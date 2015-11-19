@@ -99,5 +99,30 @@ public class HarvestController {
             
         }
     }
+    
+    /**
+    Gets an array of projects
+    */
+    public func getProjects(completionHandler: (projects: [Project]?, requestError: NSError?) -> ()) {
+        
+        requestController.get("projects") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(projects: nil, requestError: error)
+                return;
+            }
+            
+            if let projectsArray = response?.array as? [[String: AnyObject]] {
+             
+                let projects = projectsArray.map({
+                    Project(dictionary: $0)
+                })
+                
+                completionHandler(projects: projects, requestError: nil)
+            }
+            
+        }
+        
+    }
 
 }
