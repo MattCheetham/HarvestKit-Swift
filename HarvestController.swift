@@ -35,7 +35,7 @@ public class HarvestController {
     }
     
     /**
-    Gets a list of all registered users for the given account
+    Gets all registered users for the given account
     
     - parameters:
         - completionHandler: The completion handler to return users and errors to
@@ -66,7 +66,7 @@ public class HarvestController {
     }
     
     /**
-    Gets an array of timers for a user for the current day
+    Gets timers for a user for the current day
      
     - parameters:
         - user: The user to look up the data for
@@ -101,7 +101,10 @@ public class HarvestController {
     }
     
     /**
-    Gets an array of projects
+    Gets projects for the account
+     
+    - parameters:
+        - completionHandler: The completion handler to return projects and errors to
     */
     public func getProjects(completionHandler: (projects: [Project]?, requestError: NSError?) -> ()) {
         
@@ -124,5 +127,32 @@ public class HarvestController {
         }
         
     }
-
+    
+    /**
+    Gets clients for the account
+    
+    - parameters:
+        - completionHandler: The completion handler to return clients and errors to
+    */
+    public func getClients(completionHandler: (clients: [Client]?, requestError: NSError?) -> ()) {
+        
+        requestController.get("clients") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(clients: nil, requestError: error)
+                return;
+            }
+            
+            if let clientsArray = response?.array as? [[String: AnyObject]] {
+                
+                let clients = clientsArray.map({
+                    Client(dictionary: $0)
+                })
+                
+                completionHandler(clients: clients, requestError: nil)
+            }
+            
+        }
+        
+    }
 }

@@ -11,7 +11,7 @@ import Foundation
 /**
 A struct representation of a client in the harvest system
 */
-struct Client {
+public struct Client {
     
     /**
      A unique identifier for this Client
