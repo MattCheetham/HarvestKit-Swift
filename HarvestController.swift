@@ -28,4 +28,32 @@ public class HarvestController {
         
     }
     
+    /**
+    Gets a list of all registered users for the given account
+    */
+    func getUsers(completionHandler: (users: [User]?, requestError: NSError?) -> ()) {
+        
+        requestController.get("people") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        
+            if let error = requestError {
+                completionHandler(users: nil, requestError: error)
+                return;
+            }
+            
+            if let usersArray = response?.array as? [[String: AnyObject]] {
+                
+                let users = usersArray.map({
+                    
+                    User(dictionary: $0)
+                    
+                })
+                
+                completionHandler(users: users, requestError: nil)
+                
+            }
+            
+        }
+        
+    }
+    
 }
