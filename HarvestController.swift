@@ -31,7 +31,7 @@ public class HarvestController {
     /**
     Gets a list of all registered users for the given account
     */
-    func getUsers(completionHandler: (users: [User]?, requestError: NSError?) -> ()) {
+    public func getUsers(completionHandler: (users: [User]?, requestError: NSError?) -> ()) {
         
         requestController.get("people") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
         
@@ -56,4 +56,35 @@ public class HarvestController {
         
     }
     
+    /**
+    Gets an array of timers for a user for the current day
+    */
+    public func getTimers(user: User?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+        
+        guard let givenUser = user, let userId = givenUser.identifier else {
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 1000, userInfo: [NSLocalizedDescriptionKey: "No user supplied or user did not have an ID"])
+            completionHandler(timers: nil, requestError: error)
+            return
+        }
+        
+        requestController.get("daily?of_user=#(:userIdentifier)", withURLParamDictionary: ["userIdentifier":userId]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(timers: nil, requestError: error)
+                return;
+            }
+            
+            if let timerResponseDictionary = response?.dictionary as? [String: AnyObject], let timerEntriesArray = timerResponseDictionary["day_entries"] as? [[String: AnyObject]] {
+                
+                let timersArray = timerEntriesArray.map({
+                    Timer(dictionary: $0)
+                })
+                
+                completionHandler(timers: timersArray, requestError: nil)
+                
+            }
+            
+        }
+    }
+
 }
