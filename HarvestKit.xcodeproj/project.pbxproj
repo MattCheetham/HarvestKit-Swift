@@ -19,6 +19,7 @@
 		491808911BFDE6F500B69D28 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918088F1BFDE6F500B69D28 /* Timer.swift */; };
 		498F530C1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
 		498F530D1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
+		49D924D31BFE4B5E00F7E0C2 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D924D21BFE4B5E00F7E0C2 /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		491808861BFDE08F00B69D28 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = HarvestKitShared/User.swift; sourceTree = "<group>"; };
 		4918088F1BFDE6F500B69D28 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = HarvestKitShared/Timer.swift; sourceTree = "<group>"; };
 		498F530B1BFE378100BFCA16 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = HarvestKitShared/Project.swift; sourceTree = "<group>"; };
+		49D924D21BFE4B5E00F7E0C2 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = HarvestKitShared/Client.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				491808831BFDDEE100B69D28 /* HarvestController.swift */,
+				49D924D21BFE4B5E00F7E0C2 /* Client.swift */,
 				4918088F1BFDE6F500B69D28 /* Timer.swift */,
 				491808861BFDE08F00B69D28 /* User.swift */,
 				498F530B1BFE378100BFCA16 /* Project.swift */,
@@ -316,6 +319,7 @@
 				491808901BFDE6F500B69D28 /* Timer.swift in Sources */,
 				491808871BFDE08F00B69D28 /* User.swift in Sources */,
 				491808841BFDDEE100B69D28 /* HarvestController.swift in Sources */,
+				49D924D31BFE4B5E00F7E0C2 /* Client.swift in Sources */,
 				498F530C1BFE378100BFCA16 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
