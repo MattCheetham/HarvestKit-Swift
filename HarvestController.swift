@@ -21,6 +21,10 @@ public class HarvestController {
     
     let requestController = TSCRequestController(baseAddress: "https://3sidedcube.harvestapp.com")
     
+    /**
+    Initialises a new harvest controller with the given credential. You must supply a credential to correctly initialise.
+    - parameter credential: A TSCRequestCredential initialised with an email address and password
+    */
     public init(credential: TSCRequestCredential!) {
         
         requestController.sharedRequestCredential = credential
