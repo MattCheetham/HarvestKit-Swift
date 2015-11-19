@@ -15,6 +15,8 @@
 		491808851BFDDEE100B69D28 /* HarvestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808831BFDDEE100B69D28 /* HarvestController.swift */; };
 		491808871BFDE08F00B69D28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808861BFDE08F00B69D28 /* User.swift */; };
 		491808881BFDE08F00B69D28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808861BFDE08F00B69D28 /* User.swift */; };
+		491808901BFDE6F500B69D28 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918088F1BFDE6F500B69D28 /* Timer.swift */; };
+		491808911BFDE6F500B69D28 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918088F1BFDE6F500B69D28 /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,20 @@
 			remoteGlobalIDString = 49084FD11BD13DBD0012F636;
 			remoteInfo = ThunderRequestTV;
 		};
+		491808971BFDE6F600B69D28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 490D873E1BFDDD4800ADE0F1 /* ThunderRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1177ED81BBAF18E00372D4D;
+			remoteInfo = ThunderRequestMac;
+		};
+		491808991BFDE6F600B69D28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 490D873E1BFDDD4800ADE0F1 /* ThunderRequest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B1177EE21BBAF18E00372D4D;
+			remoteInfo = ThunderRequestMacTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +67,7 @@
 		490D873E1BFDDD4800ADE0F1 /* ThunderRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThunderRequest.xcodeproj; path = ThunderRequest/ThunderRequest.xcodeproj; sourceTree = "<group>"; };
 		491808831BFDDEE100B69D28 /* HarvestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvestController.swift; sourceTree = "<group>"; };
 		491808861BFDE08F00B69D28 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = HarvestKitShared/User.swift; sourceTree = "<group>"; };
+		4918088F1BFDE6F500B69D28 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = HarvestKitShared/Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				491808831BFDDEE100B69D28 /* HarvestController.swift */,
+				4918088F1BFDE6F500B69D28 /* Timer.swift */,
 				491808861BFDE08F00B69D28 /* User.swift */,
 				490D87281BFDDCD200ADE0F1 /* HarvestKit */,
 				490D87371BFDDD3000ADE0F1 /* HarvestKitTV */,
@@ -117,6 +135,8 @@
 			children = (
 				490D87451BFDDD4800ADE0F1 /* ThunderRequest.framework */,
 				490D87471BFDDD4800ADE0F1 /* ThunderRequestTests.xctest */,
+				491808981BFDE6F600B69D28 /* ThunderRequestMac.framework */,
+				4918089A1BFDE6F600B69D28 /* ThunderRequestMacTests.xctest */,
 				490D87491BFDDD4800ADE0F1 /* ThunderRequestTV.framework */,
 			);
 			name = Products;
@@ -251,6 +271,20 @@
 			remoteRef = 490D87481BFDDD4800ADE0F1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		491808981BFDE6F600B69D28 /* ThunderRequestMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ThunderRequestMac.framework;
+			remoteRef = 491808971BFDE6F600B69D28 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4918089A1BFDE6F600B69D28 /* ThunderRequestMacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ThunderRequestMacTests.xctest;
+			remoteRef = 491808991BFDE6F600B69D28 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -275,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491808901BFDE6F500B69D28 /* Timer.swift in Sources */,
 				491808871BFDE08F00B69D28 /* User.swift in Sources */,
 				491808841BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 			);
@@ -284,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491808911BFDE6F500B69D28 /* Timer.swift in Sources */,
 				491808881BFDE08F00B69D28 /* User.swift in Sources */,
 				491808851BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 			);

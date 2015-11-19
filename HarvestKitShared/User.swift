@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+A struct representation of a user in the harvest system
+*/
 public struct User {
     
     /**
