@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "88604FF68235B416D63528CC921C69471FAD1D7A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "88604FF68235B416D63528CC921C69471FAD1D7A" : 0,
+    "48D1D77F8E696CFD83C9D9AC0D062062AD5CA998" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5282657C-5938-4CB9-95CB-B1407FCBD704",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "88604FF68235B416D63528CC921C69471FAD1D7A" : "HarvestKit-Swift\/",
+    "48D1D77F8E696CFD83C9D9AC0D062062AD5CA998" : "HarvestKit-Swift\/ThunderRequest\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HarvestKit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HarvestKit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:3sidedcube\/iOS-ThunderRequest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "48D1D77F8E696CFD83C9D9AC0D062062AD5CA998"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:MattCheetham\/HarvestKit-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "88604FF68235B416D63528CC921C69471FAD1D7A"
+    }
+  ]
+}
