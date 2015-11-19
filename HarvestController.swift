@@ -23,6 +23,7 @@ public class HarvestController {
     
     /**
     Initialises a new harvest controller with the given credential. You must supply a credential to correctly initialise.
+     
     - parameter credential: A TSCRequestCredential initialised with an email address and password
     */
     public init(credential: TSCRequestCredential!) {
@@ -34,6 +35,7 @@ public class HarvestController {
     
     /**
     Gets a list of all registered users for the given account
+     
     - parameter completionHandler: The completion handler to return users and errors to
     */
     public func getUsers(completionHandler: (users: [User]?, requestError: NSError?) -> ()) {
@@ -63,7 +65,9 @@ public class HarvestController {
     
     /**
     Gets an array of timers for a user for the current day
+     
     - parameter user: The user to look up the data for
+     
     - parameter completionHandler: The completion handler to return timers and errors to
     */
     public func getTimers(user: User?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
