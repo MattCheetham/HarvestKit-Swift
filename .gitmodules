@@ -1,0 +1,4 @@
+[submodule "ThunderRequest"]
+	path = ThunderRequest
+	url = git@github.com:3sidedcube/iOS-ThunderRequest.git
+	branch = feature/TV
