@@ -19,16 +19,19 @@ The Harvest controller is responsible for all interactions with the Harvest API.
 */
 public class HarvestController {
     
-    let requestController = TSCRequestController(baseAddress: "https://3sidedcube.harvestapp.com")
+    let requestController: TSCRequestController
     
     /**
     Initialises a new harvest controller with the given credential. You must supply a credential to correctly initialise.
      
     - parameters:
+        - accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
         - credential: A TSCRequestCredential initialised with an email address and password
     */
-    public init(credential: TSCRequestCredential!) {
+    public init(accountName: String!, credential: TSCRequestCredential!) {
         
+        requestController = TSCRequestController(baseAddress: "https://\(accountName).harvestapp.com")
+
         requestController.sharedRequestCredential = credential
         requestController.sharedRequestHeaders["Accept"] = "application/json"
         
