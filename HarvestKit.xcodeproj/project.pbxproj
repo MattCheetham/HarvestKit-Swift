@@ -62,18 +62,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		490D87261BFDDCD200ADE0F1 /* HarvestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490D87261BFDDCD200ADE0F1 /* HarvestKitiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKitiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490D87291BFDDCD200ADE0F1 /* HarvestKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HarvestKit.h; sourceTree = "<group>"; };
 		490D872B1BFDDCD200ADE0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		490D87361BFDDD2F00ADE0F1 /* HarvestKitTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKitTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490D87361BFDDD2F00ADE0F1 /* HarvestKittvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKittvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490D87381BFDDD3000ADE0F1 /* HarvestKitTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HarvestKitTV.h; sourceTree = "<group>"; };
 		490D873A1BFDDD3000ADE0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490D873E1BFDDD4800ADE0F1 /* ThunderRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThunderRequest.xcodeproj; path = ThunderRequest/ThunderRequest.xcodeproj; sourceTree = "<group>"; };
-		491808831BFDDEE100B69D28 /* HarvestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HarvestController.swift; path = HarvestKitShared/HarvestController.swift; sourceTree = "<group>"; };
-		491808861BFDE08F00B69D28 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = HarvestKitShared/User.swift; sourceTree = "<group>"; };
-		4918088F1BFDE6F500B69D28 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = HarvestKitShared/Timer.swift; sourceTree = "<group>"; };
-		498F530B1BFE378100BFCA16 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = HarvestKitShared/Project.swift; sourceTree = "<group>"; };
-		49D924D21BFE4B5E00F7E0C2 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = HarvestKitShared/Client.swift; sourceTree = "<group>"; };
+		491808831BFDDEE100B69D28 /* HarvestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HarvestController.swift; path = "HarvestKit-Shared/HarvestController.swift"; sourceTree = "<group>"; };
+		491808861BFDE08F00B69D28 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "HarvestKit-Shared/User.swift"; sourceTree = "<group>"; };
+		4918088F1BFDE6F500B69D28 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = "HarvestKit-Shared/Timer.swift"; sourceTree = "<group>"; };
+		498F530B1BFE378100BFCA16 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = "HarvestKit-Shared/Project.swift"; sourceTree = "<group>"; };
+		49D924D21BFE4B5E00F7E0C2 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = "HarvestKit-Shared/Client.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 				4918088F1BFDE6F500B69D28 /* Timer.swift */,
 				491808861BFDE08F00B69D28 /* User.swift */,
 				498F530B1BFE378100BFCA16 /* Project.swift */,
-				490D87281BFDDCD200ADE0F1 /* HarvestKit */,
-				490D87371BFDDD3000ADE0F1 /* HarvestKitTV */,
+				490D87281BFDDCD200ADE0F1 /* HarvestKit-iOS */,
+				490D87371BFDDD3000ADE0F1 /* HarvestKit-tvOS */,
 				490D87271BFDDCD200ADE0F1 /* Products */,
 				490D874A1BFDDD4B00ADE0F1 /* Supporting Frameworks */,
 			);
@@ -114,28 +114,28 @@
 		490D87271BFDDCD200ADE0F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				490D87261BFDDCD200ADE0F1 /* HarvestKit.framework */,
-				490D87361BFDDD2F00ADE0F1 /* HarvestKitTV.framework */,
+				490D87261BFDDCD200ADE0F1 /* HarvestKitiOS.framework */,
+				490D87361BFDDD2F00ADE0F1 /* HarvestKittvOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		490D87281BFDDCD200ADE0F1 /* HarvestKit */ = {
+		490D87281BFDDCD200ADE0F1 /* HarvestKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				490D87291BFDDCD200ADE0F1 /* HarvestKit.h */,
 				490D872B1BFDDCD200ADE0F1 /* Info.plist */,
 			);
-			path = HarvestKit;
+			path = "HarvestKit-iOS";
 			sourceTree = "<group>";
 		};
-		490D87371BFDDD3000ADE0F1 /* HarvestKitTV */ = {
+		490D87371BFDDD3000ADE0F1 /* HarvestKit-tvOS */ = {
 			isa = PBXGroup;
 			children = (
 				490D87381BFDDD3000ADE0F1 /* HarvestKitTV.h */,
 				490D873A1BFDDD3000ADE0F1 /* Info.plist */,
 			);
-			path = HarvestKitTV;
+			path = "HarvestKit-tvOS";
 			sourceTree = "<group>";
 		};
 		490D873F1BFDDD4800ADE0F1 /* Products */ = {
@@ -180,9 +180,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		490D87251BFDDCD200ADE0F1 /* HarvestKit */ = {
+		490D87251BFDDCD200ADE0F1 /* HarvestKitiOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 490D872E1BFDDCD200ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKit" */;
+			buildConfigurationList = 490D872E1BFDDCD200ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKitiOS" */;
 			buildPhases = (
 				490D87211BFDDCD200ADE0F1 /* Sources */,
 				490D87221BFDDCD200ADE0F1 /* Frameworks */,
@@ -193,14 +193,14 @@
 			);
 			dependencies = (
 			);
-			name = HarvestKit;
+			name = HarvestKitiOS;
 			productName = HarvestKit;
-			productReference = 490D87261BFDDCD200ADE0F1 /* HarvestKit.framework */;
+			productReference = 490D87261BFDDCD200ADE0F1 /* HarvestKitiOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		490D87351BFDDD2F00ADE0F1 /* HarvestKitTV */ = {
+		490D87351BFDDD2F00ADE0F1 /* HarvestKittvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 490D873D1BFDDD3000ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKitTV" */;
+			buildConfigurationList = 490D873D1BFDDD3000ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKittvOS" */;
 			buildPhases = (
 				490D87311BFDDD2F00ADE0F1 /* Sources */,
 				490D87321BFDDD2F00ADE0F1 /* Frameworks */,
@@ -211,9 +211,9 @@
 			);
 			dependencies = (
 			);
-			name = HarvestKitTV;
+			name = HarvestKittvOS;
 			productName = HarvestKitTV;
-			productReference = 490D87361BFDDD2F00ADE0F1 /* HarvestKitTV.framework */;
+			productReference = 490D87361BFDDD2F00ADE0F1 /* HarvestKittvOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -251,8 +251,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				490D87251BFDDCD200ADE0F1 /* HarvestKit */,
-				490D87351BFDDD2F00ADE0F1 /* HarvestKitTV */,
+				490D87251BFDDCD200ADE0F1 /* HarvestKitiOS */,
+				490D87351BFDDD2F00ADE0F1 /* HarvestKittvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -437,7 +437,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = HarvestKit/Info.plist;
+				INFOPLIST_FILE = "HarvestKit-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mattcheetham.HarvestKit;
@@ -455,7 +455,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = HarvestKit/Info.plist;
+				INFOPLIST_FILE = "HarvestKit-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mattcheetham.HarvestKit;
@@ -472,7 +472,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = HarvestKitTV/Info.plist;
+				INFOPLIST_FILE = "HarvestKit-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mattcheetham.HarvestKitTV;
@@ -493,7 +493,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = HarvestKitTV/Info.plist;
+				INFOPLIST_FILE = "HarvestKit-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mattcheetham.HarvestKitTV;
@@ -517,7 +517,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		490D872E1BFDDCD200ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKit" */ = {
+		490D872E1BFDDCD200ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKitiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				490D872F1BFDDCD200ADE0F1 /* Debug */,
@@ -526,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		490D873D1BFDDD3000ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKitTV" */ = {
+		490D873D1BFDDD3000ADE0F1 /* Build configuration list for PBXNativeTarget "HarvestKittvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				490D873B1BFDDD3000ADE0F1 /* Debug */,
