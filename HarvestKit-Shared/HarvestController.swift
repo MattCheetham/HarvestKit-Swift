@@ -12,8 +12,6 @@
     import ThunderRequestTV
 #elseif os (OSX)
     import ThunderRequestMac
-#else
-    
 #endif
 import Foundation
 
@@ -49,6 +47,8 @@ public class HarvestController {
         
     }
     
+    //MARK:- Users
+    
     /**
     Gets all registered users for the given account
     
@@ -79,6 +79,8 @@ public class HarvestController {
         }
         
     }
+    
+    //MARK:- Timers
     
     /**
     Gets timers for a user for the current day
@@ -115,6 +117,8 @@ public class HarvestController {
         }
     }
     
+    //MARK:- Projects
+    
     /**
     Gets projects for the account
      
@@ -142,6 +146,9 @@ public class HarvestController {
         }
         
     }
+    
+    
+    //MARK:- Clients
     
     /**
     Gets clients for the account
