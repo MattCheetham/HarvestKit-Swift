@@ -10,6 +10,8 @@
     import ThunderRequest
 #elseif os(tvOS)
     import ThunderRequestTV
+#elseif os (OSX)
+    import ThunderRequestMac
 #else
     
 #endif
