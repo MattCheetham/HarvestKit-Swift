@@ -13,6 +13,7 @@
 #else
     
 #endif
+import Foundation
 
 /**
 The Harvest controller is responsible for all interactions with the Harvest API. It must be initialised with a TSCRequestCredential containing the API username and password
@@ -26,13 +27,22 @@ public class HarvestController {
      
     - parameters:
         - accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
-        - credential: A TSCRequestCredential initialised with an email address and password
+        - username: The username of the account to log in with. This is usually the users email address
+        - password: The password for the supplied username
     */
-    public init(accountName: String!, credential: TSCRequestCredential!) {
+    public init(accountName: String!, username: String!, password: String!) {
         
         requestController = TSCRequestController(baseAddress: "https://\(accountName).harvestapp.com")
+        
+        let userPasswordString = "\(username):\(password)"
+        let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64EncodedCredential = userPasswordData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        if let base64Cred = base64EncodedCredential {
+            let authString = "Basic \(base64Cred)"
+            requestController.sharedRequestHeaders["Authorization"] = authString
 
-        requestController.sharedRequestCredential = credential
+        }
+        
         requestController.sharedRequestHeaders["Accept"] = "application/json"
         
     }
@@ -83,7 +93,7 @@ public class HarvestController {
             return
         }
         
-        requestController.get("daily?of_user=#(:userIdentifier)", withURLParamDictionary: ["userIdentifier":userId]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("daily?of_user=(:userIdentifier)", withURLParamDictionary: ["userIdentifier":userId]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
             
             if let error = requestError {
                 completionHandler(timers: nil, requestError: error)
