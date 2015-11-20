@@ -22,6 +22,16 @@ Add this project as a submodule into git repository, drag the project file insid
 
 Not yet, but I’m working on it
 
+## Usage
+
+### Setup
+
+```swift
+import HarvestKit
+
+let harvestController = HarvestController(accountName: “mycompanyname”, username: “example@mycompany.com”, password: “1234”)
+```
+
 ## License
 
 HarvestKit is released under the MIT license. See LICENSE for details.
