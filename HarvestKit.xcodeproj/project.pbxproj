@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4903DC341BFF45FB0090B2CF /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D924D21BFE4B5E00F7E0C2 /* Client.swift */; };
-		490D872A1BFDDCD200ADE0F1 /* HarvestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 490D87291BFDDCD200ADE0F1 /* HarvestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		490D87391BFDDD3000ADE0F1 /* HarvestKitTV.h in Headers */ = {isa = PBXBuildFile; fileRef = 490D87381BFDDD3000ADE0F1 /* HarvestKitTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		490D872A1BFDDCD200ADE0F1 /* HarvestKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490D87291BFDDCD200ADE0F1 /* HarvestKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		490D87391BFDDD3000ADE0F1 /* HarvestKit-tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 490D87381BFDDD3000ADE0F1 /* HarvestKit-tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4918087D1BFDDDFF00B69D28 /* ThunderRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D87451BFDDD4800ADE0F1 /* ThunderRequest.framework */; };
 		4918087E1BFDDE0200B69D28 /* ThunderRequestTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D87491BFDDD4800ADE0F1 /* ThunderRequestTV.framework */; };
 		491808841BFDDEE100B69D28 /* HarvestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808831BFDDEE100B69D28 /* HarvestController.swift */; };
@@ -63,10 +63,10 @@
 
 /* Begin PBXFileReference section */
 		490D87261BFDDCD200ADE0F1 /* HarvestKitiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKitiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		490D87291BFDDCD200ADE0F1 /* HarvestKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HarvestKit.h; sourceTree = "<group>"; };
+		490D87291BFDDCD200ADE0F1 /* HarvestKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HarvestKit-iOS.h"; sourceTree = "<group>"; };
 		490D872B1BFDDCD200ADE0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490D87361BFDDD2F00ADE0F1 /* HarvestKittvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKittvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		490D87381BFDDD3000ADE0F1 /* HarvestKitTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HarvestKitTV.h; sourceTree = "<group>"; };
+		490D87381BFDDD3000ADE0F1 /* HarvestKit-tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HarvestKit-tvOS.h"; sourceTree = "<group>"; };
 		490D873A1BFDDD3000ADE0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490D873E1BFDDD4800ADE0F1 /* ThunderRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThunderRequest.xcodeproj; path = ThunderRequest/ThunderRequest.xcodeproj; sourceTree = "<group>"; };
 		491808831BFDDEE100B69D28 /* HarvestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HarvestController.swift; path = "HarvestKit-Shared/HarvestController.swift"; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		490D87281BFDDCD200ADE0F1 /* HarvestKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				490D87291BFDDCD200ADE0F1 /* HarvestKit.h */,
+				490D87291BFDDCD200ADE0F1 /* HarvestKit-iOS.h */,
 				490D872B1BFDDCD200ADE0F1 /* Info.plist */,
 			);
 			path = "HarvestKit-iOS";
@@ -132,7 +132,7 @@
 		490D87371BFDDD3000ADE0F1 /* HarvestKit-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				490D87381BFDDD3000ADE0F1 /* HarvestKitTV.h */,
+				490D87381BFDDD3000ADE0F1 /* HarvestKit-tvOS.h */,
 				490D873A1BFDDD3000ADE0F1 /* Info.plist */,
 			);
 			path = "HarvestKit-tvOS";
@@ -165,7 +165,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490D872A1BFDDCD200ADE0F1 /* HarvestKit.h in Headers */,
+				490D872A1BFDDCD200ADE0F1 /* HarvestKit-iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490D87391BFDDD3000ADE0F1 /* HarvestKitTV.h in Headers */,
+				490D87391BFDDD3000ADE0F1 /* HarvestKit-tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
