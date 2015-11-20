@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4903DC341BFF45FB0090B2CF /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D924D21BFE4B5E00F7E0C2 /* Client.swift */; };
 		490D872A1BFDDCD200ADE0F1 /* HarvestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 490D87291BFDDCD200ADE0F1 /* HarvestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		490D87391BFDDD3000ADE0F1 /* HarvestKitTV.h in Headers */ = {isa = PBXBuildFile; fileRef = 490D87381BFDDD3000ADE0F1 /* HarvestKitTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4918087D1BFDDDFF00B69D28 /* ThunderRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D87451BFDDD4800ADE0F1 /* ThunderRequest.framework */; };
@@ -331,6 +332,7 @@
 				491808911BFDE6F500B69D28 /* Timer.swift in Sources */,
 				491808881BFDE08F00B69D28 /* User.swift in Sources */,
 				491808851BFDDEE100B69D28 /* HarvestController.swift in Sources */,
+				4903DC341BFF45FB0090B2CF /* Client.swift in Sources */,
 				498F530D1BFE378100BFCA16 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
