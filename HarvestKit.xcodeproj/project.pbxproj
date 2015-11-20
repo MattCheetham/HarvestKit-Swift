@@ -69,7 +69,7 @@
 		490D87381BFDDD3000ADE0F1 /* HarvestKitTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HarvestKitTV.h; sourceTree = "<group>"; };
 		490D873A1BFDDD3000ADE0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490D873E1BFDDD4800ADE0F1 /* ThunderRequest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThunderRequest.xcodeproj; path = ThunderRequest/ThunderRequest.xcodeproj; sourceTree = "<group>"; };
-		491808831BFDDEE100B69D28 /* HarvestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarvestController.swift; sourceTree = "<group>"; };
+		491808831BFDDEE100B69D28 /* HarvestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HarvestController.swift; path = HarvestKitShared/HarvestController.swift; sourceTree = "<group>"; };
 		491808861BFDE08F00B69D28 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = HarvestKitShared/User.swift; sourceTree = "<group>"; };
 		4918088F1BFDE6F500B69D28 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = HarvestKitShared/Timer.swift; sourceTree = "<group>"; };
 		498F530B1BFE378100BFCA16 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = HarvestKitShared/Project.swift; sourceTree = "<group>"; };
