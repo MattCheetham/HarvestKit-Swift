@@ -32,6 +32,10 @@ import HarvestKit
 let harvestController = HarvestController(accountName: “mycompanyname”, username: “example@mycompany.com”, password: “1234”)
 ```
 
+## Documentation
+
+Full documentation is [available here](http://mattcheetham.github.io/HarvestKit-Swift)
+
 ## License
 
 HarvestKit is released under the MIT license. See LICENSE for details.
