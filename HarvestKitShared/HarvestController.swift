@@ -93,7 +93,7 @@ public class HarvestController {
             return
         }
         
-        requestController.get("daily?of_user=#(:userIdentifier)", withURLParamDictionary: ["userIdentifier":userId]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("daily?of_user=(:userIdentifier)", withURLParamDictionary: ["userIdentifier":userId]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
             
             if let error = requestError {
                 completionHandler(timers: nil, requestError: error)
