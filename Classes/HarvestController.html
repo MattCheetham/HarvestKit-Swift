@@ -13,13 +13,13 @@
     <a title="HarvestController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">HarvestKit Docs</a> (100% documented)</p>
+        <p><a href="../index.html">HarvestKitiOS Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/MattCheetham/HarvestKit-Swift"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">HarvestKit Reference</a>
+        <a href="../index.html">HarvestKitiOS Reference</a>
         <img id="carat" src="../img/carat.png" />
         HarvestController Class Reference
       </p>
@@ -64,7 +64,9 @@
 
                 </div>
               </div>
-            <p>The Harvest controller is responsible for all interactions with the Harvest API. It must be initialised with a TSCRequestCredential containing the API username and password</p>
+            <p>The Harvest controller is responsible for all interactions with the Harvest API. It must be initialised with a company name, account username and account password.</p>
+
+<p>Currently the controller uses basic Auth to access the API but should support the OAuth flow in the future.</p>
 
           </section>
           <section class="section task-group-section">
@@ -73,9 +75,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10HarvestKit17HarvestControllercFMS0_FT11accountNameGSQSS_8usernameGSQSS_8passwordGSQSS__S0_"></a>
+                    <a name="/s:FC13HarvestKitiOS17HarvestControllercFMS0_FT11accountNameGSQSS_8usernameGSQSS_8passwordGSQSS__S0_"></a>
                     <a name="//apple_ref/swift/Method/init(accountName:username:password:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10HarvestKit17HarvestControllercFMS0_FT11accountNameGSQSS_8usernameGSQSS_8passwordGSQSS__S0_">init(accountName:username:password:)</a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS17HarvestControllercFMS0_FT11accountNameGSQSS_8usernameGSQSS_8passwordGSQSS__S0_">init(accountName:username:password:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -83,7 +85,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initialises a new harvest controller with the given credential. You must supply a credential to correctly initialise.</p>
+                        <p>Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.</p>
 
 <ul>
 <li>parameters:
@@ -151,17 +153,28 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKitShared/HarvestController.swift#L33-L48">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKit-Shared/HarvestController.swift#L35-L50">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Users"></a>
+                <a name="//apple_ref/swift/Section/Users" class="dashAnchor"></a>
+                <a href="#/Users">
+                  <h3 class="section-name">Users</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10HarvestKit17HarvestController8getUsersFS0_FFT5usersGSqGSaVS_4User__12requestErrorGSqCSo7NSError__T_T_"></a>
+                    <a name="/s:FC13HarvestKitiOS17HarvestController8getUsersFS0_FFT5usersGSqGSaVS_4User__12requestErrorGSqCSo7NSError__T_T_"></a>
                     <a name="//apple_ref/swift/Method/getUsers(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10HarvestKit17HarvestController8getUsersFS0_FFT5usersGSqGSaVS_4User__12requestErrorGSqCSo7NSError__T_T_">getUsers(_:)</a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS17HarvestController8getUsersFS0_FFT5usersGSqGSaVS_4User__12requestErrorGSqCSo7NSError__T_T_">getUsers(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -209,17 +222,28 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKitShared/HarvestController.swift#L56-L79">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKit-Shared/HarvestController.swift#L60-L83">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Timers"></a>
+                <a name="//apple_ref/swift/Section/Timers" class="dashAnchor"></a>
+                <a href="#/Timers">
+                  <h3 class="section-name">Timers</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10HarvestKit17HarvestController9getTimersFS0_FTGSqVS_4User_17completionHandlerFT6timersGSqGSaVS_5Timer__12requestErrorGSqCSo7NSError__T__T_"></a>
+                    <a name="/s:FC13HarvestKitiOS17HarvestController9getTimersFS0_FTGSqVS_4User_17completionHandlerFT6timersGSqGSaVS_5Timer__12requestErrorGSqCSo7NSError__T__T_"></a>
                     <a name="//apple_ref/swift/Method/getTimers(_:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10HarvestKit17HarvestController9getTimersFS0_FTGSqVS_4User_17completionHandlerFT6timersGSqGSaVS_5Timer__12requestErrorGSqCSo7NSError__T__T_">getTimers(_:completionHandler:)</a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS17HarvestController9getTimersFS0_FTGSqVS_4User_17completionHandlerFT6timersGSqGSaVS_5Timer__12requestErrorGSqCSo7NSError__T__T_">getTimers(_:completionHandler:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -281,17 +305,28 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKitShared/HarvestController.swift#L88-L114">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKit-Shared/HarvestController.swift#L94-L120">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Projects"></a>
+                <a name="//apple_ref/swift/Section/Projects" class="dashAnchor"></a>
+                <a href="#/Projects">
+                  <h3 class="section-name">Projects</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10HarvestKit17HarvestController11getProjectsFS0_FFT8projectsGSqGSaVS_7Project__12requestErrorGSqCSo7NSError__T_T_"></a>
+                    <a name="/s:FC13HarvestKitiOS17HarvestController11getProjectsFS0_FFT8projectsGSqGSaVS_7Project__12requestErrorGSqCSo7NSError__T_T_"></a>
                     <a name="//apple_ref/swift/Method/getProjects(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10HarvestKit17HarvestController11getProjectsFS0_FFT8projectsGSqGSaVS_7Project__12requestErrorGSqCSo7NSError__T_T_">getProjects(_:)</a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS17HarvestController11getProjectsFS0_FFT8projectsGSqGSaVS_7Project__12requestErrorGSqCSo7NSError__T_T_">getProjects(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -339,17 +374,28 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKitShared/HarvestController.swift#L122-L142">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKit-Shared/HarvestController.swift#L130-L150">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Clients"></a>
+                <a name="//apple_ref/swift/Section/Clients" class="dashAnchor"></a>
+                <a href="#/Clients">
+                  <h3 class="section-name">Clients</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC10HarvestKit17HarvestController10getClientsFS0_FFT7clientsGSqGSaVS_6Client__12requestErrorGSqCSo7NSError__T_T_"></a>
+                    <a name="/s:FC13HarvestKitiOS17HarvestController10getClientsFS0_FFT7clientsGSqGSaVS_6Client__12requestErrorGSqCSo7NSError__T_T_"></a>
                     <a name="//apple_ref/swift/Method/getClients(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC10HarvestKit17HarvestController10getClientsFS0_FFT7clientsGSqGSaVS_6Client__12requestErrorGSqCSo7NSError__T_T_">getClients(_:)</a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS17HarvestController10getClientsFS0_FFT7clientsGSqGSaVS_6Client__12requestErrorGSqCSo7NSError__T_T_">getClients(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -397,7 +443,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKitShared/HarvestController.swift#L150-L170">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master/HarvestKit-Shared/HarvestController.swift#L161-L181">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -407,7 +453,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="http://www.mattcheetham.co.uk" target="_blank" rel="external">MattCheetham</a>. All rights reserved. (Last updated: 2015-11-20)</p>
+          <p>&copy; 2015 <a class="link" href="http://www.mattcheetham.co.uk" target="_blank" rel="external">MattCheetham</a>. All rights reserved. (Last updated: 2015-11-21)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
