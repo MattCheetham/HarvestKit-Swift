@@ -82,24 +82,41 @@ public class HarvestController {
         
     }
     
-    //MARK: - Timers
+    //MARK: - Retrieving Timers
     
     /**
-    Gets timers for a user for the current day
+    Gets timers for a given user on a given day. If no user is specified, the authenticated user will be used. If no date is specified, today will be used
      
-    - parameters:
-        - user: The user to look up the data for
-        - completionHandler: The completion handler to return timers and errors to
+    - parameter user: The user to look up the data for. If no user is specified, the authenticated user will be used
+    - parameter date: The date as an NSDate to return timers for. If no date is supplied today will be used instead
+    - parameter completionHandler: The completion handler to return timers and errors to
     */
-    public func getTimers(user: User?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+    public func getTimers(user: User?, date: NSDate?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+     
+        var url = NSURL(string: "daily")!
         
-        guard let givenUser = user, let userId = givenUser.identifier else {
-            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 1000, userInfo: [NSLocalizedDescriptionKey: "No user supplied or user did not have an ID"])
+        //Configures date if specified
+        if let givenDate = date {
+            
+            url = url.URLByAppendingPathComponent(givenDate.dayInYear)
+            url = url.URLByAppendingPathComponent(givenDate.year)
+        }
+        
+        //Configures user if specified
+        if let givenUser = user, let userId = givenUser.identifier {
+            url = url.URLByAppendingPathComponent("?of_user=\(userId)")
+        }
+        
+        //Check we have a valid URL
+        guard let path = url.path else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Data supplied did not result in a valid request for the Harvest API. Please check your date object is valid (if supplied) and that your given user has a valid identifier (if supplied)"])
             completionHandler(timers: nil, requestError: error)
             return
         }
         
-        requestController.get("daily?of_user=(:userIdentifier)", withURLParamDictionary: ["userIdentifier":userId]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        //Makes the request for timers
+        requestController.get(path) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
             
             if let error = requestError {
                 completionHandler(timers: nil, requestError: error)
@@ -117,14 +134,45 @@ public class HarvestController {
             }
             
         }
+        
     }
+    
+    /**
+    Gets timers for a given user for the current day. If no user is specified, the authenticated user will be used.
+     
+    - parameter user: The user to look up the data for. If no user is specified, the authenticated user will be used
+    - parameter completionHandler: The completion handler to return timers and errors to
+    */
+    public func getTimers(user: User?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+        getTimers(user, date: nil, completionHandler: completionHandler)
+    }
+    
+    /**
+     Gets timers for the authenticated user for the given day. If no day is specified, today will be used.
+     
+     - parameter date: THe date as an NSDate to return timers for. If no date is supplied today will be used instead
+     - parameter completionHandler: The completion handler to return timers and errors to
+     */
+    public func getTimers(date: NSDate?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+        getTimers(nil, date: date, completionHandler: completionHandler)
+    }
+    
+    /**
+     Gets timers for the authenticated user for the current day
+     
+     - parameter completionHandler: The completion handler to return timers and errors to
+     */
+    public func getTimers(completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+        getTimers(nil, date: nil, completionHandler: completionHandler)
+    }
+    
+    //MARK: Adjusting Timers
     
     /**
     Toggles the given timer. If the timer is on, it will turn off, if it is off, it will turn on.
      
-    - parameters:
-        - timer: The timer to toggle
-        - completionHandler: The completion handler to return whether or not the toggle was successful, the updated timer and any request errors
+    - parameter timer: The timer to toggle
+    - parameter completionHandler: The completion handler to return whether or not the toggle was successful, the updated timer and any request errors
      
     - note: if your account uses timestamp timers, timers cannot be restarted. Instead, a new timer will be created with the same project, task, and notes.
     */
