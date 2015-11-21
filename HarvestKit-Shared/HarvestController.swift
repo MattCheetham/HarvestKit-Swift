@@ -119,6 +119,48 @@ public class HarvestController {
         }
     }
     
+    /**
+    Toggles the given timer. If the timer is on, it will turn off, if it is off, it will turn on.
+     
+    - parameters:
+        - timer: The timer to toggle
+        - completionHandler: The completion handler to return whether or not the toggle was successful, the updated timer and any request errors
+     
+    - note: if your account uses timestamp timers, timers cannot be restarted. Instead, a new timer will be created with the same project, task, and notes.
+    */
+    public func toggle(timer: Timer?, completionHandler: (success: Bool?, updatedTimer: Timer?, requestError: NSError?) -> ()) {
+        
+        guard let givenTimer = timer, timerIdentifier = givenTimer.identifier else {
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 1000, userInfo: [NSLocalizedDescriptionKey: "No timer supplied or timer did not have an ID"])
+            completionHandler(success: false, updatedTimer: nil, requestError: error)
+            return;
+        }
+        
+        requestController.get("daily/timer/(:timerIdentifier)", withURLParamDictionary: ["timerIdentifier":timerIdentifier]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(success: false, updatedTimer: nil, requestError: error)
+                return;
+            }
+            
+            if let toggleResponse = response {
+                
+                if toggleResponse.status == 200 {
+                    
+                    var newTimer: Timer?
+                    if let responseDictionary = response?.dictionary as? [String: AnyObject] {
+                        newTimer = Timer(dictionary: responseDictionary)
+                    }
+                    
+                    completionHandler(success: true, updatedTimer: newTimer, requestError: nil)
+                    return;
+                }
+            }
+            
+        }
+        
+    }
+     
     //MARK: - Projects
     
     /**
