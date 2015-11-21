@@ -10,20 +10,22 @@
     import ThunderRequest
 #elseif os(tvOS)
     import ThunderRequestTV
-#else
-    
+#elseif os (OSX)
+    import ThunderRequestMac
 #endif
 import Foundation
 
 /**
-The Harvest controller is responsible for all interactions with the Harvest API. It must be initialised with a TSCRequestCredential containing the API username and password
-*/
+The Harvest controller is responsible for all interactions with the Harvest API. It must be initialised with a company name, account username and account password.
+ 
+Currently the controller uses basic Auth to access the API but should support the OAuth flow in the future.
+ */
 public class HarvestController {
     
     let requestController: TSCRequestController
     
     /**
-    Initialises a new harvest controller with the given credential. You must supply a credential to correctly initialise.
+    Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
      
     - parameters:
         - accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
@@ -46,6 +48,8 @@ public class HarvestController {
         requestController.sharedRequestHeaders["Accept"] = "application/json"
         
     }
+    
+    //MARK: - Users
     
     /**
     Gets all registered users for the given account
@@ -77,6 +81,8 @@ public class HarvestController {
         }
         
     }
+    
+    //MARK: - Timers
     
     /**
     Gets timers for a user for the current day
@@ -113,6 +119,8 @@ public class HarvestController {
         }
     }
     
+    //MARK: - Projects
+    
     /**
     Gets projects for the account
      
@@ -140,6 +148,9 @@ public class HarvestController {
         }
         
     }
+    
+    
+    //MARK: - Clients
     
     /**
     Gets clients for the account

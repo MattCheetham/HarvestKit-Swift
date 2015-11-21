@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "490D87351BFDDD2F00ADE0F1"
-               BuildableName = "HarvestKitTV.framework"
-               BlueprintName = "HarvestKitTV"
+               BuildableName = "HarvestKittvOS.framework"
+               BlueprintName = "HarvestKittvOS"
                ReferencedContainer = "container:HarvestKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "490D87351BFDDD2F00ADE0F1"
-            BuildableName = "HarvestKitTV.framework"
-            BlueprintName = "HarvestKitTV"
+            BuildableName = "HarvestKittvOS.framework"
+            BlueprintName = "HarvestKittvOS"
             ReferencedContainer = "container:HarvestKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "490D87351BFDDD2F00ADE0F1"
-            BuildableName = "HarvestKitTV.framework"
-            BlueprintName = "HarvestKitTV"
+            BuildableName = "HarvestKittvOS.framework"
+            BlueprintName = "HarvestKittvOS"
             ReferencedContainer = "container:HarvestKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
