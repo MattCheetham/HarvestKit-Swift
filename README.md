@@ -11,14 +11,14 @@ A Swift framework for accessing the harvest time tracking API
 
 ## Requirements
 
-- iOS 9.1+ / tvOS 9.0+
+- iOS 9.1+ / tvOS 9.0+ / OS X 10.10+
 - Xcode 7.1+
 
 ## Installation
 
-Add this project as a submodule into git repository, drag the project file inside your project. Add “HarvestKit” or “HarvestKitTV” as an embedded library in project settings
+Add this project as a submodule into git repository, drag the project file inside your project. Add “HarvestKitiOS”, “HarvestKittvOS” or “HarvestKitOSX” as an embedded library in project settings.
 
-## CocoaPods
+## CocoaPods / Catharge
 
 Not yet, but I’m working on it
 
@@ -27,7 +27,7 @@ Not yet, but I’m working on it
 ### Setup
 
 ```swift
-import HarvestKit
+import HarvestKit(iOS/tvOS/OSX)
 
 let harvestController = HarvestController(accountName: “mycompanyname”, username: “example@mycompany.com”, password: “1234”)
 ```
