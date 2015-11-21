@@ -84,6 +84,61 @@ public class HarvestController {
     
     //MARK: - Timers
     
+    
+    /**
+    Gets timers for an optional user and optional day. If no user is specified, the authenticated user will be used. If no date is specified, today will be used
+     
+    - parameters:
+        - user: The user to look up the data for. If no user is specified, the authenticated user will be used
+        - date: THe date as an NSDate to return timers for. If no date is supplied today will be used instead
+        - completionHandler: The completion handler to return timers and errors to
+    */
+    public func getTimers(user: User?, date: NSDate?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+     
+        var url = NSURL(string: "daily")!
+        
+        //Configures date if specified
+        if let givenDate = date {
+            
+            url = url.URLByAppendingPathComponent(givenDate.dayInYear)
+            url = url.URLByAppendingPathComponent(givenDate.year)
+        }
+        
+        //Configures user if specified
+        if let givenUser = user, let userId = givenUser.identifier {
+            url = url.URLByAppendingPathComponent("?of_user=\(userId)")
+        }
+        
+        //Check we have a valid URL
+        guard let path = url.path else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Data supplied did not result in a valid request for the Harvest API. Please check your date object is valid (if supplied) and that your given user has a valid identifier (if supplied)"])
+            completionHandler(timers: nil, requestError: error)
+            return
+        }
+        
+        //Makes the request for timers
+        requestController.get(path) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(timers: nil, requestError: error)
+                return;
+            }
+            
+            if let timerResponseDictionary = response?.dictionary as? [String: AnyObject], let timerEntriesArray = timerResponseDictionary["day_entries"] as? [[String: AnyObject]] {
+                
+                let timersArray = timerEntriesArray.map({
+                    Timer(dictionary: $0)
+                })
+                
+                completionHandler(timers: timersArray, requestError: nil)
+                
+            }
+            
+        }
+        
+    }
+    
     /**
     Gets timers for a user for the current day
      
