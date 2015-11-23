@@ -208,6 +208,33 @@ public class HarvestController {
         }
         
     }
+    
+    /**
+     Deletes the given timer. Will return an error of 404 if the timer has already been deleted or is not valid
+     
+     - parameter timer: The timer to delete
+     - parameter completionHandler: The completion handler to return request errors to
+     */
+    public func delete(timer: Timer?, completionHandler: (requestError: NSError?) -> ()) {
+        
+        guard let givenTimer = timer, timerIdentifier = givenTimer.identifier else {
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 1000, userInfo: [NSLocalizedDescriptionKey: "No timer supplied or timer did not have an ID"])
+            completionHandler(requestError: error)
+            return;
+        }
+        
+        requestController.delete("daily/delete/(:timerIdentifier)", withURLParamDictionary: ["timerIdentifier":timerIdentifier]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(requestError: error)
+                return;
+            }
+            
+            completionHandler(requestError: nil)
+            
+        }
+        
+    }
      
     //MARK: - Projects
     
