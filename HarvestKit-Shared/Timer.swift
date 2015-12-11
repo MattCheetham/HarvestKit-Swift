@@ -43,6 +43,11 @@ public struct Timer {
      */
     public var active = false
     
+    /**
+    The number of hours that the Timer has been running for
+    */
+    public var hours: Double?
+    
     internal init(dictionary: [String: AnyObject]) {
         
         identifier = dictionary["id"] as? Int
@@ -50,6 +55,7 @@ public struct Timer {
         clientName = dictionary["client"] as? String
         projectName = dictionary["project"] as? String
         taskName = dictionary["task"] as? String
+        hours = dictionary["hours"] as? Double
         
         if let _ = dictionary["timer_started_at"] as? String {
             active = true
