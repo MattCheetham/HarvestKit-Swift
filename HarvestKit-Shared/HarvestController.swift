@@ -82,6 +82,55 @@ public class HarvestController {
         
     }
     
+    //MARK: - Creating Timers
+    
+    /**
+    Creates a new timer entry in the Harvest system. You may set projectIdentifier, taskIdentifier, notes and hours on the timer.
+    - requires: projectIdentifier and taskIdentifier on the timer object
+    - note: If the timer does not have hours set then the API will start the timer running
+    */
+    public func create(timer: Timer, completionHandler: (resultTimer: Timer?, requestError: NSError?) -> ()) {
+        
+        guard let _ = timer.projectIdentifier else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Timer does not have a project identifier"])
+            completionHandler(resultTimer: nil, requestError: error)
+            return
+        }
+        
+        guard let _ = timer.taskIdentifier else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Timer does not have a task identifier"])
+            completionHandler(resultTimer: nil, requestError: error)
+            return
+        }
+        
+        requestController.post("daily/add", bodyParams: timer.serialisedObject) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(resultTimer: nil, requestError: error)
+                return
+            }
+            
+            if let timerResponse = response {
+                
+                if let timerResponseDictionary = timerResponse.dictionary as? [String: AnyObject] {
+                    
+                    let createdTimer = Timer(dictionary: timerResponseDictionary)
+                    completionHandler(resultTimer: createdTimer, requestError: nil)
+                    return
+                    
+                }
+                
+            }
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid timer object"])
+            completionHandler(resultTimer: nil, requestError: error)
+            
+        }
+        
+    }
+    
     //MARK: - Retrieving Timers
     
     /**
