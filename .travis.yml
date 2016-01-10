@@ -1,5 +1,10 @@
 language: objective-c
 xcode_project: HarvestKit.xcodeproj # path to your xcodeproj folder
+before_install: 
+  - brew update
+  - brew upgrade xctool
+  - brew install carthage
+  - carthage bootstrap --verbose
 xcode_scheme: MyNewProjectTests
 osx_image: xcode7.1
 env:
