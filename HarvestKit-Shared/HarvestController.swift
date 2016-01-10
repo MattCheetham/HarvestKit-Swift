@@ -20,7 +20,7 @@ The Harvest controller is responsible for all interactions with the Harvest API.
  
 Currently the controller uses basic Auth to access the API but should support the OAuth flow in the future.
  */
-public class HarvestController {
+public final class HarvestController {
     
     let requestController: TSCRequestController
     
