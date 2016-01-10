@@ -1,0 +1,16 @@
+{
+  "id": 123456,
+  "project": "My test project",
+  "created_at": "2016-01-08T09:03:30Z",
+  "hours": 6,
+  "user_id": 534625,
+  "notes": "Some project notes",
+  "task_id": "434563",
+  "updated_at": "2016-01-10T09:55:57Z",
+  "hours_without_timer": 6,
+  "project_id": "3324553",
+  "client": "Generic Client",
+  "spent_at": "2016-01-08",
+  "task": "iOS",
+  "timer_started_at": "2016-01-10T18:25:34Z"
+}

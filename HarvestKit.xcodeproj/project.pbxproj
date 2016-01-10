@@ -21,6 +21,14 @@
 		491808911BFDE6F500B69D28 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918088F1BFDE6F500B69D28 /* Timer.swift */; };
 		498F530C1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
 		498F530D1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
+		49AC1C4B1C42B79000E420B4 /* ThunderRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49AC1C4A1C42B79000E420B4 /* ThunderRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49AC1C4D1C42B86C00E420B4 /* timer.json in Resources */ = {isa = PBXBuildFile; fileRef = 49AC1C4C1C42B86C00E420B4 /* timer.json */; };
+		49AC1C501C42D70800E420B4 /* client.json in Resources */ = {isa = PBXBuildFile; fileRef = 49AC1C4F1C42D70800E420B4 /* client.json */; };
+		49AC1C521C42D81700E420B4 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 49AC1C511C42D81700E420B4 /* user.json */; };
+		49AC1C541C42D8F800E420B4 /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = 49AC1C531C42D8F800E420B4 /* project.json */; };
+		49AC1C561C42DB7A00E420B4 /* errorObject.json in Resources */ = {isa = PBXBuildFile; fileRef = 49AC1C551C42DB7A00E420B4 /* errorObject.json */; };
+		49AC1C581C42E73200E420B4 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC1C571C42E73200E420B4 /* ExtensionTests.swift */; };
+		49AC1C5A1C42E75600E420B4 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC1C591C42E75600E420B4 /* TestBase.swift */; };
 		49D924D31BFE4B5E00F7E0C2 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D924D21BFE4B5E00F7E0C2 /* Client.swift */; };
 		49DBB1DC1BFF963400640F31 /* HarvestKit-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 49DBB1DB1BFF963400640F31 /* HarvestKit-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49DBB1E21BFF967600640F31 /* HarvestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808831BFDDEE100B69D28 /* HarvestController.swift */; };
@@ -37,9 +45,33 @@
 		49EC2CE01C4273AC00B9FF49 /* ThunderRequest.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49EC2CDF1C4273AC00B9FF49 /* ThunderRequest.framework.dSYM */; };
 		49EC2CE31C4273C700B9FF49 /* ThunderRequestTV.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49EC2CE21C4273C700B9FF49 /* ThunderRequestTV.framework.dSYM */; };
 		49EC2CE61C4273DE00B9FF49 /* ThunderRequestMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49EC2CE51C4273DE00B9FF49 /* ThunderRequestMac.framework.dSYM */; };
+		49EC2D061C42AC9C00B9FF49 /* HarvestKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC2D051C42AC9C00B9FF49 /* HarvestKitTests.swift */; };
+		49EC2D081C42AC9C00B9FF49 /* HarvestKitiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D87261BFDDCD200ADE0F1 /* HarvestKitiOS.framework */; };
+		49EC2D0F1C42ADD300B9FF49 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC2D0E1C42ADD300B9FF49 /* ModelTests.swift */; };
+		49EC2D121C42B09A00B9FF49 /* ThunderRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC2CD51C42728300B9FF49 /* ThunderRequest.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		49EC2D091C42AC9C00B9FF49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 490D871D1BFDDCD200ADE0F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 490D87251BFDDCD200ADE0F1;
+			remoteInfo = HarvestKitiOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		49AC1C491C42B77000E420B4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49AC1C4B1C42B79000E420B4 /* ThunderRequest.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49EC2CDE1C42738400B9FF49 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,6 +116,14 @@
 		491808861BFDE08F00B69D28 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "HarvestKit-Shared/User.swift"; sourceTree = "<group>"; };
 		4918088F1BFDE6F500B69D28 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = "HarvestKit-Shared/Timer.swift"; sourceTree = "<group>"; };
 		498F530B1BFE378100BFCA16 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = "HarvestKit-Shared/Project.swift"; sourceTree = "<group>"; };
+		49AC1C4A1C42B79000E420B4 /* ThunderRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThunderRequest.framework; path = ../Carthage/Build/iOS/ThunderRequest.framework; sourceTree = "<group>"; };
+		49AC1C4C1C42B86C00E420B4 /* timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timer.json; sourceTree = "<group>"; };
+		49AC1C4F1C42D70800E420B4 /* client.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = client.json; sourceTree = "<group>"; };
+		49AC1C511C42D81700E420B4 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		49AC1C531C42D8F800E420B4 /* project.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = project.json; sourceTree = "<group>"; };
+		49AC1C551C42DB7A00E420B4 /* errorObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = errorObject.json; sourceTree = "<group>"; };
+		49AC1C571C42E73200E420B4 /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		49AC1C591C42E75600E420B4 /* TestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
 		49D924D21BFE4B5E00F7E0C2 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = "HarvestKit-Shared/Client.swift"; sourceTree = "<group>"; };
 		49DBB1D91BFF963400640F31 /* HarvestKitOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKitOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBB1DB1BFF963400640F31 /* HarvestKit-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HarvestKit-OSX.h"; sourceTree = "<group>"; };
@@ -95,6 +135,10 @@
 		49EC2CDF1C4273AC00B9FF49 /* ThunderRequest.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ThunderRequest.framework.dSYM; path = Carthage/Build/iOS/ThunderRequest.framework.dSYM; sourceTree = "<group>"; };
 		49EC2CE21C4273C700B9FF49 /* ThunderRequestTV.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ThunderRequestTV.framework.dSYM; path = Carthage/Build/tvOS/ThunderRequestTV.framework.dSYM; sourceTree = "<group>"; };
 		49EC2CE51C4273DE00B9FF49 /* ThunderRequestMac.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ThunderRequestMac.framework.dSYM; path = Carthage/Build/Mac/ThunderRequestMac.framework.dSYM; sourceTree = "<group>"; };
+		49EC2D031C42AC9C00B9FF49 /* HarvestKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarvestKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49EC2D051C42AC9C00B9FF49 /* HarvestKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestKitTests.swift; sourceTree = "<group>"; };
+		49EC2D071C42AC9C00B9FF49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EC2D0E1C42ADD300B9FF49 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +166,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49EC2D001C42AC9C00B9FF49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49EC2D081C42AC9C00B9FF49 /* HarvestKitiOS.framework in Frameworks */,
+				49EC2D121C42B09A00B9FF49 /* ThunderRequest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -146,6 +199,7 @@
 				490D87281BFDDCD200ADE0F1 /* HarvestKit-iOS */,
 				490D87371BFDDD3000ADE0F1 /* HarvestKit-tvOS */,
 				49DBB1DA1BFF963400640F31 /* HarvestKit-OSX */,
+				49EC2D041C42AC9C00B9FF49 /* HarvestKitTests */,
 				490D87271BFDDCD200ADE0F1 /* Products */,
 				490D874A1BFDDD4B00ADE0F1 /* Supporting Frameworks */,
 			);
@@ -157,6 +211,7 @@
 				490D87261BFDDCD200ADE0F1 /* HarvestKitiOS.framework */,
 				490D87361BFDDD2F00ADE0F1 /* HarvestKittvOS.framework */,
 				49DBB1D91BFF963400640F31 /* HarvestKitOSX.framework */,
+				49EC2D031C42AC9C00B9FF49 /* HarvestKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +245,18 @@
 			name = "Supporting Frameworks";
 			sourceTree = "<group>";
 		};
+		49AC1C4E1C42B86F00E420B4 /* JSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				49AC1C551C42DB7A00E420B4 /* errorObject.json */,
+				49AC1C4C1C42B86C00E420B4 /* timer.json */,
+				49AC1C4F1C42D70800E420B4 /* client.json */,
+				49AC1C511C42D81700E420B4 /* user.json */,
+				49AC1C531C42D8F800E420B4 /* project.json */,
+			);
+			name = "JSON Files";
+			sourceTree = "<group>";
+		};
 		49DBB1DA1BFF963400640F31 /* HarvestKit-OSX */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +275,20 @@
 				49EC2CDF1C4273AC00B9FF49 /* ThunderRequest.framework.dSYM */,
 			);
 			name = "Debug Symbols";
+			sourceTree = "<group>";
+		};
+		49EC2D041C42AC9C00B9FF49 /* HarvestKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				49AC1C591C42E75600E420B4 /* TestBase.swift */,
+				49EC2D051C42AC9C00B9FF49 /* HarvestKitTests.swift */,
+				49EC2D0E1C42ADD300B9FF49 /* ModelTests.swift */,
+				49AC1C571C42E73200E420B4 /* ExtensionTests.swift */,
+				49AC1C4E1C42B86F00E420B4 /* JSON Files */,
+				49AC1C4A1C42B79000E420B4 /* ThunderRequest.framework */,
+				49EC2D071C42AC9C00B9FF49 /* Info.plist */,
+			);
+			path = HarvestKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,12 +381,32 @@
 			productReference = 49DBB1D91BFF963400640F31 /* HarvestKitOSX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		49EC2D021C42AC9C00B9FF49 /* HarvestKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49EC2D0D1C42AC9C00B9FF49 /* Build configuration list for PBXNativeTarget "HarvestKitTests" */;
+			buildPhases = (
+				49EC2CFF1C42AC9C00B9FF49 /* Sources */,
+				49EC2D001C42AC9C00B9FF49 /* Frameworks */,
+				49EC2D011C42AC9C00B9FF49 /* Resources */,
+				49AC1C491C42B77000E420B4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49EC2D0A1C42AC9C00B9FF49 /* PBXTargetDependency */,
+			);
+			name = HarvestKitTests;
+			productName = HarvestKitTests;
+			productReference = 49EC2D031C42AC9C00B9FF49 /* HarvestKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		490D871D1BFDDCD200ADE0F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Matt Cheetham";
 				TargetAttributes = {
@@ -317,6 +418,9 @@
 					};
 					49DBB1D81BFF963400640F31 = {
 						CreatedOnToolsVersion = 7.1.1;
+					};
+					49EC2D021C42AC9C00B9FF49 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -335,6 +439,7 @@
 				490D87251BFDDCD200ADE0F1 /* HarvestKitiOS */,
 				490D87351BFDDD2F00ADE0F1 /* HarvestKittvOS */,
 				49DBB1D81BFF963400640F31 /* HarvestKitOSX */,
+				49EC2D021C42AC9C00B9FF49 /* HarvestKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -358,6 +463,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49EC2D011C42AC9C00B9FF49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49AC1C521C42D81700E420B4 /* user.json in Resources */,
+				49AC1C501C42D70800E420B4 /* client.json in Resources */,
+				49AC1C4D1C42B86C00E420B4 /* timer.json in Resources */,
+				49AC1C541C42D8F800E420B4 /* project.json in Resources */,
+				49AC1C561C42DB7A00E420B4 /* errorObject.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +568,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49EC2CFF1C42AC9C00B9FF49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49AC1C5A1C42E75600E420B4 /* TestBase.swift in Sources */,
+				49AC1C581C42E73200E420B4 /* ExtensionTests.swift in Sources */,
+				49EC2D061C42AC9C00B9FF49 /* HarvestKitTests.swift in Sources */,
+				49EC2D0F1C42ADD300B9FF49 /* ModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49EC2D0A1C42AC9C00B9FF49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 490D87251BFDDCD200ADE0F1 /* HarvestKitiOS */;
+			targetProxy = 49EC2D091C42AC9C00B9FF49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		490D872C1BFDDCD200ADE0F1 /* Debug */ = {
@@ -687,6 +823,36 @@
 			};
 			name = Release;
 		};
+		49EC2D0B1C42AC9C00B9FF49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HarvestKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mattcheetham.HarvestKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49EC2D0C1C42AC9C00B9FF49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HarvestKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mattcheetham.HarvestKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -722,6 +888,15 @@
 			buildConfigurations = (
 				49DBB1DF1BFF963400640F31 /* Debug */,
 				49DBB1E01BFF963400640F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49EC2D0D1C42AC9C00B9FF49 /* Build configuration list for PBXNativeTarget "HarvestKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49EC2D0B1C42AC9C00B9FF49 /* Debug */,
+				49EC2D0C1C42AC9C00B9FF49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

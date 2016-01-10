@@ -31,7 +31,7 @@ public struct Timer {
     /**
     The unique identifier for the project
     */
-    public var projectIdentifier: Int?
+    public var projectIdentifier: String?
     
     /**
     The name of the project that the timer falls under
@@ -39,14 +39,14 @@ public struct Timer {
     public var projectName: String?
     
     /**
+     The unique identifier for the task
+     */
+    public var taskIdentifier: String?
+    /**
+     
     The name of the task that the timer falls under
     */
     public var taskName: String?
-    
-    /**
-     The unique identifier for the task
-     */
-    public var taskIdentifier: Int?
     
     /**
      A boolean to indicate whether or not the timer is currently active.
@@ -69,14 +69,14 @@ public struct Timer {
     */
     public init() {}
     
-    internal init(dictionary: [String: AnyObject]) {
+    internal init?(dictionary: [String: AnyObject]) {
         
         identifier = dictionary["id"] as? Int
         notes = dictionary["notes"] as? String
         clientName = dictionary["client"] as? String
-        projectIdentifier = dictionary["project_id"] as? Int
+        projectIdentifier = dictionary["project_id"] as? String
         projectName = dictionary["project"] as? String
-        taskIdentifier = dictionary["task_id"] as? Int
+        taskIdentifier = dictionary["task_id"] as? String
         taskName = dictionary["task"] as? String
         hours = dictionary["hours"] as? Double
         hoursWithoutTimer = dictionary["hours_without_timer"] as? Double

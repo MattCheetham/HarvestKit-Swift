@@ -55,7 +55,7 @@ public final class HarvestController {
     
     - parameter completionHandler: The completion handler to return users and errors to
     */
-    public func getUsers(completionHandler: (users: [User]?, requestError: NSError?) -> ()) {
+    public func getUsers(completionHandler: (users: [User?]?, requestError: NSError?) -> ()) {
         
         requestController.get("people") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
         
@@ -142,7 +142,7 @@ public final class HarvestController {
     - parameter date: The date as an NSDate to return timers for. If no date is supplied today will be used instead
     - parameter completionHandler: The completion handler to return timers and errors to
     */
-    public func getTimers(user: User?, date: NSDate?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+    public func getTimers(user: User?, date: NSDate?, completionHandler: (timers: [Timer?]?, requestError: NSError?) -> ()) {
      
         var url = NSURL(string: "daily")!
         
@@ -194,7 +194,7 @@ public final class HarvestController {
     - parameter user: The user to look up the data for. If no user is specified, the authenticated user will be used
     - parameter completionHandler: The completion handler to return timers and errors to
     */
-    public func getTimers(user: User?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+    public func getTimers(user: User?, completionHandler: (timers: [Timer?]?, requestError: NSError?) -> ()) {
         getTimers(user, date: nil, completionHandler: completionHandler)
     }
     
@@ -204,7 +204,7 @@ public final class HarvestController {
      - parameter date: THe date as an NSDate to return timers for. If no date is supplied today will be used instead
      - parameter completionHandler: The completion handler to return timers and errors to
      */
-    public func getTimers(date: NSDate?, completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+    public func getTimers(date: NSDate?, completionHandler: (timers: [Timer?]?, requestError: NSError?) -> ()) {
         getTimers(nil, date: date, completionHandler: completionHandler)
     }
     
@@ -213,7 +213,7 @@ public final class HarvestController {
      
      - parameter completionHandler: The completion handler to return timers and errors to
      */
-    public func getTimers(completionHandler: (timers: [Timer]?, requestError: NSError?) -> ()) {
+    public func getTimers(completionHandler: (timers: [Timer?]?, requestError: NSError?) -> ()) {
         getTimers(nil, date: nil, completionHandler: completionHandler)
     }
     
@@ -371,7 +371,7 @@ public final class HarvestController {
     - parameters:
         - completionHandler: The completion handler to return projects and errors to
     */
-    public func getProjects(completionHandler: (projects: [Project]?, requestError: NSError?) -> ()) {
+    public func getProjects(completionHandler: (projects: [Project?]?, requestError: NSError?) -> ()) {
         
         requestController.get("projects") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
             
@@ -402,7 +402,7 @@ public final class HarvestController {
     - parameters:
         - completionHandler: The completion handler to return clients and errors to
     */
-    public func getClients(completionHandler: (clients: [Client]?, requestError: NSError?) -> ()) {
+    public func getClients(completionHandler: (clients: [Client?]?, requestError: NSError?) -> ()) {
         
         requestController.get("clients") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
             

@@ -43,11 +43,11 @@ public struct Project {
     */
     public var notes: String?
     
-    internal init(dictionary: [String: AnyObject]) {
+    internal init?(dictionary: [String: AnyObject]) {
         
         guard let projectDictionary = dictionary["project"] as? [String: AnyObject] else {
             print("Dictionary was missing project key")
-            return
+            return nil
         }
         
         identifier = projectDictionary["id"] as? Int
