@@ -31,6 +31,9 @@
 		49DBB1E41BFF967600640F31 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918088F1BFDE6F500B69D28 /* Timer.swift */; };
 		49DBB1E51BFF967600640F31 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808861BFDE08F00B69D28 /* User.swift */; };
 		49DBB1E61BFF967600640F31 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
+		49EC2CC81C425E4700B9FF49 /* SerializableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC2CC71C425E4700B9FF49 /* SerializableExtensions.swift */; };
+		49EC2CC91C425E4700B9FF49 /* SerializableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC2CC71C425E4700B9FF49 /* SerializableExtensions.swift */; };
+		49EC2CCA1C425E4700B9FF49 /* SerializableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC2CC71C425E4700B9FF49 /* SerializableExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,7 @@
 		49DBB1D91BFF963400640F31 /* HarvestKitOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKitOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBB1DB1BFF963400640F31 /* HarvestKit-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HarvestKit-OSX.h"; sourceTree = "<group>"; };
 		49DBB1DD1BFF963400640F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EC2CC71C425E4700B9FF49 /* SerializableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializableExtensions.swift; path = "HarvestKit-Shared/SerializableExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		490A24A11C00E057004159E0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				49EC2CC71C425E4700B9FF49 /* SerializableExtensions.swift */,
 				490A24981C00DFF6004159E0 /* DateExtensions.swift */,
 			);
 			name = Extensions;
@@ -402,6 +407,7 @@
 				491808841BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 				49D924D31BFE4B5E00F7E0C2 /* Client.swift in Sources */,
 				498F530C1BFE378100BFCA16 /* Project.swift in Sources */,
+				49EC2CC81C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
 				490A24991C00DFF6004159E0 /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +421,7 @@
 				491808851BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 				4903DC341BFF45FB0090B2CF /* Client.swift in Sources */,
 				498F530D1BFE378100BFCA16 /* Project.swift in Sources */,
+				49EC2CC91C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
 				490A249A1C00DFF6004159E0 /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +435,7 @@
 				49DBB1E31BFF967600640F31 /* Client.swift in Sources */,
 				49DBB1E61BFF967600640F31 /* Project.swift in Sources */,
 				49DBB1E21BFF967600640F31 /* HarvestController.swift in Sources */,
+				49EC2CCA1C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
 				490A249B1C00DFF6004159E0 /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
