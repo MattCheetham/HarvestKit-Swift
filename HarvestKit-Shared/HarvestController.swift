@@ -316,6 +316,47 @@ public class HarvestController {
         }
         
     }
+    
+    /**
+    Updates a timer. The timer must have an identifier to be updated. All other properties will be updated in the system.
+    - parameter timer: The timer to update. You may modify a timer returned from another request or create a new one that has a valid identifier
+    - parameter completionHandler: The completion handler to return request errors to as well as the updated timer
+    */
+    public func update(timer: Timer, completionHandler: (updatedTimer: Timer?, requestError: NSError?) -> ()) {
+        
+        guard let timerIdentifier = timer.identifier else {
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 1000, userInfo: [NSLocalizedDescriptionKey: "Supplied timer does not have an identifier"])
+            completionHandler(updatedTimer: nil, requestError: error)
+            return;
+        }
+        
+        requestController.post("daily/update/(:timerIdentifier)", withURLParamDictionary: ["timerIdentifier":timerIdentifier], bodyParams: timer.serialisedObject) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(updatedTimer: nil, requestError: error)
+                return
+            }
+            
+            if let toggleResponse = response {
+                
+                if toggleResponse.status == 200 {
+                    
+                    var newTimer: Timer?
+                    if let responseDictionary = response?.dictionary as? [String: AnyObject] {
+                        newTimer = Timer(dictionary: responseDictionary)
+                    }
+                    
+                    completionHandler(updatedTimer: newTimer, requestError: nil)
+                    return;
+                }
+            }
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid timer object"])
+            completionHandler(updatedTimer: nil, requestError: error)
+            return
+        }
+        
+    }
      
     //MARK: - Projects
     
