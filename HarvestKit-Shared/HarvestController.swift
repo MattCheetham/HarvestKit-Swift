@@ -166,6 +166,38 @@ public class HarvestController {
         getTimers(nil, date: nil, completionHandler: completionHandler)
     }
     
+    /**
+    Gets a timer for a specific ID
+    - parameter identifier: The identifier for a timer
+    */
+    public func getTimer(identifier: Int, completionHandler: (timer: Timer?, requestError: NSError?) -> ()) {
+        
+        requestController.get("daily/show/(:timerIdentifier)", withURLParamDictionary: ["timerIdentifier":identifier]) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(timer: nil, requestError: error)
+                return
+            }
+            
+            if let timerResponse = response {
+                
+                if let timerResponseDictionary = timerResponse.dictionary as? [String: AnyObject] {
+                    
+                    let foundTimer = Timer(dictionary: timerResponseDictionary)
+                    completionHandler(timer: foundTimer, requestError: nil)
+                    return
+                    
+                }
+                
+            }
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid timer object"])
+            completionHandler(timer: nil, requestError: error)
+            
+        }
+        
+    }
+    
     //MARK: Adjusting Timers
     
     /**
