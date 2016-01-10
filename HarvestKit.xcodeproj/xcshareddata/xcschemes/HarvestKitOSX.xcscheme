@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "49DBB1D81BFF963400640F31"
+            BuildableName = "HarvestKitOSX.framework"
+            BlueprintName = "HarvestKitOSX"
+            ReferencedContainer = "container:HarvestKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
