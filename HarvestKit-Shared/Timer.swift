@@ -48,6 +48,12 @@ public struct Timer {
     */
     public var hours: Double?
     
+    /**
+    The number of hours that the Timer was manually adjusted to be running to.
+    If the user has the timer running for an hour but then manually edits it to be 2.5 hours this property will show 1.5 hours.
+    */
+    public var hoursWithoutTimer: Double?
+    
     internal init(dictionary: [String: AnyObject]) {
         
         identifier = dictionary["id"] as? Int
@@ -56,6 +62,7 @@ public struct Timer {
         projectName = dictionary["project"] as? String
         taskName = dictionary["task"] as? String
         hours = dictionary["hours"] as? Double
+        hoursWithoutTimer = dictionary["hours_without_timer"] as? Double
         
         if let _ = dictionary["timer_started_at"] as? String {
             active = true
