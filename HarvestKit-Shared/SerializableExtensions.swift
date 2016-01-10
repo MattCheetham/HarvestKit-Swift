@@ -18,29 +18,24 @@ public extension Timer {
     */
     var serialisedObject: [String: AnyObject] {
         
-        get {
+        var mutableDictionary = [String: AnyObject]()
         
-            var mutableDictionary = [String: AnyObject]()
-            
-            if let projectId = projectIdentifier {
-                mutableDictionary["project_id"] = projectId
-            }
-            
-            if let taskId = taskIdentifier {
-                mutableDictionary["task_id"] = taskId
-            }
-            
-            if let inputHours = hours {
-                mutableDictionary["hours"] = inputHours
-            }
-            
-            if let inputNotes = notes {
-                mutableDictionary["notes"] = inputNotes
-            }
-            
-            return mutableDictionary
+        if let projectId = projectIdentifier {
+            mutableDictionary["project_id"] = projectId
         }
         
+        if let taskId = taskIdentifier {
+            mutableDictionary["task_id"] = taskId
+        }
+        
+        if let inputHours = hours {
+            mutableDictionary["hours"] = inputHours
+        }
+        
+        if let inputNotes = notes {
+            mutableDictionary["notes"] = inputNotes
+        }
+        
+        return mutableDictionary
     }
-    
 }
