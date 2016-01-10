@@ -64,9 +64,10 @@ public struct Timer {
     */
     public var hoursWithoutTimer: Double?
     
-    public init() {
-        
-    }
+    /**
+    Standard initialiser
+    */
+    public init() {}
     
     internal init(dictionary: [String: AnyObject]) {
         
