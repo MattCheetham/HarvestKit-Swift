@@ -27,10 +27,9 @@ public class HarvestController {
     /**
     Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
      
-    - parameters:
-        - accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
-        - username: The username of the account to log in with. This is usually the users email address
-        - password: The password for the supplied username
+    - parameter accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
+    - parameter username: The username of the account to log in with. This is usually the users email address
+    - parameter password: The password for the supplied username
     */
     public init(accountName: String!, username: String!, password: String!) {
         
@@ -54,8 +53,7 @@ public class HarvestController {
     /**
     Gets all registered users for the given account
     
-    - parameters:
-        - completionHandler: The completion handler to return users and errors to
+    - parameter completionHandler: The completion handler to return users and errors to
     */
     public func getUsers(completionHandler: (users: [User]?, requestError: NSError?) -> ()) {
         
@@ -86,7 +84,11 @@ public class HarvestController {
     
     /**
     Creates a new timer entry in the Harvest system. You may set projectIdentifier, taskIdentifier, notes and hours on the timer.
-    - requires: projectIdentifier and taskIdentifier on the timer object
+    
+    - parameter timer: The new timer object to send to the API
+    - parameter completionHandler: The completion handler to return the created timer object and errors to
+    
+    - requires: `projectIdentifier` and `taskIdentifier` on the timer object
     - note: If the timer does not have hours set then the API will start the timer running
     */
     public func create(timer: Timer, completionHandler: (resultTimer: Timer?, requestError: NSError?) -> ()) {
@@ -217,7 +219,9 @@ public class HarvestController {
     
     /**
     Gets a timer for a specific ID
+     
     - parameter identifier: The identifier for a timer
+    - parameter completionHandler: The completion handler to return the timer and errors to
     */
     public func getTimer(identifier: Int, completionHandler: (timer: Timer?, requestError: NSError?) -> ()) {
         
@@ -319,6 +323,7 @@ public class HarvestController {
     
     /**
     Updates a timer. The timer must have an identifier to be updated. All other properties will be updated in the system.
+     
     - parameter timer: The timer to update. You may modify a timer returned from another request or create a new one that has a valid identifier
     - parameter completionHandler: The completion handler to return request errors to as well as the updated timer
     */
