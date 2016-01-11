@@ -5,10 +5,14 @@ A Swift framework for accessing the harvest time tracking API
 
 
 ## Features
-- Get list of projects
-- Get list of clients
-- Get list of users
-- Get list of timers for a specific user
+- Get projects
+- Get clients
+- Get users
+- Get timers for current or specific user
+- Create timers
+- Update timers
+- Delete timers
+- Toggle timers on and off
 
 ## Requirements
 
@@ -19,9 +23,9 @@ A Swift framework for accessing the harvest time tracking API
 
 ## Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+[Carthage](https://github.com/Carthage/Carthage) is a decentralised dependency manager that builds your dependencies and provides you with binary frameworks.
 
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+You can install Carthage with [Homebrew](http://brew.sh/) using the following commands:
 
 ```bash
 $ brew update
@@ -34,11 +38,12 @@ To integrate HarvestKit into your Xcode project using Carthage, specify it in yo
 github “MattCheetham/HarvestKit-Swift” ~> 1.1
 ```
 
-Run `carthage bootstrap` to build the framework and drag the built `HarvestKit.framework` into your Xcode project.
+Run `carthage bootstrap` to build the framework and drag the built `HarvestKit.framework` for the platform into your Xcode project.
+You will also need to the drag the built `ThunderRequest.framework` for the platform into your project.
 
 
 ### Manual
-Add this project as a submodule into git repository, drag the project file inside your project. Add “HarvestKitiOS”, “HarvestKittvOS” or “HarvestKitOSX” as an embedded library in project settings.
+Add this project as a submodule into git repository, drag the project file inside your project. Add `HarvestKitiOS`, `HarvestKittvOS` or `HarvestKitOSX` as an embedded library in project settings.
 
 ### CocoaPods
 
