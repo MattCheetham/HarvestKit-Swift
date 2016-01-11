@@ -43,7 +43,7 @@ You will also need to the drag the built `ThunderRequest.framework` for the plat
 
 
 ### Manual
-Add this project as a submodule into git repository, drag the project file inside your project. Add `HarvestKitiOS`, `HarvestKittvOS` or `HarvestKitOSX` as an embedded library in project settings.
+Add this project as a submodule into git repository, drag the project file inside your project. Add `HarvestKitiOS`, `HarvestKittvOS` or `HarvestKitOSX` as an embedded library in project settings. You will also need to add [ThunderRequest](https://github.com/3sidedcube/iOS-ThunderRequest) framework to your project as this is a dependency of HarvestKit
 
 ### CocoaPods
 
