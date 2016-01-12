@@ -7,6 +7,7 @@
     <meta charset='utf-8'>
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
+    
   </head>
   <body>
     <a title="HarvestKitiOS  Reference"></a>
@@ -14,6 +15,7 @@
       <div class="content-wrapper">
         <p><a href="index.html">HarvestKitiOS Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/MattCheetham/HarvestKit-Swift"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Fmattcheetham%2Egithub%2Eio%2FHarvestKit%2DSwift%2Fdocsets%2FHarvestKitiOS%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -31,6 +33,14 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Classes/HarvestController.html">HarvestController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/NSDate.html">NSDate</a>
               </li>
             </ul>
           </li>
@@ -61,30 +71,50 @@
 
 <p>A Swift framework for accessing the harvest time tracking API</p>
 
-<p><a href="https://travis-ci.org/MattCheetham/HarvestKit-Swift"><img src="https://travis-ci.org/MattCheetham/HarvestKit-Swift.svg?branch=master" alt="Build Status"></a></p>
+<p><a href="https://travis-ci.org/MattCheetham/HarvestKit-Swift"><img src="https://travis-ci.org/MattCheetham/HarvestKit-Swift.svg?branch=master" alt="Build Status"></a> <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
 <a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features'>Features</h2>
 
 <ul>
-<li>Get list of projects</li>
-<li>Get list of clients</li>
-<li>Get list of users</li>
-<li>Get list of timers for a specific user</li>
+<li>Get projects</li>
+<li>Get clients</li>
+<li>Get users</li>
+<li>Get timers for current or specific user</li>
+<li>Create timers</li>
+<li>Update timers</li>
+<li>Delete timers</li>
+<li>Toggle timers on and off</li>
 </ul>
 <a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
 
 <ul>
-<li>iOS 9.1+ / tvOS 9.0+ / OS X 10.10+</li>
+<li>iOS 9.0+ / tvOS 9.0+ / OS X 10.10+</li>
 <li>Xcode 7.1+</li>
 </ul>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='carthage'>Carthage</h2>
 
-<p>Add this project as a submodule into git repository, drag the project file inside your project. Add “HarvestKitiOS”, “HarvestKittvOS” or “HarvestKitOSX” as an embedded library in project settings.</p>
-<a href='#cocoapods_catharge' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='cocoapods_catharge'>CocoaPods / Catharge</h2>
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralised dependency manager that builds your dependencies and provides you with binary frameworks.</p>
+
+<p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following commands:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>brew update
+<span class="gp">$ </span>brew install carthage
+</code></pre>
+
+<p>To integrate HarvestKit into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github “MattCheetham/HarvestKit-Swift” ~&gt; 1.1
+</code></pre>
+
+<p>Run <code>carthage bootstrap</code> to build the framework and drag the built <code>HarvestKit.framework</code> for the platform into your Xcode project.
+You will also need to the drag the built <code>ThunderRequest.framework</code> for the platform into your project.</p>
+<a href='#manual' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='manual'>Manual</h3>
+
+<p>Add this project as a submodule into git repository, drag the project file inside your project. Add <code>HarvestKitiOS</code>, <code>HarvestKittvOS</code> or <code>HarvestKitOSX</code> as an embedded library in project settings. You will also need to add <a href="https://github.com/3sidedcube/iOS-ThunderRequest">ThunderRequest</a> framework to your project as this is a dependency of HarvestKit</p>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>CocoaPods</h3>
 
 <p>Not yet, but I’m working on it</p>
 <a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
 <a href='#setup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='setup'>Setup</h3>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">HarvestKit</span><span class="p">(</span><span class="n">iOS</span><span class="o">/</span><span class="n">tvOS</span><span class="o">/</span><span class="kt">OSX</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">HarvestKitiOS</span> <span class="o">/</span> <span class="kd">import</span> <span class="kt">HarvestKittvOS</span> <span class="o">/</span> <span class="kd">import</span> <span class="kt">HarvestKitOSX</span>
 
 <span class="k">let</span> <span class="nv">harvestController</span> <span class="o">=</span> <span class="kt">HarvestController</span><span class="p">(</span><span class="nv">accountName</span><span class="p">:</span> <span class="err">“</span><span class="n">mycompanyname</span><span class="err">”</span><span class="p">,</span> <span class="nv">username</span><span class="p">:</span> <span class="err">“</span><span class="n">example</span><span class="kd">@mycompany</span><span class="o">.</span><span class="n">com</span><span class="err">”</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="err">“</span><span class="mi">1234</span><span class="err">”</span><span class="p">)</span>
 </code></pre>
@@ -98,8 +128,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="http://www.mattcheetham.co.uk" target="_blank" rel="external">MattCheetham</a>. All rights reserved. (Last updated: 2015-11-21)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2016 <a class="link" href="https://mattcheetham.co.uk" target="_blank" rel="external">MattCheetham</a>. All rights reserved. (Last updated: 2016-01-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
