@@ -43,11 +43,11 @@ public struct User {
     */
     public var department: String?
     
-    internal init(dictionary: [String: AnyObject]) {
+    internal init?(dictionary: [String: AnyObject]) {
         
         guard let userDictionary = dictionary["user"] as? [String: AnyObject] else {
-            print("Event was missing event key")
-            return
+            print("User was missing user key")
+            return nil
         }
         
         identifier = userDictionary["id"] as? Int

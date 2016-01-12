@@ -1,0 +1,17 @@
+{
+    "client": {
+      "id": 347832,
+      "last_invoice_kind": "project",
+      "cache_version": 48237422,
+      "active": true,
+      "created_at": "2013-08-13T23:19:40Z",
+      "details": "Generic client details",
+      "highrise_id": null,
+      "updated_at": "2015-01-26T14:41:39Z",
+      "currency_symbol": "£",
+      "default_invoice_timeframe": "20141201,20141231",
+      "currency": "British Pound - GBP",
+      "name": "Important Client",
+      "statement_key": "b874384bvdbc8949bb39478"
+    }
+}

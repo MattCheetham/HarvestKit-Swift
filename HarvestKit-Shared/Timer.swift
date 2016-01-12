@@ -29,11 +29,21 @@ public struct Timer {
     public var clientName: String?
     
     /**
+    The unique identifier for the project
+    */
+    public var projectIdentifier: String?
+    
+    /**
     The name of the project that the timer falls under
     */
     public var projectName: String?
     
     /**
+     The unique identifier for the task
+     */
+    public var taskIdentifier: String?
+    /**
+     
     The name of the task that the timer falls under
     */
     public var taskName: String?
@@ -43,13 +53,33 @@ public struct Timer {
      */
     public var active = false
     
-    internal init(dictionary: [String: AnyObject]) {
+    /**
+    The number of hours that the Timer has been running for
+    */
+    public var hours: Double?
+    
+    /**
+    The number of hours that the Timer was manually adjusted to be running to.
+    If the user has the timer running for an hour but then manually edits it to be 2.5 hours this property will show 1.5 hours.
+    */
+    public var hoursWithoutTimer: Double?
+    
+    /**
+    Standard initialiser
+    */
+    public init() {}
+    
+    internal init?(dictionary: [String: AnyObject]) {
         
         identifier = dictionary["id"] as? Int
         notes = dictionary["notes"] as? String
         clientName = dictionary["client"] as? String
+        projectIdentifier = dictionary["project_id"] as? String
         projectName = dictionary["project"] as? String
+        taskIdentifier = dictionary["task_id"] as? String
         taskName = dictionary["task"] as? String
+        hours = dictionary["hours"] as? Double
+        hoursWithoutTimer = dictionary["hours_without_timer"] as? Double
         
         if let _ = dictionary["timer_started_at"] as? String {
             active = true

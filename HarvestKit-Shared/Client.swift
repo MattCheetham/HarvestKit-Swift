@@ -38,11 +38,11 @@ public struct Client {
      */
     public var active: Bool?
     
-    internal init(dictionary: [String: AnyObject]) {
+    internal init?(dictionary: [String: AnyObject]) {
         
         guard let clientDictionary = dictionary["client"] as? [String: AnyObject] else {
             print("Dictionary was missing client key")
-            return
+            return nil
         }
         
         identifier = clientDictionary["id"] as? Int
