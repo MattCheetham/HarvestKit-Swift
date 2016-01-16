@@ -229,4 +229,31 @@ public class ContactsController {
         
     }
     
+    /**
+     Deletes the given contact. Will return an error of 404 if the timer has already been deleted or is not valid
+     
+     - parameter contact: The contact to delete
+     - parameter completionHandler: The completion handler to return request errors to
+     */
+    public func delete(contact: Contact, completionHandler: (requestError: NSError?) -> ()) {
+        
+        guard let contactIdentifier = contact.identifier else {
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have an identifier"])
+            completionHandler(requestError: error)
+            return;
+        }
+        
+        requestController.delete("contacts/\(contactIdentifier)") { (resposne: TSCRequestResponse?, requestError: NSError?) -> Void in
+
+            if let error = requestError {
+                completionHandler(requestError: error)
+                return;
+            }
+            
+            completionHandler(requestError: nil)
+            
+        }
+        
+    }
+    
 }
