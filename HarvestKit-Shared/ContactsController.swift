@@ -16,16 +16,32 @@ import Foundation
     import ThunderRequestMac
 #endif
 
+/**
+The contacts controller is responsible for managing contacts in the Harvest API. Contacts can be assosciated with clients
+*/
 public class ContactsController {
     
+    /**
+    The request controller used to load contact information. This is shared with other controllers
+    */
     let requestController: TSCRequestController
     
+    /**
+    Initialises a new controller.
+    - parameter requestController: The request controller to use when loading contact information. This must be passed down from HarvestController so that authentication may be shared
+    */
     internal init(requestController: TSCRequestController) {
         
         self.requestController = requestController
-        
     }
     
+    /**
+    Gets all contacts for the account of the authenticated user.
+     
+    - parameter completionHandler: The completion handler to return contacts and errors to
+     
+    - Note: The user must have access to the contacts on this account
+    */
     public func getContacts(completionHandler: (contacts: [Contact]?, requestError: NSError?) -> ()) {
         
         requestController.get("contacts") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
@@ -40,9 +56,66 @@ public class ContactsController {
                 let contacts = contactsArray.map({Contact(dictionary: $0)}).filter { $0 != nil }.map { $0! }
                 
                 completionHandler(contacts: contacts, requestError: nil)
+                return
             }
             
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 500, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid response"])
+            completionHandler(contacts: nil, requestError: error)
+            
         }
+        
+    }
+    
+    /**
+     Gets all contacts assosciated with a client by their identifier
+     
+     - parameter clientIdentifier: The unique identifier of the client to search for contacts for
+     - parameter completionHandler: The completion handler to return contacts and errors to
+     
+     - Note: The user must have access to the contacts on this account
+     */
+    public func getContacts(clientIdentifier: Int, completionHandler: (contacts: [Contact]?, requestError: NSError?) -> ()) {
+        
+        requestController.get("clients/\(clientIdentifier)/contacts") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(contacts: nil, requestError: error)
+                return;
+            }
+            
+            if let contactsArray = response?.array as? [[String: AnyObject]] {
+                
+                let contacts = contactsArray.map({Contact(dictionary: $0)}).filter { $0 != nil }.map { $0! }
+                
+                completionHandler(contacts: contacts, requestError: nil)
+                return
+            }
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 500, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid response"])
+            completionHandler(contacts: nil, requestError: error)
+            
+        }
+        
+    }
+    
+    /**
+     Gets all contacts assosciated with a client
+     
+     - parameter clientIdentifier: The unique identifier of the client to search for contacts for
+     - parameter completionHandler: The completion handler to return contacts and errors to
+     
+     - Note: The user must have access to the contacts on this account
+     */
+    public func getContacts(client: Client, completionHandler: (contacts: [Contact]?, requestError: NSError?) -> ()) {
+        
+        guard let clientIdentifier = client.identifier else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "The client specified does not have an identifier"])
+            completionHandler(contacts: nil, requestError: error)
+            return
+        }
+        
+        getContacts(clientIdentifier, completionHandler: completionHandler)
         
     }
     
