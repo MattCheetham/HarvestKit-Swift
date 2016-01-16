@@ -35,6 +35,8 @@ public class ContactsController {
         self.requestController = requestController
     }
     
+    //MARK: - Retrieving Contacts
+    
     /**
     Gets all contacts for the account of the authenticated user.
      
@@ -116,6 +118,40 @@ public class ContactsController {
         }
         
         getContacts(clientIdentifier, completionHandler: completionHandler)
+        
+    }
+    
+    /**
+     Gets a contact for a specific ID
+     
+     - parameter identifier: The identifier for a contact
+     - parameter completionHandler: The completion handler to return the contact and errors to
+     */
+    public func getContact(identifier: Int, completionHandler: (contact: Contact?, requestError: NSError?) -> ()) {
+        
+        requestController.get("contacts/\(identifier)") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(contact: nil, requestError: error)
+                return
+            }
+            
+            if let contactResponse = response {
+                
+                if let contactResponseDictionary = contactResponse.dictionary as? [String: AnyObject] {
+                    
+                    let foundContact = Contact(dictionary: contactResponseDictionary)
+                    completionHandler(contact: foundContact, requestError: nil)
+                    return
+                    
+                }
+                
+            }
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 500, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid contact object"])
+            completionHandler(contact: nil, requestError: error)
+            
+        }
         
     }
     
