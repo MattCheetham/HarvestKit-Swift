@@ -201,4 +201,32 @@ public class ContactsController {
         
     }
     
+    //MARK: - Modifying Contacts
+    
+    /**
+    Updates a contact. The contact must have an identifier to be updated. All other properties will be updated in the system except for creation and update date which are fixed.
+    
+    - parameter contact: The contact to update. You may modify a contact returned from another request or create a new one that has a valid identifier
+    - parameter completionHandler: The completion handler to return request errors to
+    */
+    public func update(contact: Contact, completionHandler: (requestError: NSError?) -> ()) {
+        
+        guard let contactIdentifier = contact.identifier else {
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Supplied contact does not have an identifier"])
+            completionHandler(requestError: error)
+            return;
+        }
+        
+        requestController.put("contacts/\(contactIdentifier)", bodyParams: contact.serialisedObject) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(requestError: error)
+                return
+            }
+            
+            completionHandler(requestError: nil)
+        }
+        
+    }
+    
 }
