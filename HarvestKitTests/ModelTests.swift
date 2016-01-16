@@ -169,5 +169,52 @@ class ModelTests: TestBase {
         }
         
     }
+    
+    func testCreatingContactFromJSON() {
+        
+        let contactObject = loadDictionaryForFile("contact")
+        
+        XCTAssertNotNil(contactObject)
+        
+        if let contactDictionary = contactObject {
+            
+            let contact = Contact(dictionary: contactDictionary)
+            
+            XCTAssertNotNil(contact)
+            
+            if let generatedContact = contact {
+                
+                XCTAssertNotNil(generatedContact.identifier)
+                XCTAssertNotNil(generatedContact.clientIdentifier)
+                XCTAssertNotNil(generatedContact.title)
+                XCTAssertNotNil(generatedContact.firstName)
+                XCTAssertNotNil(generatedContact.lastName)
+                XCTAssertNotNil(generatedContact.email)
+                XCTAssertNotNil(generatedContact.officePhoneNumber)
+                XCTAssertNotNil(generatedContact.mobilePhoneNumber)
+                XCTAssertNotNil(generatedContact.faxNumber)
+                XCTAssertNotNil(generatedContact.created)
+                XCTAssertNotNil(generatedContact.updated)
+                
+            }
+            
+        }
+        
+    }
+    
+    func testCreatingContactFromJSONWithMissingUserKey() {
+        
+        let contactObject = loadDictionaryForFile("errorObject")
+        
+        XCTAssertNotNil(contactObject)
+        
+        if let contactDictionary = contactObject {
+            
+            let contact = Contact(dictionary: contactDictionary)
+            
+            XCTAssertNil(contact)
+        }
+        
+    }
 
 }
