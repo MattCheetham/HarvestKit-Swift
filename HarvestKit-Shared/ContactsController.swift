@@ -35,6 +35,52 @@ public class ContactsController {
         self.requestController = requestController
     }
     
+    //MARK: - Creating Contacts
+    
+    /**
+    Creates a new contact entry in the Harvest system. You may configure any of the parameters on the contact object you are creating and they will be saved.
+    
+    - parameter contact: The new contact object to send to the API
+    - parameter completionHandler: The completion handler to return any errors to
+    
+    - requires: `clientIdentifier`, `firstName` and `lastName` on the contact object as a minimum
+    */
+    public func create(contact: Contact, completionHandler: (requestError: NSError?) -> ()) {
+        
+        guard let _ = contact.clientIdentifier else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have a client identifier"])
+            completionHandler(requestError: error)
+            return
+        }
+        
+        guard let _ = contact.firstName else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have a first name"])
+            completionHandler(requestError: error)
+            return
+        }
+        
+        guard let _ = contact.lastName else {
+            
+            let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have a last name"])
+            completionHandler(requestError: error)
+            return
+        }
+        
+        requestController.post("contacts", bodyParams: contact.serialisedObject) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(requestError: error)
+                return
+            }
+            
+            completionHandler(requestError: nil)
+            
+        }
+        
+    }
+    
     //MARK: - Retrieving Contacts
     
     /**

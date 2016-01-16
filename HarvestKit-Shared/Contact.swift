@@ -16,57 +16,62 @@ public struct Contact {
     /**
     A unique identifier for the contact in the Harvest API
     */
-    var identifier: Int?
+    public var identifier: Int?
     
     /**
     A the unique identifier of the client that this contact is assosciated with
     */
-    var clientIdentifier: Int?
+    public var clientIdentifier: Int?
     
     /**
     The prefix for the name of the contact. Typically Mr, Mrs, Mx etc.
     */
-    var title: String?
+    public var title: String?
     
     /**
     The first name of the contact
     */
-    var firstName: String?
+    public var firstName: String?
     
     /**
     The last name of the contact
     */
-    var lastName: String?
+    public var lastName: String?
     
     /**
     The email address that can be used to reach this contact
     */
-    var email: String?
+    public var email: String?
     
     /**
     The phone number that can be used to reach this contact at the office. Stored as a string and may contain country codes, dashes, brackets etc.
     */
-    var officePhoneNumber: String?
+    public var officePhoneNumber: String?
     
     /**
      The phone number that can be used to reach this contact on a mobile. Stored as a string and may contain country codes, dashes, brackets etc.
      */
-    var mobilePhoneNumber: String?
+    public var mobilePhoneNumber: String?
     
     /**
     The number that can be used to communicate with this contact by fax. Stored as a string and may contain country codes, dashes, brackets etc.
     */
-    var faxNumber: String?
+    public var faxNumber: String?
     
     /**
     The date that the contact was created
     */
-    var created: NSDate?
+    public var created: NSDate?
     
     /**
     The date that the contact was last modified
     */
-    var updated: NSDate?
+    public var updated: NSDate?
+    
+    /**
+     Standard initialiser
+     */
+    public init() {}
     
     internal init?(dictionary: [String: AnyObject]) {
 

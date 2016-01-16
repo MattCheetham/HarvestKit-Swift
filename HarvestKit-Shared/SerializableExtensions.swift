@@ -39,3 +39,56 @@ public extension Timer {
         return mutableDictionary
     }
 }
+
+/**
+Extends contact to make it serializable
+*/
+public extension Contact {
+    
+    /**
+    A dictionary representation of the contact which can be submitted to the API to create a new contact or update an existing one
+    */
+    var serialisedObject: [String: AnyObject] {
+        
+        var mutableDictionary = [String: AnyObject]()
+        
+        var mutableContactContainer = [String: AnyObject]()
+        
+        if let clientIdentifier = clientIdentifier {
+            mutableContactContainer["client_id"] = clientIdentifier
+        }
+        
+        if let clientTitle = title {
+            mutableContactContainer["title"] = clientTitle
+        }
+        
+        if let clientFirstName = firstName {
+            mutableContactContainer["first_name"] = clientFirstName
+        }
+        
+        if let clientLastName = lastName {
+            mutableContactContainer["last_name"] = clientLastName
+        }
+        
+        if let clientEmail = email {
+            mutableContactContainer["email"] = clientEmail
+        }
+        
+        if let clientOfficePhone = officePhoneNumber {
+            mutableContactContainer["phone_office"] = clientOfficePhone
+        }
+        
+        if let clientMobilePhone = mobilePhoneNumber {
+            mutableContactContainer["phone_mobile"] = clientMobilePhone
+        }
+        
+        if let clientFax = faxNumber {
+            mutableContactContainer["fax"] = clientFax
+        }
+                
+        mutableDictionary["contact"] = mutableContactContainer
+        
+        return mutableDictionary
+    }
+    
+}
