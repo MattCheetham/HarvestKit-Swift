@@ -19,7 +19,7 @@ import Foundation
 /**
 The contacts controller is responsible for managing contacts in the Harvest API. Contacts can be assosciated with clients
 */
-public class ContactsController {
+public final class ContactsController {
     
     /**
     The request controller used to load contact information. This is shared with other controllers

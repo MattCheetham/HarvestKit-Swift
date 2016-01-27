@@ -30,6 +30,12 @@
 		49AC1C581C42E73200E420B4 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC1C571C42E73200E420B4 /* ExtensionTests.swift */; };
 		49AC1C5A1C42E75600E420B4 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC1C591C42E75600E420B4 /* TestBase.swift */; };
 		49B59CCC1C4AB103000BE592 /* contact.json in Resources */ = {isa = PBXBuildFile; fileRef = 49B59CCB1C4AB103000BE592 /* contact.json */; };
+		49B59CD01C4AB3DD000BE592 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B59CCF1C4AB3DD000BE592 /* AccountController.swift */; };
+		49B59CD11C4AB3DD000BE592 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B59CCF1C4AB3DD000BE592 /* AccountController.swift */; };
+		49B59CD21C4AB3DD000BE592 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B59CCF1C4AB3DD000BE592 /* AccountController.swift */; };
+		49B59CD41C4AB5D6000BE592 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B59CD31C4AB5D6000BE592 /* Company.swift */; };
+		49B59CD51C4AB5D6000BE592 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B59CD31C4AB5D6000BE592 /* Company.swift */; };
+		49B59CD61C4AB5D6000BE592 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B59CD31C4AB5D6000BE592 /* Company.swift */; };
 		49D924D31BFE4B5E00F7E0C2 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D924D21BFE4B5E00F7E0C2 /* Client.swift */; };
 		49DBB1DC1BFF963400640F31 /* HarvestKit-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 49DBB1DB1BFF963400640F31 /* HarvestKit-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49DBB1E21BFF967600640F31 /* HarvestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808831BFDDEE100B69D28 /* HarvestController.swift */; };
@@ -135,6 +141,8 @@
 		49AC1C571C42E73200E420B4 /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		49AC1C591C42E75600E420B4 /* TestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
 		49B59CCB1C4AB103000BE592 /* contact.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contact.json; sourceTree = "<group>"; };
+		49B59CCF1C4AB3DD000BE592 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountController.swift; path = "HarvestKit-Shared/AccountController.swift"; sourceTree = "<group>"; };
+		49B59CD31C4AB5D6000BE592 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Company.swift; path = "HarvestKit-Shared/Company.swift"; sourceTree = "<group>"; };
 		49D924D21BFE4B5E00F7E0C2 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = "HarvestKit-Shared/Client.swift"; sourceTree = "<group>"; };
 		49DBB1D91BFF963400640F31 /* HarvestKitOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HarvestKitOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DBB1DB1BFF963400640F31 /* HarvestKit-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HarvestKit-OSX.h"; sourceTree = "<group>"; };
@@ -204,14 +212,8 @@
 		490D871C1BFDDCD200ADE0F1 = {
 			isa = PBXGroup;
 			children = (
-				491808831BFDDEE100B69D28 /* HarvestController.swift */,
-				49EE8AAF1C4A6F3E007BFC8B /* ContactsController.swift */,
-				49EE8AB31C4A7059007BFC8B /* TimersController.swift */,
-				49D924D21BFE4B5E00F7E0C2 /* Client.swift */,
-				4918088F1BFDE6F500B69D28 /* Timer.swift */,
-				491808861BFDE08F00B69D28 /* User.swift */,
-				498F530B1BFE378100BFCA16 /* Project.swift */,
-				49EE8AB71C4A739C007BFC8B /* Contact.swift */,
+				49B59CCD1C4AB395000BE592 /* Controllers */,
+				49B59CCE1C4AB39E000BE592 /* Models */,
 				490A24A11C00E057004159E0 /* Extensions */,
 				490D87281BFDDCD200ADE0F1 /* HarvestKit-iOS */,
 				490D87371BFDDD3000ADE0F1 /* HarvestKit-tvOS */,
@@ -273,6 +275,30 @@
 				49B59CCB1C4AB103000BE592 /* contact.json */,
 			);
 			name = "JSON Files";
+			sourceTree = "<group>";
+		};
+		49B59CCD1C4AB395000BE592 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				491808831BFDDEE100B69D28 /* HarvestController.swift */,
+				49EE8AAF1C4A6F3E007BFC8B /* ContactsController.swift */,
+				49EE8AB31C4A7059007BFC8B /* TimersController.swift */,
+				49B59CCF1C4AB3DD000BE592 /* AccountController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		49B59CCE1C4AB39E000BE592 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49D924D21BFE4B5E00F7E0C2 /* Client.swift */,
+				49B59CD31C4AB5D6000BE592 /* Company.swift */,
+				4918088F1BFDE6F500B69D28 /* Timer.swift */,
+				491808861BFDE08F00B69D28 /* User.swift */,
+				498F530B1BFE378100BFCA16 /* Project.swift */,
+				49EE8AB71C4A739C007BFC8B /* Contact.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		49DBB1DA1BFF963400640F31 /* HarvestKit-OSX */ = {
@@ -558,7 +584,9 @@
 				498F530C1BFE378100BFCA16 /* Project.swift in Sources */,
 				49EC2CC81C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
 				49EE8AB01C4A6F3E007BFC8B /* ContactsController.swift in Sources */,
+				49B59CD01C4AB3DD000BE592 /* AccountController.swift in Sources */,
 				490A24991C00DFF6004159E0 /* DateExtensions.swift in Sources */,
+				49B59CD41C4AB5D6000BE592 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +603,9 @@
 				498F530D1BFE378100BFCA16 /* Project.swift in Sources */,
 				49EC2CC91C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
 				49EE8AB11C4A6F3E007BFC8B /* ContactsController.swift in Sources */,
+				49B59CD11C4AB3DD000BE592 /* AccountController.swift in Sources */,
 				490A249A1C00DFF6004159E0 /* DateExtensions.swift in Sources */,
+				49B59CD51C4AB5D6000BE592 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +622,9 @@
 				49DBB1E21BFF967600640F31 /* HarvestController.swift in Sources */,
 				49EC2CCA1C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
 				49EE8AB21C4A6F3E007BFC8B /* ContactsController.swift in Sources */,
+				49B59CD21C4AB3DD000BE592 /* AccountController.swift in Sources */,
 				490A249B1C00DFF6004159E0 /* DateExtensions.swift in Sources */,
+				49B59CD61C4AB5D6000BE592 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

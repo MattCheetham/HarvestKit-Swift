@@ -38,6 +38,11 @@ public final class HarvestController {
     public let contactsController: ContactsController
     
     /**
+    The controller for getting the user account
+    */
+    public let accountController: AccountController
+    
+    /**
     Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
      
     - parameter accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
@@ -62,6 +67,7 @@ public final class HarvestController {
         //Setup sub controllers
         timersController = TimersController(requestController: requestController)
         contactsController = ContactsController(requestController: requestController)
+        accountController = AccountController(requestController: requestController)
         
     }
     
