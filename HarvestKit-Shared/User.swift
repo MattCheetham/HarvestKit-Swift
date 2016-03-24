@@ -9,8 +9,8 @@
 import Foundation
 
 /**
-A struct representation of a user in the harvest system
-*/
+ A struct representation of a user in the harvest system
+ */
 public struct User {
     
     /**
@@ -19,51 +19,51 @@ public struct User {
     public var identifier: Int?
     
     /**
-    The users first Name
-    */
+     The users first Name
+     */
     public var firstName: String?
     
     /**
-    The users last name
-    */
+     The users last name
+     */
     public var lastName: String?
     
     /**
-    The users email address
-    */
+     The users email address
+     */
     public var email: String?
     
     /**
-    A boolean to indicate whether or not the user is active in the system. If false, this user has been deactivated
-    */
+     A boolean to indicate whether or not the user is active in the system. If false, this user has been deactivated
+     */
     public var active: Bool?
     
     /**
-    A boolean to indicate whether or not the user is an admin in this system.
-    - note: Only populated when created from the Who Am I call
-    */
+     A boolean to indicate whether or not the user is an admin in this system.
+     - note: Only populated when created from the Who Am I call
+     */
     public var admin: Bool?
     
     /**
-    The name of the department that the user belongs to
-    */
+     The name of the department that the user belongs to
+     */
     public var department: String?
     
     /**
-    The timezone identifier as a string that the user has their account set to. E.g. "Europe/London"
+     The timezone identifier as a string that the user has their account set to. E.g. "Europe/London"
      - note: Only populated when created from the Who Am I call
-    */
+     */
     public var timezoneIdentifier: String?
     
     /**
-    The timezone city. The harvest API doesn't give any documentation on this so I'm going to assume it always returns the city part of the `timezoneIdentifier`
+     The timezone city. The harvest API doesn't give any documentation on this so I'm going to assume it always returns the city part of the `timezoneIdentifier`
      - note: Only populated when created from the Who Am I call
-    */
+     */
     public var timezoneCity: String?
     
     /**
-    A boolean indicating whether or not the user is a project manager
-    - note: Only populated when created from the Who Am I call
+     A boolean indicating whether or not the user is a project manager
+     - note: Only populated when created from the Who Am I call
      */
     public var projectManager: Bool?
     
@@ -86,21 +86,21 @@ public struct User {
     public var createInvoices: Bool?
     
     /**
-    The number of seconds that the user is offset from UTC with their current timezone settings
+     The number of seconds that the user is offset from UTC with their current timezone settings
      - note: Only populated when created from the Who Am I call
-    */
+     */
     public var timezoneOffsetSeconds: Int?
     
     /**
-    No information was found about this property in the Harvest API Documentation
+     No information was found about this property in the Harvest API Documentation
      - note: Only populated when created from the Who Am I call
-    */
+     */
     public var timestampTimers: Bool?
     
     /**
-    The URL to the users avatar if they have one
+     The URL to the users avatar if they have one
      - note: Only populated when created from the Who Am I call
-    */
+     */
     public var avatarURL: NSURL?
     
     internal init?(dictionary: [String: AnyObject]) {
