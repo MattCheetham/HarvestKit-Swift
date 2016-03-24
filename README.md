@@ -35,7 +35,7 @@ $ brew install carthage
 To integrate HarvestKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github “MattCheetham/HarvestKit-Swift” ~> 1.1
+github “MattCheetham/HarvestKit-Swift” ~> 1.2
 ```
 
 Run `carthage bootstrap` to build the framework and drag the built `HarvestKit.framework` for the platform into your Xcode project.
