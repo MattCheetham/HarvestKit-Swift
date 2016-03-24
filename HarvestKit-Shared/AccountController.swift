@@ -58,8 +58,8 @@ public final class AccountController {
                 responseCompany = Company(dictionary: companyDictionary)
             }
             
-            if let userDictionary = responseDictionary["user"] as? [String: AnyObject] {
-                responseUser = User(dictionary: userDictionary)
+            if let _ = responseDictionary["user"] as? [String: AnyObject] {
+                responseUser = User(dictionary: responseDictionary)
             }
             
             completionHandler(currentUser: responseUser, currentCompany: responseCompany, requestError: nil)
