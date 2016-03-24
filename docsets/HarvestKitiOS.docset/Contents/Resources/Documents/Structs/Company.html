@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Timer Struct Reference</title>
+    <title>Company Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Timer" class="dashAnchor"></a>
-    <a title="Timer Struct Reference"></a>
+    <a name="//apple_ref/swift/Struct/Company" class="dashAnchor"></a>
+    <a title="Company Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">HarvestKitiOS Docs</a> (100% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">HarvestKitiOS Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Timer Struct Reference
+        Company Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -82,14 +82,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Timer</h1>
+            <h1>Company</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Timer</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Company</span></code></pre>
 
                 </div>
               </div>
-            <p>A struct representation of a timer entry in the harvest system</p>
+            <p>A struct representation of a company. Typiclaly returned from the API when querying about the current authenticated user</p>
 
           </section>
           <section class="section task-group-section">
@@ -98,219 +98,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer10identifierGSqSi_"></a>
-                    <a name="//apple_ref/swift/Property/identifier" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer10identifierGSqSi_">identifier</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A unique identifier for this timer</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L19">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer5notesGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/notes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer5notesGSqSS_">notes</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Any notes the user has attatched to the entry</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">notes</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L24">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer10clientNameGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/clientName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer10clientNameGSqSS_">clientName</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The name of the client that the timer belongs to</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">clientName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L29">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer17projectIdentifierGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/projectIdentifier" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer17projectIdentifierGSqSS_">projectIdentifier</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The unique identifier for the project</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">projectIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L34">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer11projectNameGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/projectName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer11projectNameGSqSS_">projectName</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The name of the project that the timer falls under</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">projectName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L39">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer14taskIdentifierGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/taskIdentifier" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer14taskIdentifierGSqSS_">taskIdentifier</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The unique identifier for the task</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">taskIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L44">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer8taskNameGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/taskName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer8taskNameGSqSS_">taskName</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The name of the task that the timer falls under</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">taskName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L49">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer6activeSb"></a>
+                    <a name="/s:vV13HarvestKitiOS7Company6activeGSqSb_"></a>
                     <a name="//apple_ref/swift/Property/active" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer6activeSb">active</a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company6activeGSqSb_">active</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -318,19 +108,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A boolean to indicate whether or not the timer is currently active.</p>
+                        <p>Determines whether or not this company account is active</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">active</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">active</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L54">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -338,9 +128,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer5hoursGSqSd_"></a>
-                    <a name="//apple_ref/swift/Property/hours" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer5hoursGSqSd_">hours</a>
+                    <a name="/s:vV13HarvestKitiOS7Company8planTypeGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/planType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company8planTypeGSqSS_">planType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -348,19 +138,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The number of hours that the Timer has been running for</p>
+                        <p>The plan this buisiness is on. Determines how much their monthly payments are</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hours</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">planType</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L59">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -368,9 +158,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer17hoursWithoutTimerGSqSd_"></a>
-                    <a name="//apple_ref/swift/Property/hoursWithoutTimer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer17hoursWithoutTimerGSqSd_">hoursWithoutTimer</a>
+                    <a name="/s:vV13HarvestKitiOS7Company10timeFormatGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/timeFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company10timeFormatGSqSS_">timeFormat</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -378,20 +168,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The number of hours that the Timer was manually adjusted to be running to.
-If the user has the timer running for an hour but then manually edits it to be 2.5 hours this property will show 1.5 hours.</p>
+                        <p>Not documented in Harvest Documentation. Presumably the format that timers from this account should be displayed in.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hoursWithoutTimer</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timeFormat</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L65">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -399,9 +188,9 @@ If the user has the timer running for an hour but then manually edits it to be 2
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV13HarvestKitiOS5TimercFT_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV13HarvestKitiOS5TimercFT_S0_">init()</a>
+                    <a name="/s:vV13HarvestKitiOS7Company7baseURLGSqCSo5NSURL_"></a>
+                    <a name="//apple_ref/swift/Property/baseURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company7baseURLGSqCSo5NSURL_">baseURL</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -409,33 +198,29 @@ If the user has the timer running for an hour but then manually edits it to be 2
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Standard initialiser</p>
+                        <p>The URL that users must go to to access this harvest account</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L70">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer16serialisedObjectGVs10DictionarySSPs9AnyObject__"></a>
-                    <a name="//apple_ref/swift/Property/serialisedObject" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer16serialisedObjectGVs10DictionarySSPs9AnyObject__">serialisedObject</a>
+                    <a name="/s:vV13HarvestKitiOS7Company12weekStartDayGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/weekStartDay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company12weekStartDayGSqSS_">weekStartDay</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -443,19 +228,199 @@ If the user has the timer running for an hour but then manually edits it to be 2
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A dictionary representation of the timer which can be submitted to the API to create a new timer</p>
+                        <p>The day that this company considers to be the beginning of the working week</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">serialisedObject</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">weekStartDay</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/SerializableExtensions.swift#L19-L40">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L39">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS7Company7modulesGSqGVs10DictionarySSSb__"></a>
+                    <a name="//apple_ref/swift/Property/modules" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company7modulesGSqGVs10DictionarySSSb__">modules</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An dictionary of objects determining what modules this company has enabled. This can determine which controllers you can use as some methods will return 404 where that feature is not enabled in the modules. Admins can configure modules.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">modules</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L44">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS7Company18thousandsSeperatorGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/thousandsSeperator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company18thousandsSeperatorGSqSS_">thousandsSeperator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The seperator that should be used for numbers over a thousand if any. Helps to localise figures where appropriate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">thousandsSeperator</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L49">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS7Company11colorSchemeGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/colorScheme" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company11colorSchemeGSqSS_">colorScheme</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The color scheme that the company has applied to their account in the website. You may use this to theme your application if you wish.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">colorScheme</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L54">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS7Company13decimalSymbolGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/decimalSymbol" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company13decimalSymbolGSqSS_">decimalSymbol</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The symbol that should be use to denote a decimal. Varies per company locale.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">decimalSymbol</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L59">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS7Company11companyNameGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/companyName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company11companyNameGSqSS_">companyName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The name of the company</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">companyName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L64">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS7Company11clockFormatGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/clockFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Company11clockFormatGSqSS_">clockFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The time format used by the company. 12h or 24h for example.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">clockFormat</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Company.swift#L69">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

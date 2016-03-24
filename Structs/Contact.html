@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Timer Struct Reference</title>
+    <title>Contact Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Timer" class="dashAnchor"></a>
-    <a title="Timer Struct Reference"></a>
+    <a name="//apple_ref/swift/Struct/Contact" class="dashAnchor"></a>
+    <a title="Contact Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">HarvestKitiOS Docs</a> (100% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">HarvestKitiOS Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Timer Struct Reference
+        Contact Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -82,14 +82,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Timer</h1>
+            <h1>Contact</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Timer</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Contact</span></code></pre>
 
                 </div>
               </div>
-            <p>A struct representation of a timer entry in the harvest system</p>
+            <p>A struct representation of a project in the harvest system.</p>
 
           </section>
           <section class="section task-group-section">
@@ -98,9 +98,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer10identifierGSqSi_"></a>
+                    <a name="/s:vV13HarvestKitiOS7Contact10identifierGSqSi_"></a>
                     <a name="//apple_ref/swift/Property/identifier" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer10identifierGSqSi_">identifier</a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact10identifierGSqSi_">identifier</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -108,7 +108,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A unique identifier for this timer</p>
+                        <p>A unique identifier for the contact in the Harvest API</p>
 
                       </div>
                       <div class="declaration">
@@ -120,7 +120,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L19">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -128,9 +128,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer5notesGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/notes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer5notesGSqSS_">notes</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact16clientIdentifierGSqSi_"></a>
+                    <a name="//apple_ref/swift/Property/clientIdentifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact16clientIdentifierGSqSi_">clientIdentifier</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -138,19 +138,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Any notes the user has attatched to the entry</p>
+                        <p>A the unique identifier of the client that this contact is assosciated with</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">notes</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">clientIdentifier</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L24">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -158,9 +158,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer10clientNameGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/clientName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer10clientNameGSqSS_">clientName</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact5titleGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact5titleGSqSS_">title</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -168,19 +168,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The name of the client that the timer belongs to</p>
+                        <p>The prefix for the name of the contact. Typically Mr, Mrs, Mx etc.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">clientName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L29">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -188,9 +188,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer17projectIdentifierGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/projectIdentifier" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer17projectIdentifierGSqSS_">projectIdentifier</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact9firstNameGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/firstName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact9firstNameGSqSS_">firstName</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -198,19 +198,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The unique identifier for the project</p>
+                        <p>The first name of the contact</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">projectIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L34">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -218,9 +218,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer11projectNameGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/projectName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer11projectNameGSqSS_">projectName</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact8lastNameGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/lastName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact8lastNameGSqSS_">lastName</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,19 +228,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The name of the project that the timer falls under</p>
+                        <p>The last name of the contact</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">projectName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L39">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -248,9 +248,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer14taskIdentifierGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/taskIdentifier" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer14taskIdentifierGSqSS_">taskIdentifier</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact5emailGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/email" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact5emailGSqSS_">email</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -258,19 +258,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The unique identifier for the task</p>
+                        <p>The email address that can be used to reach this contact</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">taskIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L44">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -278,9 +278,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer8taskNameGSqSS_"></a>
-                    <a name="//apple_ref/swift/Property/taskName" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer8taskNameGSqSS_">taskName</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact17officePhoneNumberGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/officePhoneNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact17officePhoneNumberGSqSS_">officePhoneNumber</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -288,19 +288,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The name of the task that the timer falls under</p>
+                        <p>The phone number that can be used to reach this contact at the office. Stored as a string and may contain country codes, dashes, brackets etc.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">taskName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">officePhoneNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L49">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L49">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -308,9 +308,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer6activeSb"></a>
-                    <a name="//apple_ref/swift/Property/active" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer6activeSb">active</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact17mobilePhoneNumberGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/mobilePhoneNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact17mobilePhoneNumberGSqSS_">mobilePhoneNumber</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -318,19 +318,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A boolean to indicate whether or not the timer is currently active.</p>
+                        <p>The phone number that can be used to reach this contact on a mobile. Stored as a string and may contain country codes, dashes, brackets etc.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">active</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">mobilePhoneNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L54">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L54">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -338,9 +338,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer5hoursGSqSd_"></a>
-                    <a name="//apple_ref/swift/Property/hours" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer5hoursGSqSd_">hours</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact9faxNumberGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/faxNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact9faxNumberGSqSS_">faxNumber</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -348,19 +348,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The number of hours that the Timer has been running for</p>
+                        <p>The number that can be used to communicate with this contact by fax. Stored as a string and may contain country codes, dashes, brackets etc.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hours</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">faxNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L59">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L59">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -368,9 +368,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer17hoursWithoutTimerGSqSd_"></a>
-                    <a name="//apple_ref/swift/Property/hoursWithoutTimer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer17hoursWithoutTimerGSqSd_">hoursWithoutTimer</a>
+                    <a name="/s:vV13HarvestKitiOS7Contact7createdGSqCSo6NSDate_"></a>
+                    <a name="//apple_ref/swift/Property/created" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact7createdGSqCSo6NSDate_">created</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -378,20 +378,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The number of hours that the Timer was manually adjusted to be running to.
-If the user has the timer running for an hour but then manually edits it to be 2.5 hours this property will show 1.5 hours.</p>
+                        <p>The date that the contact was created</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hoursWithoutTimer</span><span class="p">:</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">NSDate</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L65">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L64">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -399,9 +398,39 @@ If the user has the timer running for an hour but then manually edits it to be 2
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV13HarvestKitiOS5TimercFT_S0_"></a>
+                    <a name="/s:vV13HarvestKitiOS7Contact7updatedGSqCSo6NSDate_"></a>
+                    <a name="//apple_ref/swift/Property/updated" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact7updatedGSqCSo6NSDate_">updated</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The date that the contact was last modified</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">updated</span><span class="p">:</span> <span class="kt">NSDate</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L69">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV13HarvestKitiOS7ContactcFT_S0_"></a>
                     <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV13HarvestKitiOS5TimercFT_S0_">init()</a>
+                    <a class="token" href="#/s:FV13HarvestKitiOS7ContactcFT_S0_">init()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -421,7 +450,7 @@ If the user has the timer running for an hour but then manually edits it to be 2
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Timer.swift#L70">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/Contact.swift#L74">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -433,9 +462,9 @@ If the user has the timer running for an hour but then manually edits it to be 2
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV13HarvestKitiOS5Timer16serialisedObjectGVs10DictionarySSPs9AnyObject__"></a>
+                    <a name="/s:vV13HarvestKitiOS7Contact16serialisedObjectGVs10DictionarySSPs9AnyObject__"></a>
                     <a name="//apple_ref/swift/Property/serialisedObject" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV13HarvestKitiOS5Timer16serialisedObjectGVs10DictionarySSPs9AnyObject__">serialisedObject</a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS7Contact16serialisedObjectGVs10DictionarySSPs9AnyObject__">serialisedObject</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -443,7 +472,7 @@ If the user has the timer running for an hour but then manually edits it to be 2
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A dictionary representation of the timer which can be submitted to the API to create a new timer</p>
+                        <p>A dictionary representation of the contact which can be submitted to the API to create a new contact or update an existing one</p>
 
                       </div>
                       <div class="declaration">
@@ -455,7 +484,7 @@ If the user has the timer running for an hour but then manually edits it to be 2
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/SerializableExtensions.swift#L19-L40">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/SerializableExtensions.swift#L51-L92">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

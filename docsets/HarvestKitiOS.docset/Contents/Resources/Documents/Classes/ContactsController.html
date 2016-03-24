@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ContactsController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ContactsController" class="dashAnchor"></a>
+    <a title="ContactsController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">HarvestKitiOS Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/MattCheetham/HarvestKit-Swift"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Fmattcheetham%2Egithub%2Eio%2FHarvestKit%2DSwift%2Fdocsets%2FHarvestKitiOS%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">HarvestKitiOS Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ContactsController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AccountController.html">AccountController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ContactsController.html">ContactsController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HarvestController.html">HarvestController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TimersController.html">TimersController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSDate.html">NSDate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Client.html">Client</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Company.html">Company</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Contact.html">Contact</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Project.html">Project</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Timer.html">Timer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/User.html">User</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ContactsController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">ContactsController</span></code></pre>
+
+                </div>
+              </div>
+            <p>The contacts controller is responsible for managing contacts in the Harvest API. Contacts can be assosciated with clients</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Creating%20Contacts"></a>
+                <a name="//apple_ref/swift/Section/Creating Contacts" class="dashAnchor"></a>
+                <a href="#/Creating%20Contacts">
+                  <h3 class="section-name">Creating Contacts</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13HarvestKitiOS18ContactsController6createFTVS_7Contact17completionHandlerFT12requestErrorGSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/create(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS18ContactsController6createFTVS_7Contact17completionHandlerFT12requestErrorGSqCSo7NSError__T__T_">create(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new contact entry in the Harvest system. You may configure any of the parameters on the contact object you are creating and they will be saved.</p>
+
+<div class="aside aside-requires">
+    <p class="aside-title">Requires</p>
+    <p><code>clientIdentifier</code>, <code>firstName</code> and <code>lastName</code> on the contact object as a minimum</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">create</span><span class="p">(</span><span class="nv">contact</span><span class="p">:</span> <span class="kt">Contact</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">requestError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contact</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The new contact object to send to the API</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler to return any errors to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/ContactsController.swift#L48-L82">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Retrieving%20Contacts"></a>
+                <a name="//apple_ref/swift/Section/Retrieving Contacts" class="dashAnchor"></a>
+                <a href="#/Retrieving%20Contacts">
+                  <h3 class="section-name">Retrieving Contacts</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13HarvestKitiOS18ContactsController11getContactsFFT8contactsGSqGSaVS_7Contact__12requestErrorGSqCSo7NSError__T_T_"></a>
+                    <a name="//apple_ref/swift/Method/getContacts(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS18ContactsController11getContactsFFT8contactsGSqGSaVS_7Contact__12requestErrorGSqCSo7NSError__T_T_">getContacts(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets all contacts for the account of the authenticated user.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The user must have access to the contacts on this account</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getContacts</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">contacts</span><span class="p">:</span> <span class="p">[</span><span class="kt">Contact</span><span class="p">]?,</span> <span class="nv">requestError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler to return contacts and errors to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/ContactsController.swift#L93-L115">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13HarvestKitiOS18ContactsController11getContactsFTSi17completionHandlerFT8contactsGSqGSaVS_7Contact__12requestErrorGSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getContacts(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS18ContactsController11getContactsFTSi17completionHandlerFT8contactsGSqGSaVS_7Contact__12requestErrorGSqCSo7NSError__T__T_">getContacts(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets all contacts assosciated with a client by their identifier</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The user must have access to the contacts on this account</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getContacts</span><span class="p">(</span><span class="nv">clientIdentifier</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">contacts</span><span class="p">:</span> <span class="p">[</span><span class="kt">Contact</span><span class="p">]?,</span> <span class="nv">requestError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clientIdentifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique identifier of the client to search for contacts for</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler to return contacts and errors to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/ContactsController.swift#L125-L147">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13HarvestKitiOS18ContactsController11getContactsFTVS_6Client17completionHandlerFT8contactsGSqGSaVS_7Contact__12requestErrorGSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getContacts(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS18ContactsController11getContactsFTVS_6Client17completionHandlerFT8contactsGSqGSaVS_7Contact__12requestErrorGSqCSo7NSError__T__T_">getContacts(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets all contacts assosciated with a client</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>The user must have access to the contacts on this account</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getContacts</span><span class="p">(</span><span class="nv">client</span><span class="p">:</span> <span class="kt">Client</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">contacts</span><span class="p">:</span> <span class="p">[</span><span class="kt">Contact</span><span class="p">]?,</span> <span class="nv">requestError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clientIdentifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique identifier of the client to search for contacts for</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler to return contacts and errors to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/ContactsController.swift#L157-L168">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13HarvestKitiOS18ContactsController10getContactFTSi17completionHandlerFT7contactGSqVS_7Contact_12requestErrorGSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/getContact(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS18ContactsController10getContactFTSi17completionHandlerFT7contactGSqVS_7Contact_12requestErrorGSqCSo7NSError__T__T_">getContact(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets a contact for a specific ID</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getContact</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">contact</span><span class="p">:</span> <span class="kt">Contact</span><span class="p">?,</span> <span class="nv">requestError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The identifier for a contact</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler to return the contact and errors to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/ContactsController.swift#L176-L202">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Modifying%20Contacts"></a>
+                <a name="//apple_ref/swift/Section/Modifying Contacts" class="dashAnchor"></a>
+                <a href="#/Modifying%20Contacts">
+                  <h3 class="section-name">Modifying Contacts</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13HarvestKitiOS18ContactsController6updateFTVS_7Contact17completionHandlerFT12requestErrorGSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/update(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS18ContactsController6updateFTVS_7Contact17completionHandlerFT12requestErrorGSqCSo7NSError__T__T_">update(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates a contact. The contact must have an identifier to be updated. All other properties will be updated in the system except for creation and update date which are fixed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">contact</span><span class="p">:</span> <span class="kt">Contact</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">requestError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contact</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The contact to update. You may modify a contact returned from another request or create a new one that has a valid identifier</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler to return request errors to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/ContactsController.swift#L212-L230">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13HarvestKitiOS18ContactsController6deleteFTVS_7Contact17completionHandlerFT12requestErrorGSqCSo7NSError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/delete(_:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13HarvestKitiOS18ContactsController6deleteFTVS_7Contact17completionHandlerFT12requestErrorGSqCSo7NSError__T__T_">delete(_:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deletes the given contact. Will return an error of 404 if the timer has already been deleted or is not valid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">delete</span><span class="p">(</span><span class="nv">contact</span><span class="p">:</span> <span class="kt">Contact</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">(</span><span class="nv">requestError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contact</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The contact to delete</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler to return request errors to</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/ContactsController.swift#L238-L257">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://mattcheetham.co.uk" target="_blank" rel="external">MattCheetham</a>. All rights reserved. (Last updated: 2016-03-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

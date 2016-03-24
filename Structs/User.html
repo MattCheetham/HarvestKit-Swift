@@ -33,7 +33,16 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Classes/AccountController.html">AccountController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ContactsController.html">ContactsController</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/HarvestController.html">HarvestController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TimersController.html">TimersController</a>
               </li>
             </ul>
           </li>
@@ -50,6 +59,12 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/Client.html">Client</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Company.html">Company</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Contact.html">Contact</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Project.html">Project</a>
@@ -233,6 +248,37 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:vV13HarvestKitiOS4User5adminGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/admin" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User5adminGSqSb_">admin</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A boolean to indicate whether or not the user is an admin in this system.
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">admin</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:vV13HarvestKitiOS4User10departmentGSqSS_"></a>
                     <a name="//apple_ref/swift/Property/department" class="dashAnchor"></a>
                     <a class="token" href="#/s:vV13HarvestKitiOS4User10departmentGSqSS_">department</a>
@@ -255,7 +301,286 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L44">Show on GitHub</a>
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L50">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User18timezoneIdentifierGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/timezoneIdentifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User18timezoneIdentifierGSqSS_">timezoneIdentifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The timezone identifier as a string that the user has their account set to. E.g. <q>Europe/London</q>
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timezoneIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L56">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User12timezoneCityGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/timezoneCity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User12timezoneCityGSqSS_">timezoneCity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The timezone city. The harvest API doesn&rsquo;t give any documentation on this so I&rsquo;m going to assume it always returns the city part of the <code><a href="../Structs/User.html#/s:vV13HarvestKitiOS4User18timezoneIdentifierGSqSS_">timezoneIdentifier</a></code>
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timezoneCity</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L62">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User14projectManagerGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/projectManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User14projectManagerGSqSb_">projectManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A boolean indicating whether or not the user is a project manager
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">projectManager</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L68">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User14createProjectsGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/createProjects" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User14createProjectsGSqSb_">createProjects</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A boolean indicating whether or not the user can create new projects
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">createProjects</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L74">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User8seeRatesGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/seeRates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User8seeRatesGSqSb_">seeRates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A boolean indicating whether or not the user can see hourly rates
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">seeRates</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L80">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User14createInvoicesGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/createInvoices" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User14createInvoicesGSqSb_">createInvoices</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A boolean indicating whether or not the user can create new invoices
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">createInvoices</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L86">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User21timezoneOffsetSecondsGSqSi_"></a>
+                    <a name="//apple_ref/swift/Property/timezoneOffsetSeconds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User21timezoneOffsetSecondsGSqSi_">timezoneOffsetSeconds</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of seconds that the user is offset from UTC with their current timezone settings
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timezoneOffsetSeconds</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L92">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User15timestampTimersGSqSb_"></a>
+                    <a name="//apple_ref/swift/Property/timestampTimers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User15timestampTimersGSqSb_">timestampTimers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>No information was found about this property in the Harvest API Documentation
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">timestampTimers</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L98">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV13HarvestKitiOS4User9avatarURLGSqCSo5NSURL_"></a>
+                    <a name="//apple_ref/swift/Property/avatarURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV13HarvestKitiOS4User9avatarURLGSqCSo5NSURL_">avatarURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The URL to the users avatar if they have one
+- note: Only populated when created from the Who Am I call</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">avatarURL</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/MattCheetham/HarvestKit-Swift/tree/master//HarvestKit-Shared/User.swift#L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -265,7 +590,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://mattcheetham.co.uk" target="_blank" rel="external">MattCheetham</a>. All rights reserved. (Last updated: 2016-01-12)</p>
+          <p>&copy; 2016 <a class="link" href="https://mattcheetham.co.uk" target="_blank" rel="external">MattCheetham</a>. All rights reserved. (Last updated: 2016-03-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
