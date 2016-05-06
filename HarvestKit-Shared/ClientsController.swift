@@ -18,7 +18,7 @@ import Foundation
 
 /** The client controller is responsible for adding, deleting and updating client information with the Harvest API. This controller will only work if your account has the client module enabled
  */
-public final class ClientController {
+public final class ClientsController {
     
     /**
      The request controller used to load contact information. This is shared with other controllers
