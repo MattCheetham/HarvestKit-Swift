@@ -23,6 +23,9 @@ public struct Client {
      */
     public var name: String?
     
+    /**
+     The same as the `address` property. This property will take precedence over the `address` property despite `address` technically being what is displayed on the website for Harvest. You can use either property to set the fields
+ */
     public var details: String?
     
     /**
@@ -59,7 +62,7 @@ public struct Client {
     public var highriseId: Int?
     
     /**
-     The clients address that they can be contacted at
+     The clients address that they can be contacted at. Same as the `details` property although if setting both to different values which isn't possible, the details property will take precedence.
      */
     public var address: String?
     
