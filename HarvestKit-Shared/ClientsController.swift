@@ -41,7 +41,6 @@ public final class ClientsController {
      
      - parameter client: The new client object to send to the API
      - parameter completion: The completion handler to return any errors to
-     
      - requires: `name` on the client object as a minimum
      */
     public func create(client: Client, completion: (error: ErrorType?) -> ()) {
