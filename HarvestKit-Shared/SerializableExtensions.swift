@@ -92,3 +92,75 @@ public extension Contact {
     }
     
 }
+
+/**
+ Extends client to make it serializable
+ */
+public extension Client {
+    
+    /**
+     A dictionary representation of the client which can be submitted to the API to create a new client or update an existing one
+     */
+    var serialisedObject: [String: AnyObject] {
+        
+        var mutableDictionary = [String: AnyObject]()
+        
+        var mutableClientContainer = [String: AnyObject]()
+        
+        if let _identifier = identifier {
+            mutableClientContainer["id"] = _identifier
+        }
+
+        if let _name = name {
+            mutableClientContainer["name"] = _name
+        }
+        
+        if let _details = details {
+            mutableClientContainer["details"] = _details
+        }
+        
+        if let _currencyName = currencyName {
+            mutableClientContainer["currency"] = _currencyName
+        }
+        
+        if let _currencySymbol = currencySymbol {
+            mutableClientContainer["currency_symbol"] = _currencySymbol
+        }
+        
+        if let _active = active {
+            mutableClientContainer["active"] = _active
+        }
+        
+        if let _defaultInvoiceKind = defaultInvoiceKind {
+            mutableClientContainer["default_invoice_kind"] = _defaultInvoiceKind
+        }
+        
+        if let _lastInvoiceKind = lastInvoiceKind {
+            mutableClientContainer["last_invoice_kind"] = _lastInvoiceKind
+        }
+        
+        if let _defaultInvoiceTimeFrame = defaultInvoiceTimeframe {
+            mutableClientContainer["default_invoice_timeframe"] = _defaultInvoiceTimeFrame
+        }
+        
+        if let _highriseId = highriseId {
+            mutableClientContainer["highrise_id"] = _highriseId
+        }
+        
+        if let _address = address {
+            mutableClientContainer["address"] = _address
+        }
+        
+        if let _cacheVersion = cacheVersion {
+            mutableClientContainer["cache_version"] = _cacheVersion
+        }
+        
+        if let _statementKey = statementKey {
+            mutableClientContainer["statement_key"] = _statementKey
+        }
+        
+        mutableDictionary["client"] = mutableClientContainer
+        
+        return mutableDictionary
+    }
+}

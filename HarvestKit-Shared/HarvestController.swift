@@ -16,39 +16,44 @@
 import Foundation
 
 /**
-The Harvest controller is responsible for all interactions with the Harvest API. It must be initialised with a company name, account username and account password.
+ The Harvest controller is responsible for all interactions with the Harvest API. It must be initialised with a company name, account username and account password.
  
-Currently the controller uses basic Auth to access the API but should support the OAuth flow in the future.
+ Currently the controller uses basic Auth to access the API but should support the OAuth flow in the future.
  */
 public final class HarvestController {
     
     /**
-    The main request controller for the harvest framework. This will be shared amongst other sub controllers for making API requests.
-    */
+     The main request controller for the harvest framework. This will be shared amongst other sub controllers for making API requests.
+     */
     let requestController: TSCRequestController
     
     /**
-    The controller for managing Timers
-    */
+     The controller for managing Timers
+     */
     public let timersController: TimersController
     
     /**
-    The controller for managing contacts
-    */
+     The controller for managing contacts
+     */
     public let contactsController: ContactsController
     
     /**
-    The controller for getting the user account
-    */
+     The controller for getting the user account
+     */
     public let accountController: AccountController
     
     /**
-    Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
+     The controller for managing clients
+     */
+    public let clientsController: ClientsController
+    
+    /**
+     Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
      
-    - parameter accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
-    - parameter username: The username of the account to log in with. This is usually the users email address
-    - parameter password: The password for the supplied username
-    */
+     - parameter accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
+     - parameter username: The username of the account to log in with. This is usually the users email address
+     - parameter password: The password for the supplied username
+     */
     public init(accountName: String!, username: String!, password: String!) {
         
         requestController = TSCRequestController(baseAddress: "https://\(accountName).harvestapp.com")
@@ -59,7 +64,7 @@ public final class HarvestController {
         if let base64Cred = base64EncodedCredential {
             let authString = "Basic \(base64Cred)"
             requestController.sharedRequestHeaders["Authorization"] = authString
-
+            
         }
         
         requestController.sharedRequestHeaders["Accept"] = "application/json"
@@ -68,20 +73,21 @@ public final class HarvestController {
         timersController = TimersController(requestController: requestController)
         contactsController = ContactsController(requestController: requestController)
         accountController = AccountController(requestController: requestController)
+        clientsController = ClientsController(requestController: requestController)
         
     }
     
     //MARK: - Users
     
     /**
-    Gets all registered users for the given account
-    
-    - parameter completionHandler: The completion handler to return users and errors to
-    */
+     Gets all registered users for the given account
+     
+     - parameter completionHandler: The completion handler to return users and errors to
+     */
     public func getUsers(completionHandler: (users: [User?]?, requestError: NSError?) -> ()) {
         
         requestController.get("people") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
-        
+            
             if let error = requestError {
                 completionHandler(users: nil, requestError: error)
                 return;
@@ -102,15 +108,15 @@ public final class HarvestController {
         }
         
     }
-         
+    
     //MARK: - Projects
     
     /**
-    Gets projects for the account
+     Gets projects for the account
      
-    - parameters:
-        - completionHandler: The completion handler to return projects and errors to
-    */
+     - parameters:
+     - completionHandler: The completion handler to return projects and errors to
+     */
     public func getProjects(completionHandler: (projects: [Project?]?, requestError: NSError?) -> ()) {
         
         requestController.get("projects") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
@@ -121,7 +127,7 @@ public final class HarvestController {
             }
             
             if let projectsArray = response?.array as? [[String: AnyObject]] {
-             
+                
                 let projects = projectsArray.map({
                     Project(dictionary: $0)
                 })
@@ -137,11 +143,11 @@ public final class HarvestController {
     //MARK: - Clients
     
     /**
-    Gets clients for the account
-    
-    - parameters:
-        - completionHandler: The completion handler to return clients and errors to
-    */
+     Gets clients for the account
+     
+     - parameters:
+     - completionHandler: The completion handler to return clients and errors to
+     */
     public func getClients(completionHandler: (clients: [Client?]?, requestError: NSError?) -> ()) {
         
         requestController.get("clients") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in

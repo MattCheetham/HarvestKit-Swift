@@ -65,6 +65,9 @@
 		49EE8AB81C4A739C007BFC8B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE8AB71C4A739C007BFC8B /* Contact.swift */; };
 		49EE8AB91C4A739C007BFC8B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE8AB71C4A739C007BFC8B /* Contact.swift */; };
 		49EE8ABA1C4A739C007BFC8B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE8AB71C4A739C007BFC8B /* Contact.swift */; };
+		49F8136B1CDD123300639B3A /* ClientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8136A1CDD123300639B3A /* ClientsController.swift */; };
+		49F8136C1CDD123300639B3A /* ClientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8136A1CDD123300639B3A /* ClientsController.swift */; };
+		49F8136D1CDD123300639B3A /* ClientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F8136A1CDD123300639B3A /* ClientsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,7 @@
 		49EE8AAF1C4A6F3E007BFC8B /* ContactsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsController.swift; path = "HarvestKit-Shared/ContactsController.swift"; sourceTree = "<group>"; };
 		49EE8AB31C4A7059007BFC8B /* TimersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimersController.swift; path = "HarvestKit-Shared/TimersController.swift"; sourceTree = "<group>"; };
 		49EE8AB71C4A739C007BFC8B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = "HarvestKit-Shared/Contact.swift"; sourceTree = "<group>"; };
+		49F8136A1CDD123300639B3A /* ClientsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientsController.swift; path = "HarvestKit-Shared/ClientsController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				491808831BFDDEE100B69D28 /* HarvestController.swift */,
+				49F8136A1CDD123300639B3A /* ClientsController.swift */,
 				49EE8AAF1C4A6F3E007BFC8B /* ContactsController.swift */,
 				49EE8AB31C4A7059007BFC8B /* TimersController.swift */,
 				49B59CCF1C4AB3DD000BE592 /* AccountController.swift */,
@@ -580,6 +585,7 @@
 				49EE8AB81C4A739C007BFC8B /* Contact.swift in Sources */,
 				491808841BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 				49D924D31BFE4B5E00F7E0C2 /* Client.swift in Sources */,
+				49F8136B1CDD123300639B3A /* ClientsController.swift in Sources */,
 				49EE8AB41C4A7059007BFC8B /* TimersController.swift in Sources */,
 				498F530C1BFE378100BFCA16 /* Project.swift in Sources */,
 				49EC2CC81C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
@@ -599,6 +605,7 @@
 				49EE8AB91C4A739C007BFC8B /* Contact.swift in Sources */,
 				491808851BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 				4903DC341BFF45FB0090B2CF /* Client.swift in Sources */,
+				49F8136C1CDD123300639B3A /* ClientsController.swift in Sources */,
 				49EE8AB51C4A7059007BFC8B /* TimersController.swift in Sources */,
 				498F530D1BFE378100BFCA16 /* Project.swift in Sources */,
 				49EC2CC91C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
@@ -618,6 +625,7 @@
 				49EE8ABA1C4A739C007BFC8B /* Contact.swift in Sources */,
 				49DBB1E31BFF967600640F31 /* Client.swift in Sources */,
 				49DBB1E61BFF967600640F31 /* Project.swift in Sources */,
+				49F8136D1CDD123300639B3A /* ClientsController.swift in Sources */,
 				49EE8AB61C4A7059007BFC8B /* TimersController.swift in Sources */,
 				49DBB1E21BFF967600640F31 /* HarvestController.swift in Sources */,
 				49EC2CCA1C425E4700B9FF49 /* SerializableExtensions.swift in Sources */,
