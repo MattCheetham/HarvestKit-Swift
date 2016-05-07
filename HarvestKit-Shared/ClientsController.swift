@@ -93,6 +93,39 @@ public final class ClientsController {
             completion(client: nil, error: ClientError.MalformedData)
         }
     }
+    
+    //MARK - Updating Clients
+    
+    /**
+     Updates a client in the API. Any properties set on the client object will be sent to the server in an attempt to overwrite them. Not all properties are modifyable but Harvest does not make it clear which are so for now it will attempt all of them
+     
+     - parameter client: The client object to update
+     - parameter completion: The closure to call to return any errors to or indicate success
+     - requires: `identifier` on the client object as a minimum
+     */
+    public func update(client: Client, completion: (error: ErrorType?) -> ()) {
+        
+        guard let clientIdentifier = client.identifier else {
+            completion(error: ClientError.MissingIdentifier)
+            return
+        }
+        
+        requestController.put("clients/\(clientIdentifier)", bodyParams: client.serialisedObject) { (response: TSCRequestResponse?, error: NSError?) in
+            
+            if let _error = error {
+                completion(error: _error)
+                return
+            }
+            
+            if let responseStatus = response?.status where responseStatus == 200 {
+                completion(error: nil)
+                return
+            }
+            
+            completion(error: ClientError.UnexpectedResponseCode)
+        }
+        
+    }
 }
 
 /** An enum detailing the errors possible when dealing with client data */
@@ -101,6 +134,8 @@ enum ClientError: ErrorType {
     case MalformedData
     /** The client object given did not have a name set so could not be saved */
     case MissingName
+    /** The client object given did not have an identifier so cannot be updated in the system */
+    case MissingIdentifier
     /** We got an unexpected response */
     case UnexpectedResponseCode
 }
