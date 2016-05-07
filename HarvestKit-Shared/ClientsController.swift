@@ -94,7 +94,7 @@ public final class ClientsController {
         }
     }
     
-    //MARK - Updating Clients
+    //MARK - Modifying Clients
     
     /**
      Updates a client in the API. Any properties set on the client object will be sent to the server in an attempt to overwrite them. Not all properties are modifyable but Harvest does not make it clear which are so for now it will attempt all of them
@@ -126,6 +126,44 @@ public final class ClientsController {
         }
         
     }
+    
+    /**
+     Deletes a client from the Harvest API.
+     
+     - parameter client: The client to delete in the API
+     - parameter completion: The closure to call with potential errors
+     - requires: `identifier` on the client object as a minimum
+     - note: You will not be able to delete a client if they have assosciated projects or invoices
+     */
+    public func delete(client: Client, completion: (error: ErrorType?) -> ()) {
+        
+        guard let clientIdentifier = client.identifier else {
+            completion(error: ClientError.MissingIdentifier)
+            return
+        }
+        
+        requestController.delete("clients/\(clientIdentifier)") { (response: TSCRequestResponse?, error: NSError?) in
+            
+            if let _error = error {
+                
+                if let responseStatus = response?.status where responseStatus == 400 {
+                    completion(error: ClientError.HasProjectsOrInvoices)
+                    return
+                }
+                
+                completion(error: _error)
+                return
+            }
+            
+            if let responseStatus = response?.status where responseStatus == 200 {
+                completion(error: nil)
+                return
+            }
+            
+            completion(error: ClientError.UnexpectedResponseCode)
+        }
+        
+    }
 }
 
 /** An enum detailing the errors possible when dealing with client data */
@@ -138,4 +176,6 @@ enum ClientError: ErrorType {
     case MissingIdentifier
     /** We got an unexpected response */
     case UnexpectedResponseCode
+    /** The client has assosciated projects or invoices and cannot be deleted */
+    case HasProjectsOrInvoices
 }
