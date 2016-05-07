@@ -40,7 +40,7 @@ public final class ClientsController {
      Creates a new client entry in the Harvest system. You may configure any of the parameters on the contact object you are creating and they will be saved.
      
      - parameter client: The new client object to send to the API
-     - parameter completionHandler: The completion handler to return any errors to
+     - parameter completion: The completion handler to return any errors to
      
      - requires: `name` on the client object as a minimum
      */
