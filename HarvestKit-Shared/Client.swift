@@ -81,6 +81,7 @@ public struct Client {
         currencySymbol = clientDictionary["currency_symbol"] as? String
         active = clientDictionary["active"] as? Bool
         lastInvoiceKind = clientDictionary["last_invoice_kind"] as? String
+        defaultInvoiceKind = clientDictionary["default_invoice_kind"] as? String
         cacheVersion = clientDictionary["cache_version"] as? Int
         
         let dateFormatter = NSDateFormatter()
