@@ -35,7 +35,7 @@ $ brew install carthage
 To integrate HarvestKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github “MattCheetham/HarvestKit-Swift” ~> 1.2
+github “MattCheetham/HarvestKit-Swift” == 1.3
 ```
 
 Run `carthage bootstrap` to build the framework and drag the built `HarvestKit.framework` for the platform into your Xcode project.
@@ -63,6 +63,9 @@ let harvestController = HarvestController(accountName: “mycompanyname”, user
 
 Full documentation is [available here](http://mattcheetham.github.io/HarvestKit-Swift)
 
+## Code of Conduct
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
+The Code of Conduct can be found [here](CODE_OF_CONDUCT.md)
 ## License
 
 HarvestKit is released under the MIT license. See LICENSE for details.
