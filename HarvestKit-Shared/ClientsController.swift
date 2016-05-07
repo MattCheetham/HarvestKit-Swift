@@ -94,6 +94,31 @@ public final class ClientsController {
         }
     }
     
+    /**
+     Requests all clients in the system for this company
+     
+     - parameter completion: A closure to call with an optional array of `clients` and an optional `error`
+     */
+    public func getClients(completion: (clients: [Client]?, error: ErrorType?) -> ()) {
+        
+        requestController.get("clients") { (response: TSCRequestResponse?, error: NSError?) in
+            
+            if let _error = error {
+                completion(clients: nil, error: _error)
+                return
+            }
+            
+            if let responseArray = response?.array as? [[String: AnyObject]] {
+                
+                let returnedClients = responseArray.flatMap({Client(dictionary: $0)})
+                completion(clients: returnedClients, error: nil)
+                return
+            }
+            
+            completion(clients: nil, error: ClientError.MalformedData)
+        }
+    }
+    
     //MARK - Modifying Clients
     
     /**
