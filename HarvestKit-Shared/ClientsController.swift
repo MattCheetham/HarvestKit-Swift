@@ -164,6 +164,43 @@ public final class ClientsController {
         }
         
     }
+    
+    /**
+     Toggles the active status of a client.
+     
+     - parameter client: The client to toggle the active status of in the API
+     - parameter completion: The closure to call with potential errors
+     - requires: `identifier` on the client object as a minimum
+     - note: You will not be able to toggle a client if they have active projects
+     */
+    public func toggle(client: Client, completion: (error: ErrorType?) -> ()) {
+        
+        guard let clientIdentifier = client.identifier else {
+            completion(error: ClientError.MissingIdentifier)
+            return
+        }
+        
+        requestController.post("clients/\(clientIdentifier)/toggle", bodyParams: nil) { (response: TSCRequestResponse?, error: NSError?) in
+            
+            if let _error = error {
+                
+                if let responseStatus = response?.status where responseStatus == 400 {
+                    completion(error: ClientError.HasActiveProjects)
+                    return
+                }
+                
+                completion(error: _error)
+                return
+            }
+            
+            if let responseStatus = response?.status where responseStatus == 200 {
+                completion(error: nil)
+                return
+            }
+            
+            completion(error: ClientError.UnexpectedResponseCode)
+        }
+    }
 }
 
 /** An enum detailing the errors possible when dealing with client data */
@@ -178,4 +215,6 @@ enum ClientError: ErrorType {
     case UnexpectedResponseCode
     /** The client has assosciated projects or invoices and cannot be deleted */
     case HasProjectsOrInvoices
+    /** The client has active projects and cannot be disabled */
+    case HasActiveProjects
 }
