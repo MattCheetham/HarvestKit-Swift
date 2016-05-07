@@ -33,4 +33,35 @@ public final class ClientsController {
         
         self.requestController = requestController
     }
+    
+    /**
+     Requests a specific client from the API by identifier
+     
+     - parameter clientIdentifier: The identifier of the client to look up in the system
+     */
+    public func get(clientIdentifier: Int, completion: (client: Client?, error: ErrorType?) -> ()) {
+        
+        requestController.get("clients/\(clientIdentifier)") { (response: TSCRequestResponse?, error: NSError?) in
+            
+            if let _error = error {
+                completion(client: nil, error: _error)
+                return
+            }
+            
+            if let responseDictionary = response?.dictionary as? [String: AnyObject] {
+                
+                let returnedClient = Client(dictionary: responseDictionary)
+                completion(client: returnedClient, error: nil)
+                return
+            }
+            
+            completion(client: nil, error: ClientError.MalformedData)
+        }
+    }
+}
+
+/** An enum detailing the errors possible when dealing with client data */
+enum ClientError: ErrorType {
+    /** The data we got back from the server was not suitable to be converted into a client object */
+    case MalformedData
 }
