@@ -25,8 +25,8 @@ public final class HarvestController {
     /**
      The main request controller for the harvest framework. This will be shared amongst other sub controllers for making API requests.
      */
-    let requestController: TSCRequestController
-    
+    public let requestController: TSCRequestController
+
     /**
      The controller for managing Timers
      */

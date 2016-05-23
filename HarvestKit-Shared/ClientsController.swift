@@ -23,8 +23,8 @@ public final class ClientsController {
     /**
      The request controller used to load contact information. This is shared with other controllers
      */
-    let requestController: TSCRequestController
-    
+    public let requestController: TSCRequestController
+
     /**
      Initialises a new controller.
      - parameter requestController: The request controller to use when loading client information. This must be passed down from HarvestController so that authentication may be shared

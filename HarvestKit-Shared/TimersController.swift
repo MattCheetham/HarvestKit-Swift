@@ -24,8 +24,8 @@ public final class TimersController {
     /**
      The request controller used to load timer information. This is shared with other controllers
      */
-    let requestController: TSCRequestController
-    
+    public let requestController: TSCRequestController
+
     internal init(requestController: TSCRequestController) {
         
         self.requestController = requestController
