@@ -68,9 +68,9 @@ public struct Timer {
     Standard initialiser
     */
     public init() {}
-    
-    internal init?(dictionary: [String: AnyObject]) {
-        
+
+    public init?(dictionary: [String: AnyObject]) {
+
         identifier = dictionary["id"] as? Int
         notes = dictionary["notes"] as? String
         clientName = dictionary["client"] as? String
