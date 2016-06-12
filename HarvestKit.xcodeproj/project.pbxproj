@@ -49,9 +49,6 @@
 		49EC2CD61C42728300B9FF49 /* ThunderRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC2CD51C42728300B9FF49 /* ThunderRequest.framework */; };
 		49EC2CD81C42728C00B9FF49 /* ThunderRequestTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC2CD71C42728C00B9FF49 /* ThunderRequestTV.framework */; };
 		49EC2CDA1C42729500B9FF49 /* ThunderRequestMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC2CD91C42729500B9FF49 /* ThunderRequestMac.framework */; };
-		49EC2CE01C4273AC00B9FF49 /* ThunderRequest.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49EC2CDF1C4273AC00B9FF49 /* ThunderRequest.framework.dSYM */; };
-		49EC2CE31C4273C700B9FF49 /* ThunderRequestTV.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49EC2CE21C4273C700B9FF49 /* ThunderRequestTV.framework.dSYM */; };
-		49EC2CE61C4273DE00B9FF49 /* ThunderRequestMac.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49EC2CE51C4273DE00B9FF49 /* ThunderRequestMac.framework.dSYM */; };
 		49EC2D061C42AC9C00B9FF49 /* HarvestKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC2D051C42AC9C00B9FF49 /* HarvestKitTests.swift */; };
 		49EC2D081C42AC9C00B9FF49 /* HarvestKitiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D87261BFDDCD200ADE0F1 /* HarvestKitiOS.framework */; };
 		49EC2D0F1C42ADD300B9FF49 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC2D0E1C42ADD300B9FF49 /* ModelTests.swift */; };
@@ -88,36 +85,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				49AC1C4B1C42B79000E420B4 /* ThunderRequest.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EC2CDE1C42738400B9FF49 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				49EC2CE01C4273AC00B9FF49 /* ThunderRequest.framework.dSYM in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EC2CE11C4273B900B9FF49 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				49EC2CE31C4273C700B9FF49 /* ThunderRequestTV.framework.dSYM in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EC2CE41C4273D500B9FF49 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				49EC2CE61C4273DE00B9FF49 /* ThunderRequestMac.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,8 +345,6 @@
 				490D87221BFDDCD200ADE0F1 /* Frameworks */,
 				490D87231BFDDCD200ADE0F1 /* Headers */,
 				490D87241BFDDCD200ADE0F1 /* Resources */,
-				49EC2CDD1C42731F00B9FF49 /* ShellScript */,
-				49EC2CDE1C42738400B9FF49 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -398,8 +363,6 @@
 				490D87321BFDDD2F00ADE0F1 /* Frameworks */,
 				490D87331BFDDD2F00ADE0F1 /* Headers */,
 				490D87341BFDDD2F00ADE0F1 /* Resources */,
-				49EC2CDC1C42730E00B9FF49 /* ShellScript */,
-				49EC2CE11C4273B900B9FF49 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -418,8 +381,6 @@
 				49DBB1D51BFF963400640F31 /* Frameworks */,
 				49DBB1D61BFF963400640F31 /* Headers */,
 				49DBB1D71BFF963400640F31 /* Resources */,
-				49EC2CDB1C4272B800B9FF49 /* ShellScript */,
-				49EC2CE41C4273D500B9FF49 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -529,51 +490,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		49EC2CDB1C4272B800B9FF49 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/ThunderRequestMac.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		49EC2CDC1C42730E00B9FF49 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/tvOS/ThunderRequestTV.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		49EC2CDD1C42731F00B9FF49 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ThunderRequest.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		490D87211BFDDCD200ADE0F1 /* Sources */ = {
