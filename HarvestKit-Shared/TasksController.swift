@@ -72,7 +72,7 @@ public final class TasksController {
      - param project: The project to look up assigned task assignments for
      - param completionHandler: The completion handler to return tasks and errors to
      */
-    public func getTaskAssignments(project: Project, completionHandler: (tasks: [Task?]?, requestError: NSError?) -> ()) {
+    public func getTaskAssignments(project: Project, completionHandler: (tasks: [TaskAssignment?]?, requestError: NSError?) -> ()) {
         
         guard let projectId = project.identifier else {
             completionHandler(tasks: nil, requestError: nil)
