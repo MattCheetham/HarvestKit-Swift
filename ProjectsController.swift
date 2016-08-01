@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 #if os(iOS)
     import ThunderRequest
 #elseif os(tvOS)
@@ -18,7 +19,7 @@ import Foundation
 /**
  Handles loading information about projects from the Harvest API
  */
-public final class ContactsController {
+public final class ProjectsController {
     
     /**
      The request controller used to load project information. This is shared with other controllers
@@ -54,9 +55,6 @@ public final class ContactsController {
                 
                 completionHandler(projects: projects, requestError: nil)
             }
-            
         }
-        
     }
-    
 }
