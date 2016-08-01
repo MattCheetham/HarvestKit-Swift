@@ -34,7 +34,7 @@ public final class TasksController {
         getTasks { (tasks, requestError) in
             
             if let _tasks = tasks {
-                self.tasks = _tasks
+                self.tasks = _tasks.flatMap({$0})
             }
             
         }
@@ -107,6 +107,5 @@ public final class TasksController {
         }
         
         return _tasks.filter({$0.identifier == taskAssignment.identifier}).first
-        
     }
 }

@@ -48,7 +48,7 @@ public struct Task {
             return nil
         }
         
-        identifier = taskDictionary["id"] as? Int
+        identifier = taskDictionary["id"] as? String
         name = taskDictionary["name"] as? String
         billableByDefault = taskDictionary["billale_by_default"] as? Bool
         
