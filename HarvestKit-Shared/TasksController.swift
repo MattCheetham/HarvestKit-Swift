@@ -106,7 +106,7 @@ public final class TasksController {
             return nil
         }
         
-        return _tasks.filter({$0.identifier == taskAssignment.identifier})
+        return _tasks.filter({$0.identifier == taskAssignment.identifier}).first
         
     }
 }
