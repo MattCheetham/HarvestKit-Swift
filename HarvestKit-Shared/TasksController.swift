@@ -53,7 +53,7 @@ public final class TasksController {
                     Task(dictionary: $0)
                 })
                 
-                completionHandler(tasks: projects, requestError: nil)
+                completionHandler(tasks: tasks, requestError: nil)
             }
         }
     }
