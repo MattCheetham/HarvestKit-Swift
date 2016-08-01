@@ -48,24 +48,24 @@ public struct Task {
             return nil
         }
         
-        identifier = projectDictionary["id"] as? Int
-        name = projectDictionary["name"] as? String
-        billableByDefault = projectDictionary["billale_by_default"] as? Bool
+        identifier = taskDictionary["id"] as? Int
+        name = taskDictionary["name"] as? String
+        billableByDefault = taskDictionary["billale_by_default"] as? Bool
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         
-        if let createdDateString = clientDictionary["created_at"] as? String {
+        if let createdDateString = taskDictionary["created_at"] as? String {
             created = dateFormatter.dateFromString(createdDateString)
         }
         
-        if let updatedDateString = clientDictionary["updated_at"] as? String {
+        if let updatedDateString = taskDictionary["updated_at"] as? String {
             updated = dateFormatter.dateFromString(updatedDateString)
         }
         
-        isDefault = projectDictionary["is_default"] as? Bool
-        defaultHourlyRate = projectDictionary["default_hourly_rate"] as? String
-        deactivated = projectDictionary["deactivated"] as? Bool
+        isDefault = taskDictionary["is_default"] as? Bool
+        defaultHourlyRate = taskDictionary["default_hourly_rate"] as? String
+        deactivated = taskDictionary["deactivated"] as? Bool
         
     }
 }
