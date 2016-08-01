@@ -43,7 +43,7 @@ public final class TasksController {
         requestController.get("tasks") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
             
             if let error = requestError {
-                completionHandler(projects: nil, requestError: error)
+                completionHandler(tasks: nil, requestError: error)
                 return;
             }
             
@@ -53,7 +53,7 @@ public final class TasksController {
                     Task(dictionary: $0)
                 })
                 
-                completionHandler(projects: projects, requestError: nil)
+                completionHandler(tasks: projects, requestError: nil)
             }
         }
     }
