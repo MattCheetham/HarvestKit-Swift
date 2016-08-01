@@ -17,6 +17,11 @@ public struct TaskAssignment {
     
     internal init?(dictionary: [String: AnyObject]) {
         
-        identifier = dictionary["task_id"] as? String
+        guard let taskDictionary = dictionary["task_assignment"] as? [String: AnyObject] else {
+            print("Dictionary was missing taskAssignment key")
+            return nil
+        }
+        
+        identifier = taskDictionary["task_id"] as? String
     }
 }
