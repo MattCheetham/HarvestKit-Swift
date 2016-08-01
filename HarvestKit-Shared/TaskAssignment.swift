@@ -22,7 +22,10 @@ public struct TaskAssignment {
             return nil
         }
         
-        print("dict: \(taskDictionary)")
-        identifier = taskDictionary["task_id"] as? String
+        if let _taskId = taskDictionary["task_id"] as? Int {
+            identifier = String(_taskId)
+        }
+//        print("dict: \(taskDictionary)")
+//        identifier = taskDictionary["task_id"] as? String
     }
 }
