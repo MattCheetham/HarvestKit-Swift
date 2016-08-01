@@ -26,10 +26,18 @@ public final class TasksController {
      */
     public let requestController: TSCRequestController
     
+    public var tasks: [Task]?
+    
     internal init(requestController: TSCRequestController) {
         
         self.requestController = requestController
-        
+        getTasks { (tasks, requestError) in
+            
+            if let _tasks = tasks {
+                self.tasks = _tasks
+            }
+            
+        }
     }
     
     /**
@@ -59,12 +67,12 @@ public final class TasksController {
     }
     
     /**
-     Gets tasks that are assigned to a project
+     Gets tasks assignments that are assigned to a project
      
-     - param project: The project to look up assigned tasks for
+     - param project: The project to look up assigned task assignments for
      - param completionHandler: The completion handler to return tasks and errors to
      */
-    public func getTasks(project: Project, completionHandler: (tasks: [Task?]?, requestError: NSError?) -> ()) {
+    public func getTaskAssignments(project: Project, completionHandler: (tasks: [Task?]?, requestError: NSError?) -> ()) {
         
         guard let projectId = project.identifier else {
             completionHandler(tasks: nil, requestError: nil)
@@ -81,11 +89,24 @@ public final class TasksController {
             if let tasksArray = response?.array as? [[String: AnyObject]] {
                 
                 let tasks = tasksArray.map({
-                    Task(dictionary: $0)
+                    TaskAssignment(dictionary: $0)
                 })
                 
                 completionHandler(tasks: tasks, requestError: nil)
             }
         }
+    }
+    
+    /**
+     Finds the task object for a task assignment object that is returned from asking a project for it's tasks
+     */
+    public func taskFor(taskAssignment: TaskAssignment) -> Task? {
+        
+        guard let _tasks = tasks else {
+            return nil
+        }
+        
+        return _tasks.filter({$0.identifier == taskAssignment.identifier})
+        
     }
 }

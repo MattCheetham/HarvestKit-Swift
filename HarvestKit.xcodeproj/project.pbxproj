@@ -28,6 +28,9 @@
 		491A62E31D4F56E200C437C5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62E21D4F56E200C437C5 /* Task.swift */; };
 		491A62E41D4F56E200C437C5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62E21D4F56E200C437C5 /* Task.swift */; };
 		491A62E51D4F56E200C437C5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62E21D4F56E200C437C5 /* Task.swift */; };
+		491A62E71D4F673900C437C5 /* TaskAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62E61D4F673900C437C5 /* TaskAssignment.swift */; };
+		491A62E81D4F673900C437C5 /* TaskAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62E61D4F673900C437C5 /* TaskAssignment.swift */; };
+		491A62E91D4F673900C437C5 /* TaskAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62E61D4F673900C437C5 /* TaskAssignment.swift */; };
 		498F530C1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
 		498F530D1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
 		49AC1C4B1C42B79000E420B4 /* ThunderRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49AC1C4A1C42B79000E420B4 /* ThunderRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -113,6 +116,7 @@
 		491A62DA1D4F512700C437C5 /* ProjectsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		491A62DE1D4F55C800C437C5 /* TasksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TasksController.swift; path = "HarvestKit-Shared/TasksController.swift"; sourceTree = "<group>"; };
 		491A62E21D4F56E200C437C5 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = "HarvestKit-Shared/Task.swift"; sourceTree = "<group>"; };
+		491A62E61D4F673900C437C5 /* TaskAssignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskAssignment.swift; path = "HarvestKit-Shared/TaskAssignment.swift"; sourceTree = "<group>"; };
 		498F530B1BFE378100BFCA16 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = "HarvestKit-Shared/Project.swift"; sourceTree = "<group>"; };
 		49AC1C4A1C42B79000E420B4 /* ThunderRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThunderRequest.framework; path = ../Carthage/Build/iOS/ThunderRequest.framework; sourceTree = "<group>"; };
 		49AC1C4C1C42B86C00E420B4 /* timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timer.json; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 		49B59CCE1C4AB39E000BE592 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				491A62E61D4F673900C437C5 /* TaskAssignment.swift */,
 				491A62E21D4F56E200C437C5 /* Task.swift */,
 				49D924D21BFE4B5E00F7E0C2 /* Client.swift */,
 				49B59CD31C4AB5D6000BE592 /* Company.swift */,
@@ -512,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				491808901BFDE6F500B69D28 /* Timer.swift in Sources */,
+				491A62E71D4F673900C437C5 /* TaskAssignment.swift in Sources */,
 				491A62DF1D4F55C800C437C5 /* TasksController.swift in Sources */,
 				491808871BFDE08F00B69D28 /* User.swift in Sources */,
 				49EE8AB81C4A739C007BFC8B /* Contact.swift in Sources */,
@@ -535,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				491808911BFDE6F500B69D28 /* Timer.swift in Sources */,
+				491A62E81D4F673900C437C5 /* TaskAssignment.swift in Sources */,
 				491A62E01D4F55C800C437C5 /* TasksController.swift in Sources */,
 				491808881BFDE08F00B69D28 /* User.swift in Sources */,
 				49EE8AB91C4A739C007BFC8B /* Contact.swift in Sources */,
@@ -558,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DBB1E51BFF967600640F31 /* User.swift in Sources */,
+				491A62E91D4F673900C437C5 /* TaskAssignment.swift in Sources */,
 				491A62E11D4F55C800C437C5 /* TasksController.swift in Sources */,
 				49DBB1E41BFF967600640F31 /* Timer.swift in Sources */,
 				49EE8ABA1C4A739C007BFC8B /* Contact.swift in Sources */,

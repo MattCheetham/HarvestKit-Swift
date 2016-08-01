@@ -13,7 +13,7 @@ public struct Task {
     /**
      A unique identifier for this Task
      */
-    public var identifier: Int?
+    public var identifier: String?
     
     /**
      The name of the task to display to the user
@@ -43,13 +43,7 @@ public struct Task {
     
     internal init?(dictionary: [String: AnyObject]) {
         
-        var taskDictionaryKey = "task"
-        
-        if dictionary[taskDictionaryKey] == nil {
-            taskDictionaryKey = "task_assignment"
-        }
-        
-        guard let taskDictionary = dictionary[taskDictionaryKey] as? [String: AnyObject] else {
+        guard let taskDictionary = dictionary["task"] as? [String: AnyObject] else {
             print("Dictionary was missing task key")
             return nil
         }
