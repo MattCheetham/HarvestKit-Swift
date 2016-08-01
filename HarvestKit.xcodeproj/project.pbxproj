@@ -19,6 +19,9 @@
 		491808881BFDE08F00B69D28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491808861BFDE08F00B69D28 /* User.swift */; };
 		491808901BFDE6F500B69D28 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918088F1BFDE6F500B69D28 /* Timer.swift */; };
 		491808911BFDE6F500B69D28 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918088F1BFDE6F500B69D28 /* Timer.swift */; };
+		491A62DB1D4F512700C437C5 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62DA1D4F512700C437C5 /* ProjectsController.swift */; };
+		491A62DC1D4F512700C437C5 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62DA1D4F512700C437C5 /* ProjectsController.swift */; };
+		491A62DD1D4F512700C437C5 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A62DA1D4F512700C437C5 /* ProjectsController.swift */; };
 		498F530C1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
 		498F530D1BFE378100BFCA16 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F530B1BFE378100BFCA16 /* Project.swift */; };
 		49AC1C4B1C42B79000E420B4 /* ThunderRequest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49AC1C4A1C42B79000E420B4 /* ThunderRequest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,6 +104,7 @@
 		491808831BFDDEE100B69D28 /* HarvestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HarvestController.swift; path = "HarvestKit-Shared/HarvestController.swift"; sourceTree = "<group>"; };
 		491808861BFDE08F00B69D28 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "HarvestKit-Shared/User.swift"; sourceTree = "<group>"; };
 		4918088F1BFDE6F500B69D28 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = "HarvestKit-Shared/Timer.swift"; sourceTree = "<group>"; };
+		491A62DA1D4F512700C437C5 /* ProjectsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		498F530B1BFE378100BFCA16 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = "HarvestKit-Shared/Project.swift"; sourceTree = "<group>"; };
 		49AC1C4A1C42B79000E420B4 /* ThunderRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ThunderRequest.framework; path = ../Carthage/Build/iOS/ThunderRequest.framework; sourceTree = "<group>"; };
 		49AC1C4C1C42B86C00E420B4 /* timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timer.json; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				49EE8AAF1C4A6F3E007BFC8B /* ContactsController.swift */,
 				49EE8AB31C4A7059007BFC8B /* TimersController.swift */,
 				49B59CCF1C4AB3DD000BE592 /* AccountController.swift */,
+				491A62DA1D4F512700C437C5 /* ProjectsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				491808901BFDE6F500B69D28 /* Timer.swift in Sources */,
 				491808871BFDE08F00B69D28 /* User.swift in Sources */,
 				49EE8AB81C4A739C007BFC8B /* Contact.swift in Sources */,
+				491A62DB1D4F512700C437C5 /* ProjectsController.swift in Sources */,
 				491808841BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 				49D924D31BFE4B5E00F7E0C2 /* Client.swift in Sources */,
 				49F8136B1CDD123300639B3A /* ClientsController.swift in Sources */,
@@ -519,6 +525,7 @@
 				491808911BFDE6F500B69D28 /* Timer.swift in Sources */,
 				491808881BFDE08F00B69D28 /* User.swift in Sources */,
 				49EE8AB91C4A739C007BFC8B /* Contact.swift in Sources */,
+				491A62DC1D4F512700C437C5 /* ProjectsController.swift in Sources */,
 				491808851BFDDEE100B69D28 /* HarvestController.swift in Sources */,
 				4903DC341BFF45FB0090B2CF /* Client.swift in Sources */,
 				49F8136C1CDD123300639B3A /* ClientsController.swift in Sources */,
@@ -539,6 +546,7 @@
 				49DBB1E51BFF967600640F31 /* User.swift in Sources */,
 				49DBB1E41BFF967600640F31 /* Timer.swift in Sources */,
 				49EE8ABA1C4A739C007BFC8B /* Contact.swift in Sources */,
+				491A62DD1D4F512700C437C5 /* ProjectsController.swift in Sources */,
 				49DBB1E31BFF967600640F31 /* Client.swift in Sources */,
 				49DBB1E61BFF967600640F31 /* Project.swift in Sources */,
 				49F8136D1CDD123300639B3A /* ClientsController.swift in Sources */,

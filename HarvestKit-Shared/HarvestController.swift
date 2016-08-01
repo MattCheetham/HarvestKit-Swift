@@ -26,7 +26,7 @@ public final class HarvestController {
      The main request controller for the harvest framework. This will be shared amongst other sub controllers for making API requests.
      */
     public let requestController: TSCRequestController
-
+    
     /**
      The controller for managing Timers
      */
@@ -46,6 +46,11 @@ public final class HarvestController {
      The controller for managing clients
      */
     public let clientsController: ClientsController
+    
+    /**
+     The controller for managing projects
+     */
+    public let projectsController: ProjectsController
     
     /**
      Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
