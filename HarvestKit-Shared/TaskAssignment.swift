@@ -22,6 +22,7 @@ public struct TaskAssignment {
             return nil
         }
         
+        print("dict: \(taskDictionary)")
         identifier = taskDictionary["task_id"] as? String
     }
 }
