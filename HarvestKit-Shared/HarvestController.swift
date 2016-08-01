@@ -53,6 +53,11 @@ public final class HarvestController {
     public let projectsController: ProjectsController
     
     /**
+     The controller for loading and managing tasks for the account
+     */
+    public let tasksController: TasksController
+    
+    /**
      Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
      
      - parameter accountName: The name of the account as used when logging into the website as 'https://xxxx.harvestapp.com' where xxxx is your account name
@@ -80,7 +85,7 @@ public final class HarvestController {
         accountController = AccountController(requestController: requestController)
         clientsController = ClientsController(requestController: requestController)
         projectsController = ProjectsController(requestController: requestController)
-        
+        tasksController = TasksController(requestController: requestController)
     }
     
     //MARK: - Users
@@ -108,11 +113,8 @@ public final class HarvestController {
                 })
                 
                 completionHandler(users: users, requestError: nil)
-                
             }
-            
         }
-        
     }
     
     //MARK: - Projects

@@ -1,0 +1,60 @@
+//
+//  TasksController.swift
+//  HarvestKit
+//
+//  Created by Matthew Cheetham on 01/08/2016.
+//  Copyright © 2016 Matt Cheetham. All rights reserved.
+//
+
+import Foundation
+
+#if os(iOS)
+    import ThunderRequest
+#elseif os(tvOS)
+    import ThunderRequestTV
+#elseif os (OSX)
+    import ThunderRequestMac
+#endif
+
+/**
+ Handles loading information about tasks that can be used on projects from the Harvest API
+ */
+public final class TasksController {
+    
+    /**
+     The request controller used to load task information. This is shared with other controllers
+     */
+    public let requestController: TSCRequestController
+    
+    internal init(requestController: TSCRequestController) {
+        
+        self.requestController = requestController
+        
+    }
+    
+    /**
+     Gets tasks for the account
+     
+     - parameters:
+     - completionHandler: The completion handler to return tasks and errors to
+     */
+    public func getTasks(completionHandler: (tasks: [Task?]?, requestError: NSError?) -> ()) {
+        
+        requestController.get("tasks") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(projects: nil, requestError: error)
+                return;
+            }
+            
+            if let tasksArray = response?.array as? [[String: AnyObject]] {
+                
+                let tasks = tasksArray.map({
+                    Task(dictionary: $0)
+                })
+                
+                completionHandler(projects: projects, requestError: nil)
+            }
+        }
+    }
+}
