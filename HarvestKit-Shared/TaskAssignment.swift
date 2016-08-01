@@ -13,7 +13,7 @@ public struct TaskAssignment {
     /**
      A unique identifier for this Task Assignment
      */
-    public var identifier: String?
+    public var identifier: Int?
     
     internal init?(dictionary: [String: AnyObject]) {
         
@@ -22,10 +22,6 @@ public struct TaskAssignment {
             return nil
         }
         
-        if let _taskId = taskDictionary["task_id"] as? Int {
-            identifier = String(_taskId)
-        }
-//        print("dict: \(taskDictionary)")
-//        identifier = taskDictionary["task_id"] as? String
+        identifier = taskDictionary["task_id"] as? Int
     }
 }

@@ -13,7 +13,7 @@ public struct Task {
     /**
      A unique identifier for this Task
      */
-    public var identifier: String?
+    public var identifier: Int?
     
     /**
      The name of the task to display to the user
@@ -48,7 +48,7 @@ public struct Task {
             return nil
         }
         
-        identifier = taskDictionary["id"] as? String
+        identifier = taskDictionary["id"] as? Int
         name = taskDictionary["name"] as? String
         billableByDefault = taskDictionary["billale_by_default"] as? Bool
         
