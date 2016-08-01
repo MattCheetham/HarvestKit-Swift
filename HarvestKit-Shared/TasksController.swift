@@ -57,4 +57,35 @@ public final class TasksController {
             }
         }
     }
+    
+    /**
+     Gets tasks that are assigned to a project
+     
+     - param project: The project to look up assigned tasks for
+     - param completionHandler: The completion handler to return tasks and errors to
+     */
+    public func getTasks(project: Project, completionHandler: (tasks: [Task?]?, requestError: NSError?) -> ()) {
+        
+        guard let projectId = project.identifier else {
+            completionHandler(tasks: nil, requestError: nil)
+            return
+        }
+        
+        requestController.get("projects/\(projectId)/task_assignments") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+            
+            if let error = requestError {
+                completionHandler(tasks: nil, requestError: error)
+                return;
+            }
+            
+            if let tasksArray = response?.array as? [[String: AnyObject]] {
+                
+                let tasks = tasksArray.map({
+                    Task(dictionary: $0)
+                })
+                
+                completionHandler(tasks: tasks, requestError: nil)
+            }
+        }
+    }
 }

@@ -43,7 +43,13 @@ public struct Task {
     
     internal init?(dictionary: [String: AnyObject]) {
         
-        guard let taskDictionary = dictionary["task"] as? [String: AnyObject] else {
+        var taskDictionaryKey = "task"
+        
+        if dictionary[taskDictionaryKey] == nil {
+            taskDictionaryKey = "task_assignment"
+        }
+        
+        guard let taskDictionary = dictionary[taskDictionaryKey] as? [String: AnyObject] else {
             print("Dictionary was missing task key")
             return nil
         }
