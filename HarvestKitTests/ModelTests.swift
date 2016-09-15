@@ -14,7 +14,7 @@ class ModelTests: TestBase {
     
     func testCreatingTimerViaStandardInit() {
         
-        let timer = Timer()
+        let timer = HarvestKitiOS.Timer()
         XCTAssertNotNil(timer)
     }
     
@@ -26,7 +26,7 @@ class ModelTests: TestBase {
         
         if let timerDictionary = timerObject {
             
-            let timer = Timer(dictionary: timerDictionary)
+            let timer = HarvestKitiOS.Timer(dictionary: timerDictionary)
             
             XCTAssertNotNil(timer)
             

@@ -21,19 +21,19 @@ public extension Timer {
         var mutableDictionary = [String: AnyObject]()
         
         if let projectId = projectIdentifier {
-            mutableDictionary["project_id"] = projectId
+            mutableDictionary["project_id"] = projectId as AnyObject?
         }
         
         if let taskId = taskIdentifier {
-            mutableDictionary["task_id"] = taskId
+            mutableDictionary["task_id"] = taskId as AnyObject?
         }
         
         if let inputHours = hours {
-            mutableDictionary["hours"] = inputHours
+            mutableDictionary["hours"] = inputHours as AnyObject?
         }
         
         if let inputNotes = notes {
-            mutableDictionary["notes"] = inputNotes
+            mutableDictionary["notes"] = inputNotes as AnyObject?
         }
         
         return mutableDictionary
@@ -55,38 +55,38 @@ public extension Contact {
         var mutableContactContainer = [String: AnyObject]()
         
         if let clientIdentifier = clientIdentifier {
-            mutableContactContainer["client_id"] = clientIdentifier
+            mutableContactContainer["client_id"] = clientIdentifier as AnyObject?
         }
         
         if let clientTitle = title {
-            mutableContactContainer["title"] = clientTitle
+            mutableContactContainer["title"] = clientTitle as AnyObject?
         }
         
         if let clientFirstName = firstName {
-            mutableContactContainer["first_name"] = clientFirstName
+            mutableContactContainer["first_name"] = clientFirstName as AnyObject?
         }
         
         if let clientLastName = lastName {
-            mutableContactContainer["last_name"] = clientLastName
+            mutableContactContainer["last_name"] = clientLastName as AnyObject?
         }
         
         if let clientEmail = email {
-            mutableContactContainer["email"] = clientEmail
+            mutableContactContainer["email"] = clientEmail as AnyObject?
         }
         
         if let clientOfficePhone = officePhoneNumber {
-            mutableContactContainer["phone_office"] = clientOfficePhone
+            mutableContactContainer["phone_office"] = clientOfficePhone as AnyObject?
         }
         
         if let clientMobilePhone = mobilePhoneNumber {
-            mutableContactContainer["phone_mobile"] = clientMobilePhone
+            mutableContactContainer["phone_mobile"] = clientMobilePhone as AnyObject?
         }
         
         if let clientFax = faxNumber {
-            mutableContactContainer["fax"] = clientFax
+            mutableContactContainer["fax"] = clientFax as AnyObject?
         }
                 
-        mutableDictionary["contact"] = mutableContactContainer
+        mutableDictionary["contact"] = mutableContactContainer as AnyObject?
         
         return mutableDictionary
     }
@@ -108,58 +108,58 @@ public extension Client {
         var mutableClientContainer = [String: AnyObject]()
         
         if let _identifier = identifier {
-            mutableClientContainer["id"] = _identifier
+            mutableClientContainer["id"] = _identifier as AnyObject?
         }
 
         if let _name = name {
-            mutableClientContainer["name"] = _name
+            mutableClientContainer["name"] = _name as AnyObject?
         }
         
         if let _details = details {
-            mutableClientContainer["details"] = _details
+            mutableClientContainer["details"] = _details as AnyObject?
         }
         
         if let _currencyName = currencyName {
-            mutableClientContainer["currency"] = _currencyName
+            mutableClientContainer["currency"] = _currencyName as AnyObject?
         }
         
         if let _currencySymbol = currencySymbol {
-            mutableClientContainer["currency_symbol"] = _currencySymbol
+            mutableClientContainer["currency_symbol"] = _currencySymbol as AnyObject?
         }
         
         if let _active = active {
-            mutableClientContainer["active"] = _active
+            mutableClientContainer["active"] = _active as AnyObject?
         }
         
         if let _defaultInvoiceKind = defaultInvoiceKind {
-            mutableClientContainer["default_invoice_kind"] = _defaultInvoiceKind
+            mutableClientContainer["default_invoice_kind"] = _defaultInvoiceKind as AnyObject?
         }
         
         if let _lastInvoiceKind = lastInvoiceKind {
-            mutableClientContainer["last_invoice_kind"] = _lastInvoiceKind
+            mutableClientContainer["last_invoice_kind"] = _lastInvoiceKind as AnyObject?
         }
         
         if let _defaultInvoiceTimeFrame = defaultInvoiceTimeframe {
-            mutableClientContainer["default_invoice_timeframe"] = _defaultInvoiceTimeFrame
+            mutableClientContainer["default_invoice_timeframe"] = _defaultInvoiceTimeFrame as AnyObject?
         }
         
         if let _highriseId = highriseId {
-            mutableClientContainer["highrise_id"] = _highriseId
+            mutableClientContainer["highrise_id"] = _highriseId as AnyObject?
         }
         
         if let _address = address {
-            mutableClientContainer["address"] = _address
+            mutableClientContainer["address"] = _address as AnyObject?
         }
         
         if let _cacheVersion = cacheVersion {
-            mutableClientContainer["cache_version"] = _cacheVersion
+            mutableClientContainer["cache_version"] = _cacheVersion as AnyObject?
         }
         
         if let _statementKey = statementKey {
-            mutableClientContainer["statement_key"] = _statementKey
+            mutableClientContainer["statement_key"] = _statementKey as AnyObject?
         }
         
-        mutableDictionary["client"] = mutableClientContainer
+        mutableDictionary["client"] = mutableClientContainer as AnyObject?
         
         return mutableDictionary
     }

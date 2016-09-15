@@ -54,13 +54,13 @@ public final class HarvestController {
      - parameter username: The username of the account to log in with. This is usually the users email address
      - parameter password: The password for the supplied username
      */
-    public init(accountName: String!, username: String!, password: String!) {
+    public init(accountName: String, username: String, password: String) {
         
         requestController = TSCRequestController(baseAddress: "https://\(accountName).harvestapp.com")
         
         let userPasswordString = "\(username):\(password)"
-        let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
-        let base64EncodedCredential = userPasswordData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        let userPasswordData = userPasswordString.data(using: String.Encoding.utf8)
+        let base64EncodedCredential = userPasswordData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
         if let base64Cred = base64EncodedCredential {
             let authString = "Basic \(base64Cred)"
             requestController.sharedRequestHeaders["Authorization"] = authString
@@ -84,12 +84,12 @@ public final class HarvestController {
      
      - parameter completionHandler: The completion handler to return users and errors to
      */
-    public func getUsers(completionHandler: (users: [User?]?, requestError: NSError?) -> ()) {
+    public func getUsers(_ completionHandler: @escaping (_ users: [User?]?, _ requestError: NSError?) -> ()) {
         
-        requestController.get("people") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("people") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(users: nil, requestError: error)
+                completionHandler(nil, error as NSError)
                 return;
             }
             
@@ -101,7 +101,7 @@ public final class HarvestController {
                     
                 })
                 
-                completionHandler(users: users, requestError: nil)
+                completionHandler(users, nil)
                 
             }
             
@@ -117,12 +117,12 @@ public final class HarvestController {
      - parameters:
      - completionHandler: The completion handler to return projects and errors to
      */
-    public func getProjects(completionHandler: (projects: [Project?]?, requestError: NSError?) -> ()) {
+    public func getProjects(_ completionHandler: @escaping (_ projects: [Project?]?, _ requestError: NSError?) -> ()) {
         
-        requestController.get("projects") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("projects") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(projects: nil, requestError: error)
+                completionHandler(nil, error as NSError)
                 return;
             }
             
@@ -132,7 +132,7 @@ public final class HarvestController {
                     Project(dictionary: $0)
                 })
                 
-                completionHandler(projects: projects, requestError: nil)
+                completionHandler(projects, nil)
             }
             
         }
@@ -148,12 +148,12 @@ public final class HarvestController {
      - parameters:
      - completionHandler: The completion handler to return clients and errors to
      */
-    public func getClients(completionHandler: (clients: [Client?]?, requestError: NSError?) -> ()) {
+    public func getClients(_ completionHandler: @escaping (_ clients: [Client?]?, _ requestError: NSError?) -> ()) {
         
-        requestController.get("clients") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("clients") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(clients: nil, requestError: error)
+                completionHandler(nil, error as NSError)
                 return;
             }
             
@@ -163,7 +163,7 @@ public final class HarvestController {
                     Client(dictionary: $0)
                 })
                 
-                completionHandler(clients: clients, requestError: nil)
+                completionHandler(clients, nil)
             }
             
         }
