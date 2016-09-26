@@ -22,14 +22,14 @@ class TestBase: XCTestCase {
         super.tearDown()
     }
     
-    func loadDictionaryForFile(name: String!) -> [String: AnyObject]? {
+    func loadDictionaryForFile(_ name: String!) -> [String: AnyObject]? {
         
-        let jsonFilePath = NSBundle(forClass: self.dynamicType).pathForResource(name, ofType: "json")
+        let jsonFilePath = Bundle(for: type(of: self)).path(forResource: name, ofType: "json")
         
-        if let jsonPath = jsonFilePath, let jsonFileData = NSData(contentsOfFile: jsonPath) {
+        if let jsonPath = jsonFilePath, let jsonFileData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) {
             
             do {
-                if let jsonObject = try NSJSONSerialization.JSONObjectWithData(jsonFileData, options: NSJSONReadingOptions.MutableContainers) as? [String: AnyObject] {
+                if let jsonObject = try JSONSerialization.jsonObject(with: jsonFileData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: AnyObject] {
                     
                     return jsonObject
                 }

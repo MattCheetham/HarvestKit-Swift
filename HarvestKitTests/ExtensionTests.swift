@@ -18,7 +18,7 @@ class ExtensionTests: TestBase {
         
         if let timerDictionary = timerObject {
             
-            let timer = Timer(dictionary: timerDictionary)
+            let timer = HarvestKitiOS.Timer(dictionary: timerDictionary)
             
             if let generatedTimer = timer {
                 
@@ -38,7 +38,7 @@ class ExtensionTests: TestBase {
     
     func testDayInYearFromDate() {
         
-        let date = NSDate(timeIntervalSince1970: 1451072513)
+        let date = Date(timeIntervalSince1970: 1451072513)
         
         XCTAssertEqual(date.dayInYear, "359")
         
@@ -46,7 +46,7 @@ class ExtensionTests: TestBase {
     
     func testYearOfDate() {
         
-        let date = NSDate(timeIntervalSince1970: 1451072513)
+        let date = Date(timeIntervalSince1970: 1451072513)
         
         XCTAssertEqual(date.year, "2015")
         

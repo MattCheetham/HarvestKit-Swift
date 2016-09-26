@@ -52,12 +52,12 @@ public struct Client {
     /**
      The date that the client was created
      */
-    public var created: NSDate?
+    public var created: Date?
     
     /**
      The date that this client was last updated
      */
-    public var updated: NSDate?
+    public var updated: Date?
     
     public var highriseId: Int?
     
@@ -87,15 +87,15 @@ public struct Client {
         defaultInvoiceKind = clientDictionary["default_invoice_kind"] as? String
         cacheVersion = clientDictionary["cache_version"] as? Int
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         
         if let createdDateString = clientDictionary["created_at"] as? String {
-            created = dateFormatter.dateFromString(createdDateString)
+            created = dateFormatter.date(from: createdDateString)
         }
         
         if let updatedDateString = clientDictionary["updated_at"] as? String {
-            updated = dateFormatter.dateFromString(updatedDateString)
+            updated = dateFormatter.date(from: updatedDateString)
         }
         
         highriseId = clientDictionary["highrise_id"] as? Int

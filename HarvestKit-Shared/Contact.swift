@@ -61,12 +61,12 @@ public struct Contact {
     /**
     The date that the contact was created
     */
-    public var created: NSDate?
+    public var created: Date?
     
     /**
     The date that the contact was last modified
     */
-    public var updated: NSDate?
+    public var updated: Date?
     
     /**
      Standard initialiser
@@ -92,17 +92,17 @@ public struct Contact {
         
         if let createdDateString = contactDictionary["created_at"] as? String {
             
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            created = dateFormatter.dateFromString(createdDateString)
+            created = dateFormatter.date(from: createdDateString)
             
         }
         
         if let updatedDateString = contactDictionary["updated_at"] as? String {
             
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            updated = dateFormatter.dateFromString(updatedDateString)
+            updated = dateFormatter.date(from: updatedDateString)
             
         }
         
