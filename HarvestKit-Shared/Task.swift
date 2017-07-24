@@ -25,12 +25,12 @@ public struct Task {
     /**
      When this task was added to the system
      */
-    public var created: NSDate?
+    public var created: Date?
     
     /**
      When this task was updated in the system
      */
-    public var updated: NSDate?
+    public var updated: Date?
     
     /**
      If this task is the default task when users create a timer entry
@@ -52,15 +52,15 @@ public struct Task {
         name = taskDictionary["name"] as? String
         billableByDefault = taskDictionary["billale_by_default"] as? Bool
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         
         if let createdDateString = taskDictionary["created_at"] as? String {
-            created = dateFormatter.dateFromString(createdDateString)
+            created = dateFormatter.date(from: createdDateString)
         }
         
         if let updatedDateString = taskDictionary["updated_at"] as? String {
-            updated = dateFormatter.dateFromString(updatedDateString)
+            updated = dateFormatter.date(from: updatedDateString)
         }
         
         isDefault = taskDictionary["is_default"] as? Bool

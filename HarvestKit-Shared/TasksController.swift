@@ -46,12 +46,12 @@ public final class TasksController {
      - parameters:
      - completionHandler: The completion handler to return tasks and errors to
      */
-    public func getTasks(completionHandler: (tasks: [Task?]?, requestError: NSError?) -> ()) {
+    public func getTasks(_ completionHandler: @escaping (_ tasks: [Task?]?, _ requestError: Error?) -> ()) {
         
-        requestController.get("tasks") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("tasks") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(tasks: nil, requestError: error)
+                completionHandler(nil, error)
                 return;
             }
             
@@ -61,7 +61,7 @@ public final class TasksController {
                     Task(dictionary: $0)
                 })
                 
-                completionHandler(tasks: tasks, requestError: nil)
+                completionHandler(tasks, nil)
             }
         }
     }
@@ -72,17 +72,17 @@ public final class TasksController {
      - param project: The project to look up assigned task assignments for
      - param completionHandler: The completion handler to return tasks and errors to
      */
-    public func getTaskAssignments(project: Project, completionHandler: (tasks: [TaskAssignment?]?, requestError: NSError?) -> ()) {
+    public func getTaskAssignments(_ project: Project, completionHandler: @escaping (_ tasks: [TaskAssignment?]?, _ requestError: Error?) -> ()) {
         
         guard let projectId = project.identifier else {
-            completionHandler(tasks: nil, requestError: nil)
+            completionHandler(nil, nil)
             return
         }
         
-        requestController.get("projects/\(projectId)/task_assignments") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("projects/\(projectId)/task_assignments") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(tasks: nil, requestError: error)
+                completionHandler(nil, error)
                 return;
             }
             
@@ -92,7 +92,7 @@ public final class TasksController {
                     TaskAssignment(dictionary: $0)
                 })
                 
-                completionHandler(tasks: tasks, requestError: nil)
+                completionHandler(tasks, nil)
             }
         }
     }
@@ -100,7 +100,7 @@ public final class TasksController {
     /**
      Finds the task object for a task assignment object that is returned from asking a project for it's tasks
      */
-    public func taskFor(taskAssignment: TaskAssignment) -> Task? {
+    public func taskFor(_ taskAssignment: TaskAssignment) -> Task? {
         
         guard let _tasks = tasks else {
             return nil

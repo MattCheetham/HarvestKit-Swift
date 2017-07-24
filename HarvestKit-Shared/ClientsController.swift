@@ -43,26 +43,26 @@ public final class ClientsController {
      - parameter completion: The completion handler to return any errors to
      - requires: `name` on the client object as a minimum
      */
-    public func create(client: Client, completion: (error: ErrorType?) -> ()) {
+    public func create(_ client: Client, completion: @escaping (_ error: Error?) -> ()) {
         
         guard let _ = client.name else {
-            completion(error: ClientError.MissingName)
+            completion(ClientError.missingName)
             return
         }
         
-        requestController.post("clients", bodyParams: client.serialisedObject) { (response: TSCRequestResponse?, error: NSError?) in
+        requestController.post("clients", bodyParams: client.serialisedObject) { (response: TSCRequestResponse?, error: Error?) in
             
             if let _error = error {
-                completion(error: _error)
+                completion(_error)
                 return
             }
             
-            if let responseStatus = response?.status where responseStatus == 201 {
-                completion(error: nil)
+            if let responseStatus = response?.status, responseStatus == 201 {
+                completion(nil)
                 return
             }
             
-            completion(error: ClientError.UnexpectedResponseCode)
+            completion(ClientError.unexpectedResponseCode)
         }
     }
     
@@ -73,23 +73,23 @@ public final class ClientsController {
      
      - parameter clientIdentifier: The identifier of the client to look up in the system
      */
-    public func get(clientIdentifier: Int, completion: (client: Client?, error: ErrorType?) -> ()) {
+    public func get(_ clientIdentifier: Int, completion: @escaping (_ client: Client?, _ error: Error?) -> ()) {
         
-        requestController.get("clients/\(clientIdentifier)") { (response: TSCRequestResponse?, error: NSError?) in
+        requestController.get("clients/\(clientIdentifier)") { (response: TSCRequestResponse?, error: Error?) in
             
             if let _error = error {
-                completion(client: nil, error: _error)
+                completion(nil, _error)
                 return
             }
             
             if let responseDictionary = response?.dictionary as? [String: AnyObject] {
                 
                 let returnedClient = Client(dictionary: responseDictionary)
-                completion(client: returnedClient, error: nil)
+                completion(returnedClient, nil)
                 return
             }
             
-            completion(client: nil, error: ClientError.MalformedData)
+            completion(nil, ClientError.malformedData)
         }
     }
     
@@ -98,23 +98,23 @@ public final class ClientsController {
      
      - parameter completion: A closure to call with an optional array of `clients` and an optional `error`
      */
-    public func getClients(completion: (clients: [Client]?, error: ErrorType?) -> ()) {
+    public func getClients(_ completion: @escaping (_ clients: [Client]?, _ error: Error?) -> ()) {
         
-        requestController.get("clients") { (response: TSCRequestResponse?, error: NSError?) in
+        requestController.get("clients") { (response: TSCRequestResponse?, error: Error?) in
             
             if let _error = error {
-                completion(clients: nil, error: _error)
+                completion(nil, _error)
                 return
             }
             
             if let responseArray = response?.array as? [[String: AnyObject]] {
                 
                 let returnedClients = responseArray.flatMap({Client(dictionary: $0)})
-                completion(clients: returnedClients, error: nil)
+                completion(returnedClients, nil)
                 return
             }
             
-            completion(clients: nil, error: ClientError.MalformedData)
+            completion(nil, ClientError.malformedData)
         }
     }
     
@@ -127,26 +127,26 @@ public final class ClientsController {
      - parameter completion: The closure to call to return any errors to or indicate success
      - requires: `identifier` on the client object as a minimum
      */
-    public func update(client: Client, completion: (error: ErrorType?) -> ()) {
+    public func update(_ client: Client, completion: @escaping (_ error: Error?) -> ()) {
         
         guard let clientIdentifier = client.identifier else {
-            completion(error: ClientError.MissingIdentifier)
+            completion(ClientError.missingIdentifier)
             return
         }
         
-        requestController.put("clients/\(clientIdentifier)", bodyParams: client.serialisedObject) { (response: TSCRequestResponse?, error: NSError?) in
+        requestController.put("clients/\(clientIdentifier)", bodyParams: client.serialisedObject) { (response: TSCRequestResponse?, error: Error?) in
             
             if let _error = error {
-                completion(error: _error)
+                completion(_error)
                 return
             }
             
-            if let responseStatus = response?.status where responseStatus == 200 {
-                completion(error: nil)
+            if let responseStatus = response?.status, responseStatus == 200 {
+                completion(nil)
                 return
             }
             
-            completion(error: ClientError.UnexpectedResponseCode)
+            completion(ClientError.unexpectedResponseCode)
         }
         
     }
@@ -159,32 +159,32 @@ public final class ClientsController {
      - requires: `identifier` on the client object as a minimum
      - note: You will not be able to delete a client if they have assosciated projects or invoices
      */
-    public func delete(client: Client, completion: (error: ErrorType?) -> ()) {
+    public func delete(_ client: Client, completion: @escaping (_ error: Error?) -> ()) {
         
         guard let clientIdentifier = client.identifier else {
-            completion(error: ClientError.MissingIdentifier)
+            completion(ClientError.missingIdentifier)
             return
         }
         
-        requestController.delete("clients/\(clientIdentifier)") { (response: TSCRequestResponse?, error: NSError?) in
+        requestController.delete("clients/\(clientIdentifier)") { (response: TSCRequestResponse?, error: Error?) in
             
             if let _error = error {
                 
-                if let responseStatus = response?.status where responseStatus == 400 {
-                    completion(error: ClientError.HasProjectsOrInvoices)
+                if let responseStatus = response?.status, responseStatus == 400 {
+                    completion(ClientError.hasProjectsOrInvoices)
                     return
                 }
                 
-                completion(error: _error)
+                completion(_error)
                 return
             }
             
-            if let responseStatus = response?.status where responseStatus == 200 {
-                completion(error: nil)
+            if let responseStatus = response?.status, responseStatus == 200 {
+                completion(nil)
                 return
             }
             
-            completion(error: ClientError.UnexpectedResponseCode)
+            completion(ClientError.unexpectedResponseCode)
         }
         
     }
@@ -197,48 +197,48 @@ public final class ClientsController {
      - requires: `identifier` on the client object as a minimum
      - note: You will not be able to toggle a client if they have active projects
      */
-    public func toggle(client: Client, completion: (error: ErrorType?) -> ()) {
+    public func toggle(_ client: Client, completion: @escaping (_ error: Error?) -> ()) {
         
         guard let clientIdentifier = client.identifier else {
-            completion(error: ClientError.MissingIdentifier)
+            completion(ClientError.missingIdentifier)
             return
         }
         
-        requestController.post("clients/\(clientIdentifier)/toggle", bodyParams: nil) { (response: TSCRequestResponse?, error: NSError?) in
+        requestController.post("clients/\(clientIdentifier)/toggle", bodyParams: nil) { (response: TSCRequestResponse?, error: Error?) in
             
             if let _error = error {
                 
-                if let responseStatus = response?.status where responseStatus == 400 {
-                    completion(error: ClientError.HasActiveProjects)
+                if let responseStatus = response?.status, responseStatus == 400 {
+                    completion(ClientError.hasActiveProjects)
                     return
                 }
                 
-                completion(error: _error)
+                completion(_error)
                 return
             }
             
-            if let responseStatus = response?.status where responseStatus == 200 {
-                completion(error: nil)
+            if let responseStatus = response?.status, responseStatus == 200 {
+                completion(nil)
                 return
             }
             
-            completion(error: ClientError.UnexpectedResponseCode)
+            completion(ClientError.unexpectedResponseCode)
         }
     }
 }
 
 /** An enum detailing the errors possible when dealing with client data */
-enum ClientError: ErrorType {
+enum ClientError: Error {
     /** The data we got back from the server was not suitable to be converted into a client object */
-    case MalformedData
+    case malformedData
     /** The client object given did not have a name set so could not be saved */
-    case MissingName
+    case missingName
     /** The client object given did not have an identifier so cannot be updated in the system */
-    case MissingIdentifier
+    case missingIdentifier
     /** We got an unexpected response */
-    case UnexpectedResponseCode
+    case unexpectedResponseCode
     /** The client has assosciated projects or invoices and cannot be deleted */
-    case HasProjectsOrInvoices
+    case hasProjectsOrInvoices
     /** The client has active projects and cannot be disabled */
-    case HasActiveProjects
+    case hasActiveProjects
 }

@@ -45,37 +45,37 @@ public final class ContactsController {
     
     - requires: `clientIdentifier`, `firstName` and `lastName` on the contact object as a minimum
     */
-    public func create(contact: Contact, completionHandler: (requestError: NSError?) -> ()) {
+    public func create(_ contact: Contact, completionHandler: @escaping (_ requestError: Error?) -> ()) {
         
         guard let _ = contact.clientIdentifier else {
             
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have a client identifier"])
-            completionHandler(requestError: error)
+            completionHandler(error)
             return
         }
         
         guard let _ = contact.firstName else {
             
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have a first name"])
-            completionHandler(requestError: error)
+            completionHandler(error)
             return
         }
         
         guard let _ = contact.lastName else {
             
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have a last name"])
-            completionHandler(requestError: error)
+            completionHandler(error)
             return
         }
         
-        requestController.post("contacts", bodyParams: contact.serialisedObject) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.post("contacts", bodyParams: contact.serialisedObject) { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(requestError: error)
+                completionHandler(error)
                 return
             }
             
-            completionHandler(requestError: nil)
+            completionHandler(nil)
             
         }
         
@@ -90,12 +90,12 @@ public final class ContactsController {
      
     - Note: The user must have access to the contacts on this account
     */
-    public func getContacts(completionHandler: (contacts: [Contact]?, requestError: NSError?) -> ()) {
+    public func getContacts(_ completionHandler: @escaping (_ contacts: [Contact]?, _ requestError: Error?) -> ()) {
         
-        requestController.get("contacts") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("contacts") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(contacts: nil, requestError: error)
+                completionHandler(nil, error)
                 return;
             }
             
@@ -103,12 +103,12 @@ public final class ContactsController {
                 
                 let contacts = contactsArray.map({Contact(dictionary: $0)}).filter { $0 != nil }.map { $0! }
                 
-                completionHandler(contacts: contacts, requestError: nil)
+                completionHandler(contacts, nil)
                 return
             }
             
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 500, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid response"])
-            completionHandler(contacts: nil, requestError: error)
+            completionHandler(nil, error)
             
         }
         
@@ -122,12 +122,12 @@ public final class ContactsController {
      
      - Note: The user must have access to the contacts on this account
      */
-    public func getContacts(clientIdentifier: Int, completionHandler: (contacts: [Contact]?, requestError: NSError?) -> ()) {
+    public func getContacts(_ clientIdentifier: Int, completionHandler: @escaping (_ contacts: [Contact]?, _ requestError: Error?) -> ()) {
         
-        requestController.get("clients/\(clientIdentifier)/contacts") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("clients/\(clientIdentifier)/contacts") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(contacts: nil, requestError: error)
+                completionHandler(nil, error)
                 return;
             }
             
@@ -135,12 +135,12 @@ public final class ContactsController {
                 
                 let contacts = contactsArray.map({Contact(dictionary: $0)}).filter { $0 != nil }.map { $0! }
                 
-                completionHandler(contacts: contacts, requestError: nil)
+                completionHandler(contacts, nil)
                 return
             }
             
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 500, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid response"])
-            completionHandler(contacts: nil, requestError: error)
+            completionHandler(nil, error)
             
         }
         
@@ -154,12 +154,12 @@ public final class ContactsController {
      
      - Note: The user must have access to the contacts on this account
      */
-    public func getContacts(client: Client, completionHandler: (contacts: [Contact]?, requestError: NSError?) -> ()) {
+    public func getContacts(_ client: Client, completionHandler: @escaping (_ contacts: [Contact]?, _ requestError: Error?) -> ()) {
         
         guard let clientIdentifier = client.identifier else {
             
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "The client specified does not have an identifier"])
-            completionHandler(contacts: nil, requestError: error)
+            completionHandler(nil, error)
             return
         }
         
@@ -173,12 +173,12 @@ public final class ContactsController {
      - parameter identifier: The identifier for a contact
      - parameter completionHandler: The completion handler to return the contact and errors to
      */
-    public func getContact(identifier: Int, completionHandler: (contact: Contact?, requestError: NSError?) -> ()) {
+    public func getContact(_ identifier: Int, completionHandler: @escaping (_ contact: Contact?, _ requestError: Error?) -> ()) {
         
-        requestController.get("contacts/\(identifier)") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("contacts/\(identifier)") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(contact: nil, requestError: error)
+                completionHandler(nil, error)
                 return
             }
             
@@ -187,7 +187,7 @@ public final class ContactsController {
                 if let contactResponseDictionary = contactResponse.dictionary as? [String: AnyObject] {
                     
                     let foundContact = Contact(dictionary: contactResponseDictionary)
-                    completionHandler(contact: foundContact, requestError: nil)
+                    completionHandler(foundContact, nil)
                     return
                     
                 }
@@ -195,7 +195,7 @@ public final class ContactsController {
             }
             
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 500, userInfo: [NSLocalizedDescriptionKey: "The server did not return a valid contact object"])
-            completionHandler(contact: nil, requestError: error)
+            completionHandler(nil, error)
             
         }
         
@@ -209,22 +209,22 @@ public final class ContactsController {
     - parameter contact: The contact to update. You may modify a contact returned from another request or create a new one that has a valid identifier
     - parameter completionHandler: The completion handler to return request errors to
     */
-    public func update(contact: Contact, completionHandler: (requestError: NSError?) -> ()) {
+    public func update(_ contact: Contact, completionHandler: @escaping (_ requestError: Error?) -> ()) {
         
         guard let contactIdentifier = contact.identifier else {
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Supplied contact does not have an identifier"])
-            completionHandler(requestError: error)
+            completionHandler(error)
             return;
         }
         
-        requestController.put("contacts/\(contactIdentifier)", bodyParams: contact.serialisedObject) { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.put("contacts/\(contactIdentifier)", bodyParams: contact.serialisedObject) { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(requestError: error)
+                completionHandler(error)
                 return
             }
             
-            completionHandler(requestError: nil)
+            completionHandler(nil)
         }
         
     }
@@ -235,22 +235,22 @@ public final class ContactsController {
      - parameter contact: The contact to delete
      - parameter completionHandler: The completion handler to return request errors to
      */
-    public func delete(contact: Contact, completionHandler: (requestError: NSError?) -> ()) {
+    public func delete(_ contact: Contact, completionHandler: @escaping (_ requestError: Error?) -> ()) {
         
         guard let contactIdentifier = contact.identifier else {
             let error = NSError(domain: "co.uk.mattcheetham.harvestkit", code: 400, userInfo: [NSLocalizedDescriptionKey: "Contact does not have an identifier"])
-            completionHandler(requestError: error)
+            completionHandler(error)
             return;
         }
         
-        requestController.delete("contacts/\(contactIdentifier)") { (resposne: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.delete("contacts/\(contactIdentifier)") { (resposne: TSCRequestResponse?, requestError: Error?) -> Void in
 
             if let error = requestError {
-                completionHandler(requestError: error)
+                completionHandler(error)
                 return;
             }
             
-            completionHandler(requestError: nil)
+            completionHandler(nil)
             
         }
         

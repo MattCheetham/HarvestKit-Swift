@@ -31,7 +31,7 @@ public struct Company {
     /**
     The URL that users must go to to access this harvest account
     */
-    public var baseURL: NSURL?
+    public var baseURL: URL?
     
     /**
     The day that this company considers to be the beginning of the working week
@@ -75,7 +75,7 @@ public struct Company {
         timeFormat = dictionary["time_format"] as? String
         
         if let baseURLString = dictionary["base_uri"] as? String {
-            baseURL = NSURL(string: baseURLString)
+            baseURL = URL(string: baseURLString)
         }
         
         weekStartDay = dictionary["week_start_day"] as? String

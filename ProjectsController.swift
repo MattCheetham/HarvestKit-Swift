@@ -38,12 +38,12 @@ public final class ProjectsController {
      - parameters:
      - completionHandler: The completion handler to return projects and errors to
      */
-    public func getProjects(completionHandler: (projects: [Project?]?, requestError: NSError?) -> ()) {
+    public func getProjects(_ completionHandler: @escaping (_ projects: [Project?]?, _ requestError: Error?) -> ()) {
         
-        requestController.get("projects") { (response: TSCRequestResponse?, requestError: NSError?) -> Void in
+        requestController.get("projects") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(projects: nil, requestError: error)
+                completionHandler(nil, error)
                 return;
             }
             
@@ -53,7 +53,7 @@ public final class ProjectsController {
                     Project(dictionary: $0)
                 })
                 
-                completionHandler(projects: projects, requestError: nil)
+                completionHandler(projects, nil)
             }
         }
     }
