@@ -57,7 +57,7 @@ public final class ClientsController {
                 return
             }
             
-            if let responseStatus = response?.status , responseStatus == 201 {
+            if let responseStatus = response?.status, responseStatus == 201 {
                 completion(nil)
                 return
             }
@@ -141,7 +141,7 @@ public final class ClientsController {
                 return
             }
             
-            if let responseStatus = response?.status , responseStatus == 200 {
+            if let responseStatus = response?.status, responseStatus == 200 {
                 completion(nil)
                 return
             }
@@ -170,7 +170,7 @@ public final class ClientsController {
             
             if let _error = error {
                 
-                if let responseStatus = response?.status , responseStatus == 400 {
+                if let responseStatus = response?.status, responseStatus == 400 {
                     completion(ClientError.hasProjectsOrInvoices)
                     return
                 }
@@ -179,7 +179,7 @@ public final class ClientsController {
                 return
             }
             
-            if let responseStatus = response?.status , responseStatus == 200 {
+            if let responseStatus = response?.status, responseStatus == 200 {
                 completion(nil)
                 return
             }
@@ -208,7 +208,7 @@ public final class ClientsController {
             
             if let _error = error {
                 
-                if let responseStatus = response?.status , responseStatus == 400 {
+                if let responseStatus = response?.status, responseStatus == 400 {
                     completion(ClientError.hasActiveProjects)
                     return
                 }
@@ -217,7 +217,7 @@ public final class ClientsController {
                 return
             }
             
-            if let responseStatus = response?.status , responseStatus == 200 {
+            if let responseStatus = response?.status, responseStatus == 200 {
                 completion(nil)
                 return
             }

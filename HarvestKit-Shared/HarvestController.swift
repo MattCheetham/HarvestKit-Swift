@@ -26,7 +26,7 @@ public final class HarvestController {
      The main request controller for the harvest framework. This will be shared amongst other sub controllers for making API requests.
      */
     public let requestController: TSCRequestController
-
+    
     /**
      The controller for managing Timers
      */
@@ -46,6 +46,16 @@ public final class HarvestController {
      The controller for managing clients
      */
     public let clientsController: ClientsController
+    
+    /**
+     The controller for managing projects
+     */
+    public let projectsController: ProjectsController
+    
+    /**
+     The controller for loading and managing tasks for the account
+     */
+    public let tasksController: TasksController
     
     /**
      Initialises a new harvest controller with the given credentials. You must supply credentials to log in and access the harvest API.
@@ -74,7 +84,8 @@ public final class HarvestController {
         contactsController = ContactsController(requestController: requestController)
         accountController = AccountController(requestController: requestController)
         clientsController = ClientsController(requestController: requestController)
-        
+        projectsController = ProjectsController(requestController: requestController)
+        tasksController = TasksController(requestController: requestController)
     }
     
     //MARK: - Users
@@ -84,12 +95,12 @@ public final class HarvestController {
      
      - parameter completionHandler: The completion handler to return users and errors to
      */
-    public func getUsers(_ completionHandler: @escaping (_ users: [User?]?, _ requestError: NSError?) -> ()) {
+    public func getUsers(_ completionHandler: @escaping (_ users: [User?]?, _ requestError: Error?) -> ()) {
         
         requestController.get("people") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(nil, error as NSError)
+                completionHandler(nil, error)
                 return;
             }
             
@@ -102,11 +113,8 @@ public final class HarvestController {
                 })
                 
                 completionHandler(users, nil)
-                
             }
-            
         }
-        
     }
     
     //MARK: - Projects
@@ -117,12 +125,12 @@ public final class HarvestController {
      - parameters:
      - completionHandler: The completion handler to return projects and errors to
      */
-    public func getProjects(_ completionHandler: @escaping (_ projects: [Project?]?, _ requestError: NSError?) -> ()) {
+    public func getProjects(_ completionHandler: @escaping (_ projects: [Project?]?, _ requestError: Error?) -> ()) {
         
         requestController.get("projects") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(nil, error as NSError)
+                completionHandler(nil, error)
                 return;
             }
             
@@ -148,12 +156,12 @@ public final class HarvestController {
      - parameters:
      - completionHandler: The completion handler to return clients and errors to
      */
-    public func getClients(_ completionHandler: @escaping (_ clients: [Client?]?, _ requestError: NSError?) -> ()) {
+    public func getClients(_ completionHandler: @escaping (_ clients: [Client?]?, _ requestError: Error?) -> ()) {
         
         requestController.get("clients") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(nil, error as NSError)
+                completionHandler(nil, error)
                 return;
             }
             

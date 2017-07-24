@@ -17,14 +17,14 @@ public extension Date {
     The day number in the date's year, as a String
     */
     public var dayInYear: String {
-        return String(Calendar.current.ordinality(of: .day, in: .year, for: self)!)
+        return String((Calendar.current as NSCalendar).ordinality(of: .day, in: .year, for: self))
     }
     
     /**
     The date's year, as a String
     */
     public var year: String {
-        return String(Calendar.current.component(.year, from: self))
+        return String((Calendar.current as NSCalendar).component(.year, from: self))
     }
     
 }

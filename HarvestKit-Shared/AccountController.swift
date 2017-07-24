@@ -37,12 +37,12 @@ public final class AccountController {
     
     - parameter completionHandler: The completion handler to call passing a company and user object if available. This may also be passed an error object where appropriate
     */
-    public func getAccountInformation(_ completionHandler: @escaping (_ currentUser: User?, _ currentCompany: Company?, _ requestError: NSError?) -> ()) {
+    public func getAccountInformation(_ completionHandler: @escaping (_ currentUser: User?, _ currentCompany: Company?, _ requestError: Error?) -> ()) {
      
         requestController.get("account/who_am_i") { (response: TSCRequestResponse?, requestError: Error?) -> Void in
             
             if let error = requestError {
-                completionHandler(nil, nil, error as NSError)
+                completionHandler(nil, nil, error)
                 return;
             }
             

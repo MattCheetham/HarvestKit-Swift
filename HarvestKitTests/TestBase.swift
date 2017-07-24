@@ -34,7 +34,7 @@ class TestBase: XCTestCase {
                     return jsonObject
                 }
                 
-            } catch let error as NSError {
+            } catch let error as Error {
                 
                 print(error)
             }
