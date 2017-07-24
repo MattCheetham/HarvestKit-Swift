@@ -70,7 +70,7 @@ public final class HarvestController {
         
         let userPasswordString = "\(username):\(password)"
         let userPasswordData = userPasswordString.data(using: String.Encoding.utf8)
-        let base64EncodedCredential = userPasswordData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        let base64EncodedCredential = userPasswordData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
         if let base64Cred = base64EncodedCredential {
             let authString = "Basic \(base64Cred)"
             requestController.sharedRequestHeaders["Authorization"] = authString
