@@ -94,7 +94,7 @@ public final class TimersController {
     - parameter date: The date as an Date to return timers for. If no date is supplied today will be used instead
     - parameter completionHandler: The completion handler to return timers and errors to
     */
-    public func getTimers(_ user: User?, date: Date?, completionHandler: @escaping (_ timers: [Timer?]?, _ requestError: Error?) -> ()) {
+    public func getTimers(_ user: User? = nil, date: Date? = nil, completionHandler: @escaping (_ timers: [Timer?]?, _ requestError: Error?) -> ()) {
         
         var url = URL(string: "daily")!
         
@@ -132,35 +132,6 @@ public final class TimersController {
             
         }
         
-    }
-    
-    /**
-     Gets timers for a given user for the current day. If no user is specified, the authenticated user will be used.
-     
-     - parameter user: The user to look up the data for. If no user is specified, the authenticated user will be used
-     - parameter completionHandler: The completion handler to return timers and errors to
-     */
-    public func getTimers(_ user: User?, completionHandler: @escaping (_ timers: [Timer?]?, _ requestError: Error?) -> ()) {
-        getTimers(user, date: nil, completionHandler: completionHandler)
-    }
-    
-    /**
-     Gets timers for the authenticated user for the given day. If no day is specified, today will be used.
-     
-     - parameter date: THe date as an Date to return timers for. If no date is supplied today will be used instead
-     - parameter completionHandler: The completion handler to return timers and errors to
-     */
-    public func getTimers(_ date: Date?, completionHandler: @escaping (_ timers: [Timer?]?, _ requestError: Error?) -> ()) {
-        getTimers(nil, date: date, completionHandler: completionHandler)
-    }
-    
-    /**
-     Gets timers for the authenticated user for the current day
-     
-     - parameter completionHandler: The completion handler to return timers and errors to
-     */
-    public func getTimers(_ completionHandler: @escaping (_ timers: [Timer?]?, _ requestError: Error?) -> ()) {
-        getTimers(nil, date: nil, completionHandler: completionHandler)
     }
     
     /**
