@@ -127,11 +127,8 @@ public final class TimersController {
                 })
                 
                 completionHandler(timersArray, nil)
-                
             }
-            
         }
-        
     }
     
     /**
